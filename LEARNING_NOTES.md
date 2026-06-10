@@ -1,151 +1,312 @@
-# Learning Notes
-
-## Day 1
-
-### Git
-
-Learned:
--
-
-Questions:
--
-
-### Project Setup
-
-Learned:
--
-
-Questions:
--
-
 # LEARNING_NOTES.md
 
 # Learning Notes
 
-## Day 2
+---
 
-### Spring Boot Concepts
+# Day 1
+
+## Git & GitHub
+
+### Learned
+
+* Importance of version control in software development.
+* Creating and managing GitHub repositories.
+* Initializing a local Git repository.
+* Connecting local repository to remote GitHub repository.
+* Basic Git workflow.
+
+### Commands Used
+
+```bash
+git init
+git add .
+git commit -m "message"
+git remote add origin <url>
+git push -u origin main
+```
+
+### Interview Questions
+
+Q. What is Git?
+
+A. Git is a distributed version control system used to track changes in source code.
+
+Q. What is GitHub?
+
+A. GitHub is a cloud-based platform used for hosting Git repositories.
+
+Q. Difference between Git and GitHub?
+
+A. Git is a version control tool while GitHub is a hosting platform for Git repositories.
+
+---
+
+## Project Planning
+
+### Learned
+
+* Importance of designing before coding.
+* Breaking a large project into smaller milestones.
+* Documentation-driven development.
+* Creating project roadmap and architecture.
+
+### Outcome
+
+Created the complete roadmap for the Emergency Response Dispatch System.
+
+---
+
+# Day 2
+
+## Spring Boot Fundamentals
+
+### Learned
 
 @SpringBootApplication
 
-* Main entry point of Spring Boot application
+* Main entry point of Spring Boot application.
+* Combines configuration, component scanning, and auto configuration.
 
 Embedded Tomcat
 
-* Built-in web server running on port 8080
+* Built-in web server.
+* Eliminates need for external deployment server.
 
 application.properties
 
-* Central configuration file
+* Centralized configuration file.
+* Used for database and application settings.
 
 Spring Data JPA
 
-* Simplifies database operations
+* Simplifies database operations.
+* Reduces boilerplate SQL code.
 
 Hibernate
 
-* ORM implementation used by JPA
+* ORM framework used by JPA.
+* Converts Java objects into database records.
 
 ### Maven
 
+### Learned
+
 Maven
 
-* Build and dependency management tool
+* Build automation and dependency management tool.
 
 Maven Wrapper
 
-* Project-specific Maven executable
+* Allows project-specific Maven execution.
+* Removes dependency on system Maven installation.
 
-### Git Concepts
+pom.xml
 
-git add
+* Central dependency and build configuration file.
 
-* Stage files
+### Database Integration
 
-git commit
+### Learned
 
-* Create snapshot
-
-git push
-
-* Upload changes to GitHub
-
-git status
-
-* Check repository state
+* MySQL database configuration.
+* JDBC connection setup.
+* Hibernate automatic schema generation.
+* Spring Boot database connectivity.
 
 ### Interview Questions
 
 Q. What is Spring Boot?
-A. Framework used to rapidly build production-ready Java applications.
+
+A. Spring Boot is a framework used to rapidly develop production-ready Java applications.
 
 Q. What is JPA?
-A. Java Persistence API used for ORM.
+
+A. Java Persistence API used for object-relational mapping.
 
 Q. What is Hibernate?
-A. Popular implementation of JPA.
+
+A. Hibernate is the most popular implementation of JPA.
+
+Q. Why use Maven?
+
+A. Maven manages project dependencies and automates build processes.
+
+### Outcome
+
+Successfully connected Spring Boot application with MySQL database.
 
 ---
 
-## Day 3
+# Day 3
 
-### Layered Architecture
+## Layered Architecture
+
+    Controller
+        ↓
+    Service
+        ↓
+    Repository
+        ↓
+    Database
+
+### Learned
 
 Controller
-↓
-Service
-↓
-Repository
-↓
-Database
 
-### Concepts Learned
+* Handles incoming HTTP requests.
+* Returns responses to clients.
+
+Service
+
+* Contains business logic.
+* Acts as bridge between controller and repository.
+
+Repository
+
+* Handles database operations.
+* Uses Spring Data JPA.
 
 Entity
 
-* Represents database table
-
-Repository
-
-* Handles database operations
-
-Service
-
-* Contains business logic
-
-Controller
-
-* Handles HTTP requests
+* Represents database table.
+* Maps Java class to relational table.
 
 Dependency Injection
 
-* Spring automatically injects required objects
+* Spring automatically provides required objects.
 
 REST API
 
-* Communication layer between frontend and backend
+* Standard communication mechanism between frontend and backend.
 
 ### Spring Data JPA
 
 JpaRepository
 
-* Provides CRUD operations automatically
+* Provides CRUD operations automatically.
+
+findAll()
+
+* Retrieves all records.
 
 findById()
 
-* Returns Optional
+* Retrieves specific record.
+
+save()
+
+* Inserts or updates record.
 
 orElseThrow()
 
-* Throws exception when record not found
+* Throws exception when resource is not found.
 
 ### Interview Questions
 
 Q. Why use Service Layer?
-A. Separates business logic from controller.
+
+A. To separate business logic from controller logic.
 
 Q. What is Dependency Injection?
-A. Spring automatically provides required objects.
+
+A. A design pattern where Spring automatically injects required objects.
 
 Q. Why use JpaRepository?
-A. Reduces boilerplate code and provides built-in CRUD operations.
+
+A. It reduces boilerplate code and provides built-in CRUD operations.
+
+Q. What is an Entity?
+
+A. A Java class mapped to a database table using JPA annotations.
+
+### Outcome
+
+Built the complete Emergency Request module with CRUD APIs.
+
+---
+
+# Day 4
+
+## DTO Pattern
+
+### Learned
+
+DTO (Data Transfer Object)
+
+* Used to transfer data between layers.
+* Prevents direct exposure of entities.
+* Improves security and maintainability.
+
+### Validation
+
+@NotBlank
+
+* Ensures field is not empty.
+
+@NotNull
+
+* Ensures field is not null.
+
+@Min
+
+* Defines minimum allowed value.
+
+@Max
+
+* Defines maximum allowed value.
+
+@Valid
+
+* Automatically validates incoming request data.
+
+### Exception Handling
+
+Custom Exception
+
+* ResourceNotFoundException created for missing records.
+
+Global Exception Handler
+
+* Centralized error handling mechanism.
+
+@RestControllerAdvice
+
+* Handles exceptions globally.
+
+### Professional API Design
+
+ApiResponse
+
+* Standardized response format.
+* Provides consistency across APIs.
+
+Validation Error Handling
+
+* Returns field-specific validation errors.
+
+### Interview Questions
+
+Q. Why use DTO instead of Entity?
+
+A. DTO prevents exposing internal database structure and improves security.
+
+Q. What is @Valid?
+
+A. It triggers automatic validation of incoming request data.
+
+Q. What is Global Exception Handling?
+
+A. A centralized mechanism for handling exceptions across the application.
+
+Q. Why use Response Wrappers?
+
+A. To maintain consistent API response structure.
+
+Q. What is Separation of Concerns?
+
+A. Dividing application responsibilities into independent layers.
+
+### Outcome
+
+Converted the application into a production-style backend architecture with validation, DTOs, and exception handling.

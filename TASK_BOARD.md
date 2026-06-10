@@ -15,18 +15,18 @@
 - [x] Controller Layer
 - [x] Postman Testing
 - [x] CRUD APIs (Create + Read)
+- [x] Validation Layer
+- [x] DTO Layer
+- [x] Global Exception Handling
 
 ## In Progress 🔄
-
-- [ ] Validation Layer
-- [ ] DTO Layer
-- [ ] Global Exception Handling
-
-## Upcoming ⏳
 
 - [ ] Hospital Entity
 - [ ] Ambulance Entity
 - [ ] DispatchRecord Entity
+
+## Upcoming ⏳
+
 - [ ] Graph Engine
 - [ ] Dijkstra Algorithm
 - [ ] Route Optimization
