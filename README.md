@@ -4,11 +4,18 @@ A full-stack emergency dispatch and route optimization system built using Java, 
 
 ## Current Features
 
-- Emergency Request Management
-- REST APIs
-- MySQL Integration
-- Layered Spring Boot Architecture
-- GitHub Version Control
+* Emergency Request Management
+* Hospital Management
+* REST APIs
+* DTO-Based Architecture
+* Request Validation
+* Global Exception Handling
+* Professional API Responses
+* MySQL Integration
+* Layered Spring Boot Architecture
+* Postman API Testing
+* GitHub Version Control
+
 
 ## Technology Stack
 

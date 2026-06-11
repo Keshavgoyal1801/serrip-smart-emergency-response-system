@@ -2,35 +2,53 @@
 
 ## Completed ✅
 
-- [x] Project Planning
-- [x] Git Setup
-- [x] GitHub Repository Setup
-- [x] Spring Boot Project Creation
-- [x] Maven Configuration
-- [x] MySQL Integration
-- [x] Package Structure Creation
-- [x] EmergencyRequest Entity
-- [x] Repository Layer
-- [x] Service Layer
-- [x] Controller Layer
-- [x] Postman Testing
-- [x] CRUD APIs (Create + Read)
-- [x] Validation Layer
-- [x] DTO Layer
-- [x] Global Exception Handling
+* [x] Project Planning
+* [x] Git Setup
+* [x] GitHub Repository Setup
+* [x] Spring Boot Project Creation
+* [x] Maven Configuration
+* [x] MySQL Integration
+* [x] Package Structure Creation
+
+### Emergency Module
+
+* [x] EmergencyRequest Entity
+* [x] Repository Layer
+* [x] Service Layer
+* [x] Controller Layer
+* [x] CRUD APIs (Create + Read)
+* [x] DTO Layer
+* [x] Validation Layer
+* [x] Global Exception Handling
+* [x] Postman Testing
+
+### Hospital Module
+
+* [x] Hospital Entity
+* [x] Hospital DTO
+* [x] Hospital Repository
+* [x] Hospital Service
+* [x] Hospital Controller
+* [x] Hospital APIs
+* [x] Validation
+* [x] Postman Testing
 
 ## In Progress 🔄
 
-- [ ] Hospital Entity
-- [ ] Ambulance Entity
-- [ ] DispatchRecord Entity
+* [ ] Ambulance Entity
+* [ ] Ambulance DTO
+* [ ] Ambulance Repository
+* [ ] Ambulance Service
+* [ ] Ambulance Controller
 
 ## Upcoming ⏳
 
-- [ ] Graph Engine
-- [ ] Dijkstra Algorithm
-- [ ] Route Optimization
-- [ ] React Frontend
-- [ ] Authentication
-- [ ] Dockerization
-- [ ] Deployment
+* [ ] DispatchRecord Entity
+* [ ] Resource Allocation Engine
+* [ ] Graph Engine
+* [ ] Dijkstra Algorithm
+* [ ] Route Optimization
+* [ ] Authentication
+* [ ] React Frontend
+* [ ] Dockerization
+* [ ] Deployment

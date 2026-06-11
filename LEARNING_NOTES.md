@@ -310,3 +310,137 @@ A. Dividing application responsibilities into independent layers.
 ### Outcome
 
 Converted the application into a production-style backend architecture with validation, DTOs, and exception handling.
+
+# Day 5 Learning Notes
+
+## Hospital Management Module
+
+### Hospital Entity
+
+Purpose:
+Represents hospitals available in the emergency response network.
+
+Key Fields:
+
+* hospitalName
+* address
+* latitude
+* longitude
+* availableBeds
+* contactNumber
+* createdAt
+
+### DTO Pattern
+
+HospitalDTO was introduced to separate API input from database entities.
+
+Benefits:
+
+* Better security
+* Input validation
+* Clean architecture
+* Easier maintenance
+
+### Service Layer Responsibilities
+
+The Service Layer:
+
+* Handles business logic
+* Converts DTOs into Entities
+* Communicates with Repository Layer
+* Keeps Controllers lightweight
+
+### Controller Layer
+
+Responsibilities:
+
+* Accept HTTP requests
+* Validate input data
+* Call Service Layer
+* Return responses
+
+### Validation
+
+Annotations Used:
+
+@NotBlank
+
+* Ensures text fields are not empty
+
+@NotNull
+
+* Ensures required values are provided
+
+@Min
+
+* Ensures numerical values stay within acceptable limits
+
+### Professional API Design
+
+ApiResponse Wrapper:
+
+Benefits:
+
+* Consistent responses
+* Better frontend integration
+* Easier debugging
+
+Example Structure:
+
+{
+"success": true,
+"message": "Hospital created successfully",
+"data": { ... }
+}
+
+### Spring Boot Concepts Learned
+
+@RestController
+
+* Exposes REST endpoints
+
+@RequestMapping
+
+* Defines base API path
+
+@PostMapping
+
+* Handles POST requests
+
+@GetMapping
+
+* Handles GET requests
+
+@Valid
+
+* Triggers DTO validation automatically
+
+### Interview Questions
+
+Q. Why use DTOs instead of Entities directly?
+A. DTOs protect internal data structures and provide validation.
+
+Q. What is the role of Service Layer?
+A. It contains business logic and coordinates data flow between Controller and Repository.
+
+Q. Why use ApiResponse?
+A. To standardize API responses and improve maintainability.
+
+Q. What is the purpose of validation?
+A. To prevent invalid data from entering the application.
+
+## Architecture Understanding
+
+Request Flow:
+
+                               Client
+                                  ↓
+                              Controller
+                                  ↓
+                            DTO Validation
+                                  ↓
+                               Service
+                                  ↓
+                              Repository
+                                  ↓
+                               Database
