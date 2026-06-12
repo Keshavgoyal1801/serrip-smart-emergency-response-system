@@ -444,3 +444,81 @@ Request Flow:
                               Repository
                                   ↓
                                Database
+
+## Day 6
+
+### Learned
+
+* Ambulance Management Module development
+* Resource management architecture
+* Status-based entity design
+* Default field initialization in entities
+* DTO to Entity conversion
+* CRUD API development using Spring Boot
+* Validation and exception handling reuse
+* Professional API response implementation
+
+### Spring Concepts
+
+@Entity
+* Maps Ambulance class to database table
+
+@Table
+* Defines database table name
+
+JpaRepository
+* Provides built-in CRUD operations
+
+@Service
+* Contains business logic
+
+@RestController
+* Handles REST API requests
+
+@Valid
+* Validates incoming request data
+
+### New Design Concepts
+
+Ambulance Status
+
+* AVAILABLE
+* ON_ROUTE
+* AT_HOSPITAL
+* MAINTENANCE
+
+Default Values
+
+* Automatically set status to AVAILABLE
+* Automatically generate createdAt timestamp
+
+Module Architecture
+
+AmbulanceDTO
+↓
+AmbulanceController
+↓
+AmbulanceService
+↓
+AmbulanceRepository
+↓
+MySQL Database
+
+### Interview Questions
+
+Q. Why use DTOs?
+A. To separate API requests from database entities and apply validation.
+
+Q. Why initialize status in the constructor?
+A. To ensure every new ambulance starts with a valid default state.
+
+Q. Why use JpaRepository?
+A. It provides CRUD operations without writing SQL queries.
+
+Q. What is the role of Service Layer?
+A. It contains business logic and coordinates data flow between Controller and Repository.
+
+Q. What is the advantage of status tracking?
+A. It allows the system to determine resource availability for dispatch operations.
+
+---

@@ -108,6 +108,31 @@ Hospital Management Module completed and integrated successfully.
 
 ---
 
+## Day 6
+
+### Objectives
+
+* Develop Ambulance Management Module
+* Implement ambulance-related APIs
+
+### Completed
+
+* Ambulance Entity
+* Ambulance DTO
+* Ambulance Repository
+* Ambulance Service
+* Ambulance Controller
+* Ambulance API validation
+* Professional API responses
+* Ambulance status tracking
+* Postman API testing
+
+### Status
+
+Ambulance Management Module completed and integrated successfully.
+
+---
+
 ## Overall Progress
 
 Planning & Setup          ██████████ 100%
@@ -115,7 +140,7 @@ Backend Foundation        ██████████ 100%
 Emergency Module          ██████████ 100%
 API Architecture          ██████████ 100%
 Hospital Module           ██████████ 100%
-Ambulance Module          ░░░░░░░░░░ 0%
+Ambulance Module          ██████████ 100%
 Dispatch Engine           ░░░░░░░░░░ 0%
 
-Total Project Progress: ~45%
+Total Project Progress: ~55%

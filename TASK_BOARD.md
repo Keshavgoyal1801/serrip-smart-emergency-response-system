@@ -33,18 +33,28 @@
 * [x] Validation
 * [x] Postman Testing
 
+### Ambulance Module
+
+* [x] Ambulance Entity
+* [x] Ambulance DTO
+* [x] Ambulance Repository
+* [x] Ambulance Service
+* [x] Ambulance Controller
+* [x] Ambulance APIs
+* [x] Validation
+* [x] Ambulance Status Tracking
+* [x] Postman Testing
+
 ## In Progress 🔄
 
-* [ ] Ambulance Entity
-* [ ] Ambulance DTO
-* [ ] Ambulance Repository
-* [ ] Ambulance Service
-* [ ] Ambulance Controller
+* [ ] DispatchRecord Entity
+* [ ] Dispatch Service
+* [ ] Ambulance Assignment Logic
+* [ ] Hospital Assignment Logic
+* [ ] Resource Allocation Engine
 
 ## Upcoming ⏳
 
-* [ ] DispatchRecord Entity
-* [ ] Resource Allocation Engine
 * [ ] Graph Engine
 * [ ] Dijkstra Algorithm
 * [ ] Route Optimization
@@ -52,3 +62,4 @@
 * [ ] React Frontend
 * [ ] Dockerization
 * [ ] Deployment
+* [ ] Production Documentation
