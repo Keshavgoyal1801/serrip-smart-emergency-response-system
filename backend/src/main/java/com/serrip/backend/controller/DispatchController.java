@@ -32,7 +32,7 @@ public class DispatchController {
         );
     }
 
-    @PostMapping("/{emergencyId}")
+    @PostMapping("/auto/{emergencyId}")
     public ApiResponse<DispatchRecord>
     autoDispatch(
             @PathVariable Long emergencyId) {

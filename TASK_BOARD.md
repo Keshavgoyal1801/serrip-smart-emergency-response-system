@@ -2,8 +2,6 @@
 
 ## Completed ✅
 
-### Project Foundation
-
 * [x] Project Planning
 * [x] Git Setup
 * [x] GitHub Repository Setup
@@ -22,7 +20,6 @@
 * [x] DTO Layer
 * [x] Validation Layer
 * [x] Global Exception Handling
-* [x] Professional API Responses
 * [x] Postman Testing
 
 ### Hospital Module
@@ -53,31 +50,29 @@
 * [x] DispatchRecord Entity
 * [x] DispatchRecord Repository
 * [x] Dispatch Service
-* [x] Dispatch Controller
 * [x] Manual Dispatch API
 * [x] Auto Dispatch API
-* [x] Ambulance Assignment Logic
-* [x] Ambulance Availability Validation
-* [x] Ambulance Status Updates
-* [x] Dispatch History Storage
-* [x] Resource Allocation Engine V1
+* [x] Ambulance Availability Check
+* [x] Ambulance Status Update
+* [x] Distance Calculation Logic
+* [x] Nearest Ambulance Selection
+* [x] Dispatch Record Creation
 * [x] Postman Testing
 
 ## In Progress 🔄
 
-* [ ] Distance Calculation Engine
-* [ ] Nearest Ambulance Selection
-* [ ] Routing Intelligence Foundation
+* [ ] Road Network Model
+* [ ] Graph Data Structure
+* [ ] Adjacency List Design
 
 ## Upcoming ⏳
 
-* [ ] Graph Engine
 * [ ] Dijkstra Algorithm
-* [ ] Route Optimization
-* [ ] Hospital Allocation Engine
+* [ ] Route Optimization Engine
+* [ ] Traffic Simulation
 * [ ] Authentication
 * [ ] React Frontend
 * [ ] Dockerization
-* [ ] CI/CD Pipeline
+* [ ] GitHub Actions
 * [ ] Cloud Deployment
 * [ ] Production Documentation

@@ -22,38 +22,45 @@
 ## Milestone 3: Emergency Resource Management ✅
 
 * [x] Hospital Entity
+
 * [x] Hospital Repository
+
 * [x] Hospital Service
+
 * [x] Hospital Controller
+
 * [x] Hospital APIs
+
 * [x] Ambulance Entity
+
 * [x] Ambulance Repository
+
 * [x] Ambulance Service
+
 * [x] Ambulance Controller
+
 * [x] Ambulance APIs
-* [x] DispatchRecord Entity
-* [x] Resource Allocation Engine V1
 
 ## Milestone 4: Dispatch Engine ✅
 
+* [x] DispatchRecord Entity
 * [x] DispatchRecord Repository
 * [x] Dispatch Service
-* [x] Dispatch Controller
-* [x] Manual Dispatch
-* [x] Auto Dispatch
-* [x] Ambulance Assignment
+* [x] Manual Ambulance Dispatch
 * [x] Ambulance Status Updates
-* [x] Dispatch History Tracking
-* [x] Emergency Dispatch Workflow
+* [x] Dispatch Records
+* [x] Auto Dispatch API
+* [x] Nearest Ambulance Selection
+* [x] Distance Calculation Logic
 
 ## Milestone 5: Routing Intelligence 🔄
 
-* [ ] Distance Calculation Engine
-* [ ] Nearest Ambulance Selection
+* [ ] Road Network Model
 * [ ] Graph Data Structure
 * [ ] Adjacency List
 * [ ] Dijkstra Algorithm
 * [ ] Min Heap / Priority Queue
+* [ ] Shortest Path Engine
 * [ ] Dynamic Road Blockage Handling
 * [ ] Traffic Delay Simulation
 
@@ -65,17 +72,9 @@
 * [ ] Ambulance Tracking
 * [ ] Route Visualization
 
-## Milestone 7: Security ⏳
-
-* [ ] Spring Security
-* [ ] JWT Authentication
-* [ ] Role-Based Access Control
-* [ ] Admin Access Management
-
-## Milestone 8: DevOps & Deployment ⏳
+## Milestone 7: DevOps & Deployment ⏳
 
 * [ ] Dockerization
 * [ ] GitHub Actions
 * [ ] Cloud Deployment
-* [ ] Monitoring & Logging
 * [ ] Production Documentation

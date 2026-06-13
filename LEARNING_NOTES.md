@@ -585,5 +585,154 @@ AVAILABLE
 ### Spring Data JPA Concepts
 Custom Query Methods
 
-```java
-findFirstByStatus("AVAILABLE")
+[//]: # (```java)
+
+[//]: # (    findFirstByStatus&#40;"AVAILABLE"&#41;)
+
+# Day 8
+
+## Intelligent Dispatch System
+
+### Learned
+
+* Distance-based ambulance allocation
+* Automatic resource assignment
+* Nearest resource selection algorithm
+* Multi-record database processing
+* Geolocation-based decision making
+* Service layer optimization
+* Real-world dispatch workflow implementation
+
+---
+
+## Distance Calculation Logic
+
+### Purpose
+
+Calculate the distance between:
+
+* Emergency Location
+* Ambulance Location
+
+Used for selecting the nearest available ambulance.
+
+### Benefits
+
+* Faster emergency response
+* Reduced travel time
+* Better resource utilization
+* Intelligent dispatch decisions
+
+---
+
+## Auto Dispatch Workflow
+
+### Request Flow
+
+Emergency Request
+↓
+Fetch Emergency Details
+↓
+Fetch Available Ambulances
+↓
+Calculate Distance
+↓
+Find Nearest Ambulance
+↓
+Update Ambulance Status
+↓
+Create Dispatch Record
+↓
+Return Response
+
+---
+
+## Repository Concepts
+
+### Custom Query Methods
+
+findByStatus()
+
+* Retrieves ambulances by status
+
+Examples:
+
+* AVAILABLE
+* ON_ROUTE
+* AT_HOSPITAL
+* MAINTENANCE
+
+### Benefit
+
+Allows filtering resources based on availability.
+
+---
+
+## Business Logic Enhancement
+
+### Before Day 8
+
+System selected:
+
+* First available ambulance
+
+### After Day 8
+
+System selects:
+
+* Nearest available ambulance
+
+This makes dispatching smarter and more realistic.
+
+---
+
+## Spring Boot Concepts
+
+### Service Layer
+
+Responsibilities:
+
+* Fetch emergency details
+* Fetch ambulance data
+* Calculate distances
+* Select best ambulance
+* Update status
+* Save dispatch record
+
+### Repository Layer
+
+Responsibilities:
+
+* Retrieve ambulance data
+* Retrieve emergency data
+* Store dispatch records
+
+---
+
+## Interview Questions
+
+Q. What is resource allocation?
+
+A. Resource allocation is the process of assigning the most suitable resource to a task based on defined criteria.
+
+Q. Why is distance calculation important in emergency systems?
+
+A. It reduces response time and improves emergency handling efficiency.
+
+Q. What is the advantage of auto dispatch?
+
+A. It removes manual intervention and enables faster emergency response.
+
+Q. Why use status tracking in ambulances?
+
+A. It prevents assigning ambulances that are already busy.
+
+Q. What business logic was introduced in Day 8?
+
+A. Automatic nearest ambulance selection using distance comparison.
+
+---
+
+## Outcome
+
+Successfully transformed the dispatch system from manual assignment to intelligent nearest-ambulance auto dispatch.
