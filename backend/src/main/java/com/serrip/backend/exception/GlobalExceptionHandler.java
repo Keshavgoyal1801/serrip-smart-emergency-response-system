@@ -45,4 +45,18 @@ public class GlobalExceptionHandler {
                 .badRequest()
                 .body(errors);
     }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<?> handleRuntimeException(
+            RuntimeException ex) {
+
+        return ResponseEntity
+                .badRequest()
+                .body(
+                        Map.of(
+                                "message",
+                                ex.getMessage()
+                        )
+                );
+    }
 }
