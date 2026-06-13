@@ -494,15 +494,15 @@ Default Values
 
 Module Architecture
 
-AmbulanceDTO
-↓
-AmbulanceController
-↓
-AmbulanceService
-↓
-AmbulanceRepository
-↓
-MySQL Database
+                            AmbulanceDTO
+                                 ↓
+                         AmbulanceController
+                                 ↓
+                           AmbulanceService
+                                 ↓
+                         AmbulanceRepository
+                                 ↓
+                            MySQL Database
 
 ### Interview Questions
 
@@ -522,3 +522,68 @@ Q. What is the advantage of status tracking?
 A. It allows the system to determine resource availability for dispatch operations.
 
 ---
+
+---
+
+# Day 7
+
+## Dispatch Engine
+
+### Learned
+
+* Dispatch Engine development
+* Resource Allocation concepts
+* Manual ambulance assignment
+* Automatic ambulance assignment
+* Dispatch history tracking
+* Availability validation
+* Custom repository query methods
+* Business rule implementation
+
+### DispatchRecord Entity
+
+Purpose:
+
+* Stores dispatch history
+* Tracks ambulance assignments
+* Links emergencies with ambulances
+
+Key Fields:
+
+* emergencyRequestId
+* ambulanceId
+* dispatchStatus
+* dispatchedAt
+
+### Resource Allocation
+
+Manual Dispatch
+
+* User selects ambulance manually
+* Ambulance assigned to emergency
+
+Auto Dispatch
+
+* System automatically finds available ambulance
+* No ambulance ID required from user
+
+### Business Rules
+
+AVAILABLE
+
+* Ambulance can be assigned
+
+      ON_ROUTE
+
+* Ambulance cannot be assigned again
+
+      Validation Logic
+
+* Prevents double dispatching
+* Ensures resource availability
+
+### Spring Data JPA Concepts
+Custom Query Methods
+
+```java
+findFirstByStatus("AVAILABLE")

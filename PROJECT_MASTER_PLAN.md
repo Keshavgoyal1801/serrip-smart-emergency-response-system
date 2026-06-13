@@ -31,20 +31,25 @@
 * [x] Ambulance Service
 * [x] Ambulance Controller
 * [x] Ambulance APIs
-* [ ] DispatchRecord Entity
-* [ ] Resource Allocation
+* [x] DispatchRecord Entity
+* [x] Resource Allocation Engine V1
 
-## Milestone 4: Dispatch Engine 🔄
+## Milestone 4: Dispatch Engine ✅
 
-* [ ] DispatchRecord Entity
-* [ ] Ambulance Assignment
-* [ ] Hospital Assignment
-* [ ] Ambulance Status Updates
-* [ ] Resource Allocation Logic
-* [ ] Emergency Dispatch Workflow
+* [x] DispatchRecord Repository
+* [x] Dispatch Service
+* [x] Dispatch Controller
+* [x] Manual Dispatch
+* [x] Auto Dispatch
+* [x] Ambulance Assignment
+* [x] Ambulance Status Updates
+* [x] Dispatch History Tracking
+* [x] Emergency Dispatch Workflow
 
-## Milestone 5: Routing Intelligence ⏳
+## Milestone 5: Routing Intelligence 🔄
 
+* [ ] Distance Calculation Engine
+* [ ] Nearest Ambulance Selection
 * [ ] Graph Data Structure
 * [ ] Adjacency List
 * [ ] Dijkstra Algorithm
@@ -60,9 +65,17 @@
 * [ ] Ambulance Tracking
 * [ ] Route Visualization
 
-## Milestone 7: DevOps & Deployment ⏳
+## Milestone 7: Security ⏳
+
+* [ ] Spring Security
+* [ ] JWT Authentication
+* [ ] Role-Based Access Control
+* [ ] Admin Access Management
+
+## Milestone 8: DevOps & Deployment ⏳
 
 * [ ] Dockerization
 * [ ] GitHub Actions
 * [ ] Cloud Deployment
+* [ ] Monitoring & Logging
 * [ ] Production Documentation

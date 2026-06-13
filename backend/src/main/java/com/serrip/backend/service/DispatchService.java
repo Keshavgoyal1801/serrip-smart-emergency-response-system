@@ -61,4 +61,35 @@ public class DispatchService {
 
         return dispatchRepository.save(record);
     }
+
+    public DispatchRecord autoDispatch(Long emergencyId) {
+
+        EmergencyRequest emergency =
+                emergencyRepository.findById(emergencyId)
+                        .orElseThrow(() ->
+                                new ResourceNotFoundException(
+                                        "Emergency Request Not Found"));
+
+        Ambulance ambulance =
+                ambulanceRepository
+                        .findFirstByStatus("AVAILABLE")
+                        .orElseThrow(() ->
+                                new RuntimeException(
+                                        "No Available Ambulance"));
+
+        ambulance.setStatus("ON_ROUTE");
+
+        ambulanceRepository.save(ambulance);
+
+        DispatchRecord record =
+                new DispatchRecord();
+
+        record.setEmergencyRequestId(
+                emergency.getId());
+
+        record.setAmbulanceId(
+                ambulance.getId());
+
+        return dispatchRepository.save(record);
+    }
 }

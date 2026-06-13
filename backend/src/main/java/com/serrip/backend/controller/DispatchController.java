@@ -31,4 +31,20 @@ public class DispatchController {
                 record
         );
     }
+
+    @PostMapping("/{emergencyId}")
+    public ApiResponse<DispatchRecord>
+    autoDispatch(
+            @PathVariable Long emergencyId) {
+
+        DispatchRecord record =
+                service.autoDispatch(
+                        emergencyId);
+
+        return new ApiResponse<>(
+                true,
+                "Ambulance auto-dispatched successfully",
+                record
+        );
+    }
 }
