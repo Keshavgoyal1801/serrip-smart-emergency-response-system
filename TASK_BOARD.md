@@ -59,15 +59,27 @@
 * [x] Dispatch Record Creation
 * [x] Postman Testing
 
+### Routing Foundation
+
+* [x] Road Network Model
+* [x] Graph Data Structure
+* [x] Adjacency List Design
+* [x] GraphNode Model
+* [x] GraphEdge Model
+* [x] RoadGraph Implementation
+* [x] Route Network Service
+* [x] Route Controller
+* [x] Graph Controller
+* [x] Route API Testing
+
 ## In Progress 🔄
 
-* [ ] Road Network Model
-* [ ] Graph Data Structure
-* [ ] Adjacency List Design
+* [ ] Dijkstra Algorithm
+* [ ] Priority Queue Integration
+* [ ] Shortest Path Calculation
 
 ## Upcoming ⏳
 
-* [ ] Dijkstra Algorithm
 * [ ] Route Optimization Engine
 * [ ] Traffic Simulation
 * [ ] Authentication

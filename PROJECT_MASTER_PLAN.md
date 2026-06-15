@@ -22,23 +22,14 @@
 ## Milestone 3: Emergency Resource Management ✅
 
 * [x] Hospital Entity
-
 * [x] Hospital Repository
-
 * [x] Hospital Service
-
 * [x] Hospital Controller
-
 * [x] Hospital APIs
-
 * [x] Ambulance Entity
-
 * [x] Ambulance Repository
-
 * [x] Ambulance Service
-
 * [x] Ambulance Controller
-
 * [x] Ambulance APIs
 
 ## Milestone 4: Dispatch Engine ✅
@@ -55,9 +46,9 @@
 
 ## Milestone 5: Routing Intelligence 🔄
 
-* [ ] Road Network Model
-* [ ] Graph Data Structure
-* [ ] Adjacency List
+* [x] Road Network Model
+* [x] Graph Data Structure
+* [x] Adjacency List
 * [ ] Dijkstra Algorithm
 * [ ] Min Heap / Priority Queue
 * [ ] Shortest Path Engine
