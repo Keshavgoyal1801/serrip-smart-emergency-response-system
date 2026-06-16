@@ -40,4 +40,22 @@ public class RouteNetworkService {
     public RoadGraph getRoadGraph() {
         return graph;
     }
+
+    public void blockRoad(
+            int source,
+            int destination) {
+
+        graph.blockRoad(
+                source,
+                destination);
+    }
+
+    public void unblockRoad(
+            int source,
+            int destination) {
+
+        graph.unblockRoad(
+                source,
+                destination);
+    }
 }

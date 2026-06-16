@@ -73,6 +73,11 @@ public class DijkstraService {
                     graph.getAdjacencyList()
                             .get(currentNode)) {
 
+                if (edge.isBlocked()) {
+
+                    continue;
+                }
+
                 double newDistance =
                         distances.get(currentNode)
                                 + edge.getDistance();
