@@ -631,60 +631,252 @@ Adjacency List uses less memory and performs better for sparse networks.
 ✅ Ready for Dijkstra Algorithm Implementation
 
 ---
+# Day 9 Learning Notes
 
-# Current Project Status
+## Topic
 
-## Backend Development
-
-70% Complete
-
-## Emergency Management System
-
-100% Complete
-
-## Hospital Management
-
-100% Complete
-
-## Ambulance Management
-
-100% Complete
-
-## Dispatch Engine
-
-100% Complete
-
-## Routing Foundation
-
-40% Complete
-
-## Dijkstra Algorithm
-
-Next Phase
-
-## Frontend Development
-
-Pending
-
-## DevOps & Deployment
-
-Pending
-
-## Overall Project Completion
-
-Approximately 55% Complete
+Routing Intelligence using Graph Data Structures and Dijkstra's Algorithm
 
 ---
 
-# Major Achievement So Far
+## What I Learned
 
-Successfully built a production-style Smart Emergency Response Dispatch System backend featuring:
+### 1. Graph Data Structure
 
-* Emergency Management
-* Hospital Management
-* Ambulance Management
-* Intelligent Dispatch Engine
-* Distance-Based Resource Allocation
-* Routing Infrastructure Foundation
+A graph represents locations as nodes and roads as edges.
 
-The project is now entering the Algorithmic Routing Phase where Dijkstra's Shortest Path Algorithm will be implemented for optimal ambulance routing.
+Components:
+
+* GraphNode
+* GraphEdge
+* RoadGraph
+* Adjacency List
+
+Example:
+
+1 → 2 (4 km)
+
+1 → 3 (2 km)
+
+3 → 6 (3 km)
+
+---
+
+### 2. Adjacency List Representation
+
+Instead of storing roads in a matrix, roads are stored efficiently using:
+
+Map<Integer, List<GraphEdge>>
+
+Benefits:
+
+* Faster traversal
+* Less memory usage
+* Scalable road network modeling
+
+---
+
+### 3. Dijkstra Algorithm
+
+Dijkstra is a shortest path algorithm used to find the minimum distance between two locations.
+
+Process:
+
+1. Start from source node
+2. Assign distance 0 to source
+3. Assign infinity to all other nodes
+4. Visit nearest unvisited node
+5. Relax neighboring edges
+6. Update shorter distances
+7. Repeat until destination is reached
+
+Time Complexity:
+
+O((V + E) log V)
+
+---
+
+### 4. Priority Queue (Min Heap)
+
+Used to always process the node with the smallest distance first.
+
+Implementation:
+
+PriorityQueue<Integer>
+
+Benefits:
+
+* Faster shortest path computation
+* Efficient node selection
+* Industry-standard approach
+
+---
+
+### 5. Distance Tracking
+
+Used HashMap to store current shortest distances.
+
+Example:
+
+Map<Integer, Double> distances
+
+Purpose:
+
+Tracks shortest known distance from source to every node.
+
+---
+
+### 6. Previous Node Tracking
+
+Used HashMap to store parent nodes.
+
+Example:
+
+Map<Integer, Integer> previousNodes
+
+Purpose:
+
+Allows reconstruction of the final shortest path.
+
+Example:
+
+8 ← 7 ← 4 ← 2 ← 1
+
+Produces:
+
+[1, 2, 4, 7, 8]
+
+---
+
+### 7. Path Reconstruction
+
+After Dijkstra finishes:
+
+* Start from destination
+* Follow previous nodes backward
+* Reverse the list
+
+Result:
+
+Shortest Route:
+
+[1, 2, 4, 7, 8]
+
+Distance:
+
+12 km
+
+---
+
+### 8. REST API Development
+
+Created APIs for:
+
+GET /api/routes
+
+Returns complete road network.
+
+GET /api/routes/shortest?start=1&destination=8
+
+Returns:
+
+{
+"path": [1, 2, 4, 7, 8],
+"totalDistance": 12
+}
+
+---
+
+### 9. Postman Testing
+
+Validated:
+
+* Graph retrieval API
+* Shortest path API
+* Invalid node handling
+* No-path scenarios
+* Route correctness
+
+All tests passed successfully.
+
+---
+
+## Purpose
+
+To build the foundation for intelligent ambulance routing and route optimization.
+
+The routing engine will eventually help:
+
+* Find fastest ambulance routes
+* Avoid blocked roads
+* Simulate traffic delays
+* Reduce emergency response time
+
+---
+
+## Benefits
+
+### Technical Benefits
+
+* Strong understanding of Graphs
+* Practical implementation of Dijkstra Algorithm
+* Priority Queue usage
+* Path reconstruction techniques
+* Real-world routing systems
+
+### Project Benefits
+
+* Intelligent route planning
+* Foundation for traffic simulation
+* Foundation for route optimization
+* Foundation for ETA prediction
+
+---
+
+## Interview Questions
+
+### Graphs
+
+1. What is a graph?
+2. Difference between directed and undirected graphs?
+3. What is an adjacency list?
+4. What is an adjacency matrix?
+
+### Dijkstra Algorithm
+
+5. What is Dijkstra Algorithm?
+6. How does Dijkstra work?
+7. What is the time complexity of Dijkstra?
+8. Why is Priority Queue used?
+9. Can Dijkstra handle negative weights?
+10. Difference between Dijkstra and BFS?
+
+### Java Collections
+
+11. What is a PriorityQueue?
+12. How is a Min Heap implemented in Java?
+13. Difference between HashMap and TreeMap?
+14. Why use HashMap for distance tracking?
+
+### System Design
+
+15. How would Google Maps find shortest routes?
+16. How would you handle road closures?
+17. How would you simulate traffic congestion?
+18. How would you find alternate routes?
+
+---
+
+## Outcome
+
+Successfully implemented and tested a complete shortest-path routing engine using:
+
+* Graph Data Structures
+* Adjacency Lists
+* Priority Queue (Min Heap)
+* Dijkstra Algorithm
+* Path Reconstruction
+* REST APIs
+* Postman Testing
+
+The Smart Emergency Response System can now calculate the shortest route between two locations and is ready for advanced routing features such as traffic simulation and dynamic road blockage handling.
