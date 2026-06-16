@@ -37,7 +37,7 @@ public class RouteNetworkService {
         graph.addEdge(7, 8, 1);
     }
 
-    public RoadGraph getGraph() {
+    public RoadGraph getRoadGraph() {
         return graph;
     }
 }

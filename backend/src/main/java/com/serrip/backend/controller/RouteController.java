@@ -19,7 +19,7 @@ public class RouteController {
     public Object getRoutes() {
 
         return service
-                .getGraph()
+                .getRoadGraph()
                 .getAdjacencyList();
     }
 }
