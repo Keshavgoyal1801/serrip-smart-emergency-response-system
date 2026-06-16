@@ -631,7 +631,7 @@ Adjacency List uses less memory and performs better for sparse networks.
 ✅ Ready for Dijkstra Algorithm Implementation
 
 ---
-# Day 9 Learning Notes
+# Day 10 Learning Notes
 
 ## Topic
 

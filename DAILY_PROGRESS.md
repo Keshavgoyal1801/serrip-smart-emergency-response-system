@@ -224,7 +224,7 @@ The system can now model road networks using weighted graphs and adjacency lists
 
 ---
 
-## Day 9
+## Day 10
 
 ### Objectives
 
