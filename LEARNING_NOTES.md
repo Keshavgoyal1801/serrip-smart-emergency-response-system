@@ -880,3 +880,51 @@ Successfully implemented and tested a complete shortest-path routing engine usin
 * Postman Testing
 
 The Smart Emergency Response System can now calculate the shortest route between two locations and is ready for advanced routing features such as traffic simulation and dynamic road blockage handling.
+
+# Learning Notes — Day 10
+
+## Topic
+Routing Intelligence & Traffic-Aware Pathfinding
+
+## Learned
+
+* Graph Data Structures
+* Adjacency List Representation
+* Graph Nodes and Graph Edges
+* Dijkstra Shortest Path Algorithm
+* Priority Queue (Min Heap)
+* Path Reconstruction using Previous Nodes
+* Dynamic Road Blocking
+* Traffic Delay Simulation
+* Traffic-Aware Route Optimization
+
+## Purpose
+
+To build an intelligent routing engine capable of finding the optimal route for emergency vehicles while handling blocked roads and traffic delays.
+
+## Benefits
+
+* Faster emergency response
+* Dynamic route calculation
+* Scalable road network architecture
+* Real-world traffic simulation
+* Foundation for GIS-based navigation systems
+
+## Interview Questions
+
+1. What is a graph?
+2. What is an adjacency list?
+3. Why is Dijkstra algorithm used?
+4. What is the role of a priority queue in Dijkstra?
+5. What is the time complexity of Dijkstra?
+6. How do you reconstruct the shortest path?
+7. How can road blockages affect shortest path algorithms?
+8. How would you model traffic delays in routing systems?
+
+## Outcome
+
+Successfully developed a routing intelligence engine capable of:
+- Finding shortest paths
+- Avoiding blocked roads
+- Considering traffic delays
+- Optimizing emergency vehicle routing in real time
