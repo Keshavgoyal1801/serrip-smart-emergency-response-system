@@ -58,4 +58,24 @@ public class RouteNetworkService {
                 source,
                 destination);
     }
+
+    public void setTrafficDelay(
+            int source,
+            int destination,
+            double delay) {
+
+        graph.setTrafficDelay(
+                source,
+                destination,
+                delay);
+    }
+
+    public void clearTrafficDelay(
+            int source,
+            int destination) {
+
+        graph.clearTrafficDelay(
+                source,
+                destination);
+    }
 }

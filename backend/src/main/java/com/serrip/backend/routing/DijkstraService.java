@@ -73,6 +73,15 @@ public class DijkstraService {
                     graph.getAdjacencyList()
                             .get(currentNode)) {
 
+                System.out.println(
+                        "Edge -> "
+                                + edge.getDestination()
+                                + " Distance="
+                                + edge.getDistance()
+                                + " Traffic="
+                                + edge.getTrafficDelay());
+
+
                 if (edge.isBlocked()) {
 
                     continue;
@@ -80,7 +89,8 @@ public class DijkstraService {
 
                 double newDistance =
                         distances.get(currentNode)
-                                + edge.getDistance();
+                                + edge.getDistance()
+                                + edge.getTrafficDelay();
 
                 if (newDistance <
                         distances.get(

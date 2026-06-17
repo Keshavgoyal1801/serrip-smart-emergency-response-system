@@ -71,4 +71,38 @@ public class RouteController {
                 + " and "
                 + destination;
     }
+
+    @PostMapping("/api/routes/traffic")
+    public String setTrafficDelay(
+            @RequestParam int source,
+            @RequestParam int destination,
+            @RequestParam double delay) {
+
+        service.setTrafficDelay(
+                source,
+                destination,
+                delay);
+
+        return "Traffic delay set between "
+                + source
+                + " and "
+                + destination
+                + " = "
+                + delay;
+    }
+
+    @PostMapping("/api/routes/traffic/clear")
+    public String clearTrafficDelay(
+            @RequestParam int source,
+            @RequestParam int destination) {
+
+        service.clearTrafficDelay(
+                source,
+                destination);
+
+        return "Traffic delay cleared between "
+                + source
+                + " and "
+                + destination;
+    }
 }
