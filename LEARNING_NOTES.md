@@ -881,7 +881,7 @@ Successfully implemented and tested a complete shortest-path routing engine usin
 
 The Smart Emergency Response System can now calculate the shortest route between two locations and is ready for advanced routing features such as traffic simulation and dynamic road blockage handling.
 
-# Learning Notes — Day 10
+# Learning Notes — Day 11
 
 ## Topic
 Routing Intelligence & Traffic-Aware Pathfinding
@@ -928,3 +928,318 @@ Successfully developed a routing intelligence engine capable of:
 - Avoiding blocked roads
 - Considering traffic delays
 - Optimizing emergency vehicle routing in real time
+
+# Day 12 — Spring Security Foundation
+
+## Topic
+
+Authentication & Authorization Foundation using Spring Security
+
+---
+
+## Objective
+
+Build the security foundation of the Smart Emergency Response & Intelligent Routing Platform by integrating Spring Security and creating the initial authentication architecture.
+
+---
+
+## What I Built
+
+### User Entity
+
+Represents application users.
+
+Fields:
+
+* id
+* username
+* password
+* role
+
+---
+
+### Role Enum
+
+Created system roles:
+
+* ADMIN
+* DISPATCHER
+* HOSPITAL
+
+These roles will later be used for Role-Based Access Control (RBAC).
+
+---
+
+### User Repository
+
+Created a JPA repository for managing user data.
+
+Implemented:
+
+```
+findByUsername(String username)
+```
+
+Purpose:
+
+* Retrieve users during login
+* Prevent duplicate usernames during registration
+
+---
+
+### CustomUserDetailsService
+
+Implemented Spring Security's `UserDetailsService`.
+
+Responsibilities:
+
+* Load users from the database
+* Convert User entity into Spring Security UserDetails
+* Integrate application users with Spring Security
+
+Workflow:
+
+```
+Login Request
+        ↓
+UserRepository
+        ↓
+Load User
+        ↓
+UserDetails
+        ↓
+Spring Security
+```
+
+---
+
+### Security Configuration
+
+Created:
+
+```
+SecurityConfig
+```
+
+Configured:
+
+* PasswordEncoder
+* AuthenticationManager
+* SecurityFilterChain
+
+---
+
+### Password Encryption
+
+Configured:
+
+```
+BCryptPasswordEncoder
+```
+
+Purpose:
+
+* Secure password storage
+* Prevent plain-text password storage
+* Follow industry security standards
+
+---
+
+### Public vs Protected APIs
+
+Configured:
+
+Public APIs:
+
+```
+/api/auth/**
+```
+
+Protected APIs:
+
+```
+/api/routes/**
+```
+
+Any future API outside `/api/auth/**` requires authentication.
+
+---
+
+### Authentication Flow
+
+```
+Request
+      ↓
+Security Filter Chain
+      ↓
+Authentication Manager
+      ↓
+CustomUserDetailsService
+      ↓
+UserRepository
+      ↓
+MySQL Database
+```
+
+---
+
+## APIs Tested
+
+### Public Endpoint
+
+```
+GET /api/auth/test
+```
+
+Verified:
+
+* Accessible without authentication
+
+---
+
+### Protected Endpoint
+
+```
+GET /api/routes
+```
+
+Verified:
+
+* Redirects to login page when unauthenticated
+
+---
+
+## Concepts Learned
+
+### Spring Security
+
+Framework used to secure Spring applications.
+
+Provides:
+
+* Authentication
+* Authorization
+* Password Encryption
+* Session Management
+
+---
+
+### Authentication
+
+Verifies who the user is.
+
+Example:
+
+```
+Username
+Password
+```
+
+---
+
+### Authorization
+
+Determines what an authenticated user is allowed to access.
+
+Example:
+
+```
+ADMIN
+DISPATCHER
+HOSPITAL
+```
+
+---
+
+### SecurityFilterChain
+
+The central component that intercepts every incoming request.
+
+Responsibilities:
+
+* Check authentication
+* Apply authorization rules
+* Protect APIs
+
+---
+
+### BCrypt
+
+Industry-standard password hashing algorithm.
+
+Benefits:
+
+* One-way encryption
+* Salt generation
+* Resistant to brute-force attacks
+
+---
+
+### UserDetailsService
+
+Bridge between Spring Security and the application's user database.
+
+---
+
+### AuthenticationManager
+
+Responsible for authenticating login requests.
+
+---
+
+## Challenges Faced
+
+* Understanding Spring Security architecture
+* Configuring public and protected endpoints
+* Connecting application users with Spring Security
+* Verifying authentication flow
+
+---
+
+## Interview Questions
+
+### Spring Security
+
+1. What is Spring Security?
+2. Why is Spring Security used?
+3. Difference between Authentication and Authorization?
+4. What is SecurityFilterChain?
+5. What is UserDetailsService?
+6. What is AuthenticationManager?
+7. What is PasswordEncoder?
+
+### Password Security
+
+8. Why should passwords never be stored in plain text?
+9. What is BCrypt?
+10. Why is BCrypt preferred over MD5 or SHA?
+
+### REST Security
+
+11. What is permitAll()?
+12. What is authenticated()?
+13. Difference between formLogin() and httpBasic()?
+
+---
+
+## Outcome
+
+Successfully integrated Spring Security into the project.
+
+Completed:
+
+* User Entity
+* Role Management
+* User Repository
+* CustomUserDetailsService
+* Security Configuration
+* Password Encoder
+* Authentication Infrastructure
+* Public & Protected API Configuration
+
+The project is now ready for:
+
+* User Registration
+* Login API
+* JWT Authentication
+* Role-Based Access Control

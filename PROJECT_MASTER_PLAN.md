@@ -25,24 +25,20 @@
 
 ## Milestone 3: Emergency Resource Management ✅
 
+### Hospital Module
+
 * [x] Hospital Entity
-
 * [x] Hospital Repository
-
 * [x] Hospital Service
-
 * [x] Hospital Controller
-
 * [x] Hospital APIs
 
+### Ambulance Module
+
 * [x] Ambulance Entity
-
 * [x] Ambulance Repository
-
 * [x] Ambulance Service
-
 * [x] Ambulance Controller
-
 * [x] Ambulance APIs
 
 ---
@@ -63,7 +59,7 @@
 
 ## Milestone 5: Routing Intelligence ✅
 
-### Routing Foundation ✅
+### Routing Foundation
 
 * [x] Road Network Model
 * [x] Graph Data Structure
@@ -75,7 +71,7 @@
 * [x] Route Controller
 * [x] Graph Controller
 
-### Shortest Path Engine ✅
+### Shortest Path Engine
 
 * [x] Dijkstra Algorithm
 * [x] Min Heap / Priority Queue
@@ -87,7 +83,7 @@
 * [x] Shortest Route API
 * [x] Route Testing (Postman)
 
-### Advanced Routing Intelligence ✅
+### Advanced Routing Intelligence
 
 * [x] Dynamic Road Blockage Handling
 * [x] Road Blocking API
@@ -105,15 +101,43 @@
 
 ## Milestone 6: Security & Authentication 🔄
 
-* [ ] Spring Security Setup
-* [ ] User Entity
-* [ ] User Repository
+### Security Foundation ✅
+
+* [x] Spring Security Dependency
+* [x] Security Configuration
+* [x] User Entity
+* [x] Role Enum
+* [x] User Repository
+* [x] CustomUserDetailsService
+* [x] Authentication Manager
+* [x] Password Encoder (BCrypt)
+* [x] Public & Protected Endpoint Configuration
+* [x] Authentication Test Controller
+* [x] Spring Security Verification
+
+### Authentication Module ⏳
+
 * [ ] User Service
-* [ ] Authentication APIs
-* [ ] JWT Authentication
+* [ ] User Registration API
+* [ ] Login API
+* [ ] Password Encryption During Registration
+* [ ] User Persistence
+* [ ] Registration Testing
+
+### JWT Security ⏳
+
+* [ ] JWT Generation
+* [ ] JWT Validation
+* [ ] JWT Authentication Filter
 * [ ] JWT Authorization
-* [ ] Role-Based Access Control
-* [ ] Protected Endpoints
+* [ ] Protected APIs with JWT
+
+### Role-Based Access Control ⏳
+
+* [ ] ADMIN Role
+* [ ] DISPATCHER Role
+* [ ] HOSPITAL Role
+* [ ] Role-Based Endpoint Security
 * [ ] Security Testing
 
 ---
@@ -156,7 +180,7 @@
 
 ✅ Milestone 5 — Complete
 
-🟡 Milestone 6 — In Progress
+🟡 Milestone 6 — In Progress (~25%)
 
 ⚪ Milestone 7 — Not Started
 
@@ -172,10 +196,10 @@
 * Resource Management → 100%
 * Dispatch Engine → 100%
 * Routing Intelligence → 100%
-* Security Layer → 0%
+* Security Foundation → 25%
 * Frontend → 0%
 * DevOps & Deployment → 0%
 
 ### Estimated Overall Completion
 
-**~75% Complete**
+**~78% Complete**
