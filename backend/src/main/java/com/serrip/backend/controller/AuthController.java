@@ -1,17 +1,23 @@
 package com.serrip.backend.controller;
 
+import com.serrip.backend.dto.LoginRequest;
+import com.serrip.backend.dto.LoginResponse;
 import com.serrip.backend.dto.RegisterRequest;
-import com.serrip.backend.service.UserService;
+import com.serrip.backend.service.AuthenticationService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
-    private UserService userService;
+    private final AuthenticationService authenticationService;
+
+    public AuthController(
+            AuthenticationService authenticationService) {
+
+        this.authenticationService = authenticationService;
+    }
 
     @GetMapping("/test")
     public String test() {
@@ -20,10 +26,22 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String registerUser(
-            @Valid
-            @RequestBody RegisterRequest request) {
+    public String register(
 
-        return userService.registerUser(request);
+            @Valid
+            @RequestBody
+            RegisterRequest request) {
+
+        return authenticationService.register(request);
+    }
+
+    @PostMapping("/login")
+    public LoginResponse login(
+
+            @Valid
+            @RequestBody
+            LoginRequest request) {
+
+        return authenticationService.login(request);
     }
 }
