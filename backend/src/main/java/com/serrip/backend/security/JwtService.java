@@ -15,6 +15,9 @@ public class JwtService {
     private static final String SECRET_KEY =
             "mySuperSecretKeyForEmergencyResponseDispatchSystem123456789";
 
+    private static final long EXPIRATION_TIME =
+            1000L * 60 * 60 * 24;   // 24 Hours
+
     private final SecretKey key =
             Keys.hmacShaKeyFor(
                     SECRET_KEY.getBytes());
@@ -32,7 +35,7 @@ public class JwtService {
                 .expiration(
                         new Date(
                                 System.currentTimeMillis()
-                                        + 1000 * 60 * 60 * 24))
+                                        + EXPIRATION_TIME))
 
                 .signWith(
                         key,
@@ -52,9 +55,8 @@ public class JwtService {
             String token,
             String username) {
 
-        return extractUsername(token)
-                .equals(username)
-
+        return username.equals(
+                extractUsername(token))
                 && !isTokenExpired(token);
     }
 

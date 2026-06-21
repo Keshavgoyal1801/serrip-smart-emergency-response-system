@@ -13,11 +13,13 @@ public class User {
 
     @Column(
             nullable = false,
-            unique = true)
+            unique = true,
+            length = 50)
     private String username;
 
     @Column(
-            nullable = false)
+            nullable = false,
+            length = 255)
     private String password;
 
     @Enumerated(
