@@ -19,7 +19,7 @@ public class User {
 
     @Column(
             nullable = false,
-            length = 255)
+            length = 100)
     private String password;
 
     @Enumerated(
