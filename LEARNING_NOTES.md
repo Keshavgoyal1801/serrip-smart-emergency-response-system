@@ -1241,5 +1241,5 @@ The project is now ready for:
 
 * User Registration
 * Login API
-* JWT Authentication
+* JWT Authentication (Testing In Progress)
 * Role-Based Access Control
