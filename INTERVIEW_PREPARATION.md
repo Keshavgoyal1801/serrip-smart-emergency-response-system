@@ -1,4 +1,4 @@
-# INTERVIEW_PREPARATION.md
+# INTERVIEW_PREPARATION
 
 # SERRIP (Smart Emergency Response & Resource Intelligence Platform)
 
@@ -319,21 +319,21 @@ User
 
 ## Relationships
 
-Hospital
+        Hospital
 
-↓
+           ↓
+    
+      Many Ambulances
 
-Many Ambulances
+      DispatchRecord
 
-DispatchRecord
+           ↓
 
-↓
+       Emergency
 
-Emergency
+           ↓
 
-↓
-
-Ambulance
+       Ambulance
 
 ---
 
@@ -423,35 +423,35 @@ Signature
 
 ## JWT Flow
 
-Login
+            Login
 
-↓
+              ↓
 
-AuthenticationManager
+       AuthenticationManager
 
-↓
+              ↓
 
-Generate JWT
+        Generate JWT
 
-↓
+              ↓
 
-Client Stores JWT
+        Client Stores JWT
 
-↓
+              ↓
 
-Authorization Header
+        Authorization Header
 
-↓
+              ↓
 
-JwtAuthenticationFilter
+       JwtAuthenticationFilter
 
-↓
+              ↓
 
-SecurityContext
+        SecurityContext
 
-↓
+              ↓
 
-Controller
+          Controller
 
 ---
 
@@ -473,31 +473,31 @@ Check Expiry
 
 Responsibilities
 
-Read Authorization Header
+    Read Authorization Header
 
-↓
+            ↓
 
-Extract JWT
+       Extract JWT
 
-↓
+            ↓
 
-Extract Username
+     Extract Username
 
-↓
+            ↓
 
-Load User
+        Load User
 
-↓
+            ↓
 
-Validate Token
+      Validate Token
 
-↓
+            ↓
 
-Store Authentication
+    Store Authentication
 
-↓
+            ↓   
 
-Continue Request
+     Continue Request
 
 ---
 
@@ -521,7 +521,7 @@ Controllers use it later.
 
 ## Dijkstra Algorithm
 
-Purpose
+Purpose:
 
 Find Shortest Path
 
@@ -552,7 +552,7 @@ Chosen because
 
 ## Traffic Routing
 
-Features
+Features:
 
 Blocked Roads
 
@@ -568,27 +568,27 @@ Shortest Path
 
 Flow
 
-Emergency
+        Emergency
 
-↓
+            ↓
 
-Priority
+        Priority
 
-↓
+            ↓
 
-Nearest Hospital
+        Nearest Hospital
 
-↓
+            ↓
 
-Nearest Ambulance
+        Nearest Ambulance
 
-↓
+            ↓
 
-Dispatch Record
+        Dispatch Record
 
-↓
+            ↓
 
-Response
+        Response
 
 ---
 
@@ -596,31 +596,31 @@ Response
 
 HTTP Methods
 
-GET
+    GET
 
-POST
+    POST
 
-PUT
+    PUT
 
-DELETE
+    DELETE
 
 ---
 
 Status Codes
 
-200
+    200
 
-201
+    201
 
-400
+    400
 
-401
+    401
 
-403
+    403
 
-404
+    404
 
-500
+    500
 
 ---
 
@@ -668,19 +668,19 @@ Controllers stay lightweight.
 
 Commands
 
-git add
+    git add
 
-git commit
+    git commit
 
-git push
+    git push
 
-git pull
+    git pull
 
-git checkout
+    git checkout
 
-git merge
+    git merge
 
-git branch
+    git branch
 
 ---
 

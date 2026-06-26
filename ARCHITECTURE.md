@@ -5,19 +5,28 @@ Smart Emergency Response & Resource Intelligence Platform
 
     ────────────────────────────────────────────────────────────
 
-                    USER / CITIZEN
-                           │
-                           ▼
-                Emergency Request API
-                           │
-                           ▼
-                  Request Validation
-                           │
-                           ▼
-                Emergency Request Service
-                           │
-                           ▼
-                    MySQL Database
+                USER / CITIZEN
+                       │
+                       ▼
+             Authentication Module
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+        ▼              ▼              ▼
+    Registration      Login API     JWT Token
+        │              │              │
+        └──────────────┼──────────────┘
+                       ▼
+            JWT Authentication Filter
+                       │
+                       ▼
+            Spring Security Context
+                       │
+                       ▼
+            Protected REST Endpoints
+                       │
+                       ▼
+            Emergency Request API
 
     ────────────────────────────────────────────────────────────
 
@@ -50,34 +59,29 @@ Smart Emergency Response & Resource Intelligence Platform
 
                    BACKEND ARCHITECTURE
 
-                ┌─────────────────┐
-                │   Controllers   │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │       DTO       │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │   Validation    │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │    Services     │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │ Repositories    │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │      MySQL      │
-                └─────────────────┘
+                        Controllers
+                            │
+                            ▼
+                        DTO Validation
+                            │
+                            ▼
+                    Authentication Layer
+                    │
+                    ├── BCrypt Password Encoder
+                    ├── AuthenticationManager
+                    ├── JwtService
+                    ├── JwtAuthenticationFilter
+                    ├── CustomUserDetailsService
+                    └── Spring Security
+                            │
+                            ▼
+                    Business Services
+                            │
+                            ▼
+                        Repositories
+                            │
+                            ▼
+                          MySQL
 
     ────────────────────────────────────────────────────────────
 
@@ -136,6 +140,13 @@ Smart Emergency Response & Resource Intelligence Platform
     ├── longitude
     └── hospitalId
 
+    User
+    │
+    ├── id
+    ├── username
+    ├── password (BCrypt)
+    └── role
+
     ────────────────────────────────────────────────────────────
 
                     TECHNOLOGY STACK
@@ -144,7 +155,10 @@ Smart Emergency Response & Resource Intelligence Platform
     ├── Java 21
     ├── Spring Boot
     ├── Spring Data JPA
+    ├── Spring Security
     ├── Hibernate
+    ├── JWT (jjwt)
+    ├── BCrypt
     └── Maven
     
     Database
@@ -167,7 +181,13 @@ Smart Emergency Response & Resource Intelligence Platform
     ├── Real-Time Ambulance Tracking
     ├── Google Maps Integration
     ├── Notification System
-    ├── Role-Based Authentication
+    ├── Role-Based Authorization
+    ├──Refresh Tokens
+    ├──Access Token Rotation
+    ├──Password Reset
+    ├──Email Verification
+    ├──Account Locking
+    ├──Audit Logging
     ├── Admin Dashboard
     ├── Analytics & Reporting
     └── AI-Based Resource Allocation

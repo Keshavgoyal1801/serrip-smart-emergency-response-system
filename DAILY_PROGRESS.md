@@ -395,23 +395,451 @@ Overall Project Progress: **~78%**
 
 ---
 
-## Next Day Goals (Day 13)
+# Day 13 — Spring Security Foundation
 
-- Create User Service
-- Implement User Registration API
-- Encrypt passwords before saving
-- Save users into MySQL
-- Test Registration APIs
-- Prepare for JWT implementation
+## Goal
+
+Understand how Spring Security secures a Spring Boot application.
 
 ---
 
-## Time Spent
+## What I Learned
 
-Approximately **3–4 hours**
+### 1. Spring Security
+
+Spring Security is the standard authentication and authorization framework for Spring Boot.
+
+Responsibilities:
+
+- Authentication
+- Authorization
+- Password Encryption
+- Session Management
+- Filter Chain
+- Security Context
 
 ---
 
-## Status
+### 2. UserDetailsService
 
-✅ Day 12 Completed Successfully
+Spring Security never queries the database directly.
+
+Instead it asks:
+
+UserDetailsService
+
+to load the user.
+
+CustomUserDetailsService connects Spring Security with our User table.
+
+---
+
+### 3. AuthenticationManager
+
+AuthenticationManager verifies
+
+Username
+
+Password
+
+using UserDetailsService and PasswordEncoder.
+
+It throws BadCredentialsException if authentication fails.
+
+---
+
+### 4. BCrypt Password Encoder
+
+Passwords should never be stored in plain text.
+
+BCrypt
+
+- hashes passwords
+- automatically salts passwords
+- prevents rainbow table attacks
+
+Example
+
+password
+
+becomes
+
+$2a$10$xxxxxxxxxxxxxxxx
+
+---
+
+### 5. SecurityFilterChain
+
+Security configuration decides
+
+Which APIs are public
+
+Which APIs require authentication
+
+Current configuration
+
+/api/auth/**
+
+is public
+
+Everything else requires authentication.
+
+---
+
+### 6. Stateless Authentication
+
+Instead of sessions
+
+every request sends a JWT
+
+Server stores nothing
+
+This is ideal for REST APIs.
+
+---
+
+## Important Classes
+
+SecurityConfig
+
+CustomUserDetailsService
+
+AuthenticationManager
+
+PasswordEncoder
+
+UserRepository
+
+Role Enum
+
+User Entity
+
+---
+
+## Interview Questions
+
+What is Spring Security?
+
+Difference between Authentication and Authorization?
+
+Why use BCrypt?
+
+What is UserDetailsService?
+
+What is AuthenticationManager?
+
+Why Stateless APIs?
+
+# Day 14 — JWT Authentication
+
+## Goal
+
+Implement JWT Authentication using Spring Security.
+
+---
+
+## What I Learned
+
+### 1. JSON Web Token (JWT)
+
+JWT allows stateless authentication.
+
+Instead of server sessions
+
+the client stores the token.
+
+Every request sends
+
+Authorization
+
+Bearer <token>
+
+---
+
+### 2. JWT Structure
+
+JWT has three parts
+
+Header
+
+Payload
+
+Signature
+
+Header
+
+contains algorithm
+
+Payload
+
+contains claims
+
+Signature
+
+verifies authenticity
+
+---
+
+### 3. JwtService
+
+Implemented
+
+Generate Token
+
+Extract Username
+
+Validate Token
+
+Check Expiration
+
+Parse Claims
+
+---
+
+### 4. JwtAuthenticationFilter
+
+Every incoming request passes through this filter.
+
+Flow
+
+Request
+
+↓
+
+Authorization Header
+
+↓
+
+Extract JWT
+
+↓
+
+Extract Username
+
+↓
+
+Load User
+
+↓
+
+Validate Token
+
+↓
+
+Create Authentication Object
+
+↓
+
+Store in SecurityContext
+
+↓
+
+Continue Request
+
+---
+
+### 5. SecurityContextHolder
+
+After authentication
+
+Spring stores the authenticated user
+
+inside
+
+SecurityContextHolder
+
+Controllers later access this authenticated user automatically.
+
+---
+
+### 6. OncePerRequestFilter
+
+Runs exactly once
+
+for every HTTP request.
+
+Ideal place for JWT validation.
+
+---
+
+### 7. UsernamePasswordAuthenticationToken
+
+Represents an authenticated user.
+
+Contains
+
+UserDetails
+
+Credentials
+
+Authorities
+
+---
+
+### 8. SecurityContext
+
+Stores current logged-in user.
+
+Without setting SecurityContext
+
+Spring treats request as anonymous.
+
+---
+
+### 9. Protected APIs
+
+Public
+
+/api/auth/**
+
+Protected
+
+/api/emergencies/**
+
+Hospital
+
+Dispatch
+
+Ambulance
+
+etc.
+
+---
+
+### 10. Authorization Header
+
+Format
+
+Authorization
+
+Bearer eyJhbGciOi...
+
+Always starts with
+
+Bearer
+
+followed by a space.
+
+---
+
+### 11. Exception Handling
+
+BadCredentialsException
+
+returns
+
+401 Unauthorized
+
+instead of
+
+400 Bad Request
+
+This is REST best practice.
+
+---
+
+## Authentication Flow
+
+Client
+
+↓
+
+Login
+
+↓
+
+AuthenticationManager
+
+↓
+
+JwtService
+
+↓
+
+JWT Generated
+
+↓
+
+Client Stores Token
+
+↓
+
+Client Sends Token
+
+↓
+
+JwtAuthenticationFilter
+
+↓
+
+Token Validation
+
+↓
+
+SecurityContext
+
+↓
+
+Controller
+
+---
+
+## Important Classes
+
+JwtService
+
+JwtAuthenticationFilter
+
+AuthenticationService
+
+CustomUserDetailsService
+
+SecurityConfig
+
+SecurityContextHolder
+
+UsernamePasswordAuthenticationToken
+
+AuthenticationManager
+
+PasswordEncoder
+
+---
+
+## Common Mistakes
+
+Using plain password
+
+Using sessions with JWT
+
+Not setting SecurityContext
+
+Not checking expiration
+
+Using weak secret key
+
+Forgetting Bearer prefix
+
+---
+
+## Interview Questions
+
+What is JWT?
+
+Difference between JWT and Session Authentication?
+
+What is JwtAuthenticationFilter?
+
+Why OncePerRequestFilter?
+
+What is SecurityContextHolder?
+
+What is UsernamePasswordAuthenticationToken?
+
+Why BCrypt?
+
+Difference between Authentication and Authorization?
+
+How is JWT validated?
+
+Why Stateless Authentication?
