@@ -1243,3 +1243,533 @@ The project is now ready for:
 * Login API
 * JWT Authentication (Testing In Progress)
 * Role-Based Access Control
+
+# Day 13 — Spring Security Foundation
+
+## Goal
+
+Implement the basic Spring Security framework to prepare the backend for authentication and authorization.
+
+---
+
+## What I Learned
+
+### 1. Spring Security
+
+Spring Security is the official security framework for Spring Boot applications.
+
+It provides:
+
+- Authentication
+- Authorization
+- Password Encryption
+- Session Management
+- CSRF Protection
+- JWT Integration
+
+Without any configuration, Spring Security protects every endpoint by default.
+
+---
+
+### 2. User Authentication Flow
+
+Authentication verifies the identity of a user.
+
+Basic flow:
+
+Client
+↓
+Username + Password
+↓
+AuthenticationManager
+↓
+UserDetailsService
+↓
+Database
+↓
+Authenticated User
+
+---
+
+### 3. UserDetailsService
+
+Spring Security does not directly know how to load users.
+
+It delegates this responsibility to:
+
+CustomUserDetailsService
+
+Responsibilities:
+
+- Find user by username
+- Throw exception if user does not exist
+- Convert database entity into Spring Security UserDetails
+
+---
+
+### 4. AuthenticationManager
+
+AuthenticationManager is responsible for verifying user credentials.
+
+Flow:
+
+UsernamePasswordAuthenticationToken
+↓
+AuthenticationManager
+↓
+Password Comparison
+↓
+Success / Failure
+
+---
+
+### 5. BCrypt Password Encoder
+
+Passwords should never be stored in plain text.
+
+BCrypt provides:
+
+- Password Hashing
+- Salt Generation
+- Secure Verification
+
+During login:
+
+Raw Password
+↓
+
+BCrypt.matches()
+
+↓
+
+Stored Hash
+
+---
+
+### 6. Security Configuration
+
+SecurityConfig defines:
+
+- Public APIs
+- Protected APIs
+- Password Encoder
+- AuthenticationManager
+- Security Filter Chain
+
+Initially:
+
+/api/auth/**
+
+was made public.
+
+All other APIs required authentication.
+
+---
+
+### 7. User Entity
+
+Created a dedicated User entity containing:
+
+- id
+- username
+- password
+- role
+
+Roles currently supported:
+
+- ADMIN
+- DISPATCHER
+- HOSPITAL
+
+---
+
+### 8. Repository Layer
+
+UserRepository extends JpaRepository.
+
+Custom query:
+
+findByUsername()
+
+returns Optional<User>
+
+---
+
+### 9. Public vs Protected Endpoints
+
+Public:
+
+- Login
+- Register
+- Test API
+
+Protected:
+
+Everything else
+
+---
+
+### 10. Spring Security Filters
+
+Every request first passes through Spring Security Filters before reaching Controllers.
+
+Request
+↓
+
+Spring Security Filters
+↓
+
+Controller
+
+---
+
+## Key Classes Created
+
+- User
+- Role
+- UserRepository
+- CustomUserDetailsService
+- SecurityConfig
+
+---
+
+## Important Concepts
+
+- Authentication
+- Authorization
+- Password Hashing
+- UserDetailsService
+- AuthenticationManager
+- SecurityFilterChain
+- BCrypt
+
+---
+
+## Outcome
+
+Completed the Spring Security foundation required for implementing JWT authentication.
+
+# Day 14 — JWT Authentication
+
+## Goal
+
+Implement stateless authentication using JSON Web Tokens (JWT) and secure backend APIs.
+
+---
+
+## What I Learned
+
+### 1. What is JWT?
+
+JWT (JSON Web Token) is a compact token used for authentication.
+
+Instead of storing sessions on the server, the client stores the token.
+
+Each request sends:
+
+Authorization: Bearer <JWT>
+
+---
+
+### 2. JWT Structure
+
+A JWT contains three parts:
+
+Header
+↓
+
+Payload
+↓
+
+Signature
+
+Example:
+
+xxxxx.yyyyy.zzzzz
+
+---
+
+### 3. JWT Payload
+
+The payload stores user-related information.
+
+Current payload contains:
+
+- username
+- issuedAt
+- expiration
+
+---
+
+### 4. JwtService
+
+Implemented a dedicated service responsible for:
+
+- Generate Token
+- Extract Username
+- Validate Token
+- Check Expiration
+
+Methods:
+
+- generateToken()
+- extractUsername()
+- isTokenValid()
+- isTokenExpired()
+
+---
+
+### 5. Authentication Service
+
+AuthenticationService handles:
+
+Registration
+
+↓
+
+Password Encryption
+
+↓
+
+Database Save
+
+↓
+
+Login
+
+↓
+
+AuthenticationManager
+
+↓
+
+JWT Generation
+
+↓
+
+Return Token
+
+---
+
+### 6. Login Flow
+
+Client
+
+↓
+
+POST /login
+
+↓
+
+AuthenticationManager
+
+↓
+
+Database Verification
+
+↓
+
+Generate JWT
+
+↓
+
+Return JWT
+
+---
+
+### 7. Registration Flow
+
+Client
+
+↓
+
+POST /register
+
+↓
+
+Validate Request
+
+↓
+
+Encrypt Password
+
+↓
+
+Save User
+
+↓
+
+Return Success
+
+---
+
+### 8. DTOs
+
+Created:
+
+RegisterRequest
+
+LoginRequest
+
+LoginResponse
+
+DTOs help separate API models from database entities.
+
+---
+
+### 9. JwtAuthenticationFilter
+
+Every incoming request first passes through the JWT filter.
+
+Flow:
+
+Incoming Request
+
+↓
+
+Read Authorization Header
+
+↓
+
+Extract JWT
+
+↓
+
+Validate Token
+
+↓
+
+Extract Username
+
+↓
+
+Load User
+
+↓
+
+Create Authentication Object
+
+↓
+
+Store Authentication in SecurityContext
+
+↓
+
+Continue Request
+
+---
+
+### 10. SecurityContextHolder
+
+Once authenticated, Spring stores the logged-in user inside:
+
+SecurityContextHolder
+
+Controllers can later access the authenticated user from here.
+
+---
+
+### 11. Stateless Authentication
+
+Configured:
+
+SessionCreationPolicy.STATELESS
+
+This means:
+
+- No HTTP Sessions
+- No Server-side Login State
+- Every request must include a valid JWT
+
+---
+
+### 12. JWT Filter Registration
+
+Registered JwtAuthenticationFilter before Spring's default authentication filter.
+
+Flow:
+
+Request
+
+↓
+
+JwtAuthenticationFilter
+
+↓
+
+UsernamePasswordAuthenticationFilter
+
+↓
+
+Controller
+
+---
+
+### 13. Exception Handling
+
+Improved GlobalExceptionHandler to handle:
+
+- Validation Errors (400)
+- Resource Not Found (404)
+- Bad Credentials (401)
+- Runtime Exceptions (400)
+
+---
+
+### 14. Protected APIs
+
+Verified that protected APIs:
+
+- Reject requests without JWT
+- Reject invalid JWT
+- Accept valid JWT
+- Populate SecurityContext successfully
+
+---
+
+### 15. Security Testing
+
+Performed Postman testing for:
+
+- Registration
+- Duplicate Registration
+- Login
+- Invalid Login
+- Access without JWT
+- Access with JWT
+- Protected Endpoint Authorization
+
+---
+
+## Key Classes Created / Updated
+
+- JwtService
+- JwtAuthenticationFilter
+- AuthenticationService
+- AuthController
+- LoginRequest
+- LoginResponse
+- RegisterRequest
+- SecurityConfig
+- GlobalExceptionHandler
+
+---
+
+## Important Concepts
+
+- JWT
+- Stateless Authentication
+- Bearer Token
+- SecurityContextHolder
+- OncePerRequestFilter
+- AuthenticationManager
+- UsernamePasswordAuthenticationToken
+- JWT Validation
+- Authorization Header
+- BCrypt Password Encoding
+
+---
+
+## Outcome
+
+Successfully implemented JWT-based authentication with secure login, registration, protected APIs, and stateless request authorization using Spring Security.
