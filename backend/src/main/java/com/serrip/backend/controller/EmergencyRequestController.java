@@ -1,11 +1,12 @@
 package com.serrip.backend.controller;
 
-import com.serrip.backend.entity.EmergencyRequest;
-import com.serrip.backend.service.EmergencyRequestService;
-import org.springframework.web.bind.annotation.*;
 import com.serrip.backend.dto.EmergencyRequestDTO;
-import jakarta.validation.Valid;
+import com.serrip.backend.entity.EmergencyRequest;
 import com.serrip.backend.response.ApiResponse;
+import com.serrip.backend.service.EmergencyRequestService;
+import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,14 +16,19 @@ public class EmergencyRequestController {
 
     private final EmergencyRequestService service;
 
-    public EmergencyRequestController(EmergencyRequestService service) {
+    public EmergencyRequestController(
+            EmergencyRequestService service) {
+
         this.service = service;
     }
 
     @PostMapping
-    public ApiResponse<EmergencyRequest>
-    createEmergency(
-            @Valid @RequestBody EmergencyRequestDTO dto) {
+    @PreAuthorize("hasAnyRole('ADMIN','DISPATCHER')")
+    public ApiResponse<EmergencyRequest> createEmergency(
+
+            @Valid
+            @RequestBody
+            EmergencyRequestDTO dto) {
 
         EmergencyRequest saved =
                 service.createEmergency(dto);
@@ -35,14 +41,19 @@ public class EmergencyRequestController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN','DISPATCHER')")
     public List<EmergencyRequest> getAllEmergencies() {
+
         return service.getAllEmergencies();
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN','DISPATCHER')")
     public EmergencyRequest getEmergencyById(
-            @PathVariable Long id) {
+
+            @PathVariable
+            Long id) {
+
         return service.getEmergencyById(id);
     }
-
 }
