@@ -1,66 +1,67 @@
-# Milestone Tracker
+# 🚀 SERRIP Milestone Tracker
 
-## Milestone 1: Project Foundation ✅
+## ✅ Milestone 1: Project Foundation
 
-- [x] Git Setup
-- [x] GitHub Repository
-- [x] Spring Boot Setup
-- [x] Maven Setup
-- [x] MySQL Integration
+- [x] Git Repository Setup
+- [x] Spring Boot Project Setup
+- [x] Maven Configuration
+- [x] MySQL Database Integration
+- [x] Project Structure & Layered Architecture
 
 ---
 
-## Milestone 2: Backend Core Development ✅
+## ✅ Milestone 2: Backend Core Development
 
 - [x] EmergencyRequest Entity
 - [x] Repository Layer
 - [x] Service Layer
 - [x] Controller Layer
-- [x] CRUD APIs
-- [x] Validation Layer
+- [x] CRUD REST APIs
 - [x] DTO Layer
+- [x] Request Validation
 - [x] Global Exception Handling
 - [x] Standard API Response Wrapper
 
 ---
 
-## Milestone 3: Emergency Resource Management ✅
+## ✅ Milestone 3: Emergency Resource Management
 
 ### Hospital Module
 
 - [x] Hospital Entity
-- [x] Hospital Repository
-- [x] Hospital Service
-- [x] Hospital Controller
-- [x] Hospital APIs
+- [x] Repository Layer
+- [x] Service Layer
+- [x] Controller Layer
+- [x] CRUD APIs
 
 ### Ambulance Module
 
 - [x] Ambulance Entity
-- [x] Ambulance Repository
-- [x] Ambulance Service
-- [x] Ambulance Controller
-- [x] Ambulance APIs
+- [x] Repository Layer
+- [x] Service Layer
+- [x] Controller Layer
+- [x] CRUD APIs
+- [x] Ambulance Status Management
 
 ---
 
-## Milestone 4: Dispatch Engine ✅
+## ✅ Milestone 4: Dispatch Engine
 
 - [x] DispatchRecord Entity
-- [x] DispatchRecord Repository
-- [x] Dispatch Service
+- [x] Repository Layer
+- [x] Service Layer
 - [x] Manual Ambulance Dispatch
-- [x] Ambulance Status Updates
-- [x] Dispatch Records
-- [x] Auto Dispatch API
+- [x] Automatic Ambulance Dispatch
 - [x] Nearest Ambulance Selection
-- [x] Distance Calculation Logic
+- [x] Distance Calculation
+- [x] Dispatch History
+- [x] Ambulance Status Updates
 
 ---
 
-## Milestone 5: Routing Intelligence ✅
+## ✅ Milestone 5: Routing Intelligence
 
-### Routing Foundation
+### Graph Infrastructure
 
 - [x] Road Network Model
 - [x] Graph Data Structure
@@ -68,169 +69,160 @@
 - [x] GraphNode Model
 - [x] GraphEdge Model
 - [x] RoadGraph Implementation
-- [x] Route Network Service
-- [x] Route Controller
-- [x] Graph Controller
 
-### Shortest Path Engine
+### Route Optimization
 
-- [x] Dijkstra Algorithm
-- [x] Priority Queue
+- [x] Dijkstra's Shortest Path Algorithm
+- [x] Priority Queue (Min Heap)
 - [x] Distance Tracking
 - [x] Previous Node Tracking
 - [x] Path Reconstruction
 - [x] RouteResult Model
 - [x] Shortest Route API
-- [x] Route Testing
 
-### Advanced Routing Intelligence
+### Dynamic Routing
 
-- [x] Dynamic Road Blockage
-- [x] Road Blocking API
-- [x] Road Unblocking API
+- [x] Road Blocking
+- [x] Road Unblocking
 - [x] Traffic Delay Simulation
-- [x] Traffic Delay API
-- [x] Traffic Delay Clearing API
+- [x] Traffic Delay Management
 - [x] Traffic-Aware Route Calculation
 - [x] Dynamic Route Recalculation
-- [x] Smart Route Optimization
-- [x] Complete Postman Test Suite
+- [x] Route Optimization Testing
 
 ---
 
-## Milestone 6: Security & Authentication 🟡
+## ✅ Milestone 6: Security & Authentication
 
-### Security Foundation ✅
+### Authentication
 
-- [x] Spring Security Dependency
+- [x] Spring Security Integration
 - [x] Security Configuration
 - [x] User Entity
-- [x] Role Enum
+- [x] Role Management
 - [x] User Repository
 - [x] CustomUserDetailsService
 - [x] Authentication Manager
-- [x] BCrypt Password Encoder
-- [x] Public & Protected Endpoint Configuration
-- [x] Authentication Test Endpoint
-
----
-
-### Authentication Module ✅
-
-- [x] RegisterRequest DTO
-- [x] LoginRequest DTO
-- [x] LoginResponse DTO
-- [x] AuthenticationService
+- [x] BCrypt Password Encryption
 - [x] User Registration API
-- [x] Login API
-- [x] Password Encryption
-- [x] User Persistence
-- [x] Duplicate Username Validation
-- [x] Registration Testing
-- [x] Login Testing
+- [x] User Login API
 
----
+### JWT Security
 
-### JWT Security ✅
-
-- [x] JWT Dependencies
-- [x] JwtService
 - [x] JWT Token Generation
-- [x] Username Extraction
 - [x] JWT Validation
-- [x] Token Expiration Validation
+- [x] Username Extraction
 - [x] JwtAuthenticationFilter
-- [x] SecurityContext Authentication
-- [x] Stateless Session Configuration
-- [x] JWT Filter Registration
-- [x] Protected Endpoint Testing
-- [x] Invalid Token Handling
+- [x] Stateless Session Management
+- [x] JWT Protected APIs
+
+### Role-Based Authorization
+
+- [x] ADMIN Authorization
+- [x] DISPATCHER Authorization
+- [x] HOSPITAL Authorization
+- [x] Endpoint-Level Security
+- [x] Method-Level Security (@PreAuthorize)
+- [x] Role-Based API Testing
+
+### Advanced Security
+
+- [x] Custom AuthenticationEntryPoint (401)
+- [x] Custom AccessDeniedHandler (403)
+- [x] Secure Logout API
+- [x] JWT Token Blacklisting
+- [x] Blacklisted Token Validation
+- [x] Production-Style Authentication Testing
 
 ---
 
-### Role-Based Access Control 🔄
+## ⏳ Milestone 7: Frontend Development
 
-- [ ] ADMIN Authorization
-- [ ] DISPATCHER Authorization
-- [ ] HOSPITAL Authorization
-- [ ] Role-Based Endpoint Security
-- [ ] Method-Level Security
-- [ ] Role-Based Testing
+### React Application
 
----
-
-### Security Improvements (Upcoming)
-
-- [ ] Externalize JWT Secret
-- [ ] Refresh Token Support
-- [ ] Logout API
-- [ ] Token Revocation
-- [ ] AuthenticationEntryPoint
-- [ ] AccessDeniedHandler
-- [ ] Production Security Hardening
-
----
-
-## Milestone 7: Frontend Development ⏳
-
-- [ ] React Setup
-- [ ] Login Screen
+- [ ] React Project Setup
+- [ ] Project Folder Structure
+- [ ] Routing Configuration
+- [ ] Authentication Pages
+- [ ] Login & Logout Flow
 - [ ] Dashboard
-- [ ] Emergency Request Form
-- [ ] Ambulance Tracking
-- [ ] Route Visualization
-- [ ] Hospital Dashboard
+
+### User Interfaces
+
+- [ ] Emergency Request Module
 - [ ] Dispatcher Dashboard
-- [ ] Authentication Integration
+- [ ] Hospital Dashboard
+- [ ] Ambulance Dashboard
+- [ ] Route Visualization
+- [ ] Live Status Updates
+
+### Integration
+
+- [ ] JWT Integration
+- [ ] Protected Routes
+- [ ] API Integration
+- [ ] Error Handling
+- [ ] Loading States
 
 ---
 
-## Milestone 8: DevOps & Deployment ⏳
+## ⏳ Milestone 8: DevOps & Deployment
 
-- [ ] Dockerization
+- [ ] Docker Configuration
 - [ ] Docker Compose
-- [ ] GitHub Actions
+- [ ] GitHub Actions CI/CD
+- [ ] Production Environment Configuration
 - [ ] Cloud Deployment
-- [ ] Monitoring
-- [ ] Logging
-- [ ] CI/CD Pipeline
-- [ ] Production Optimization
+- [ ] Monitoring & Logging
+- [ ] Performance Optimization
 
 ---
 
-# Current Milestone Status
+# 📊 Milestone Status
 
-✅ Milestone 1 — Complete
-
-✅ Milestone 2 — Complete
-
-✅ Milestone 3 — Complete
-
-✅ Milestone 4 — Complete
-
-✅ Milestone 5 — Complete
-
-🟡 Milestone 6 — Authentication & JWT Complete (~80%)
-
-⚪ Milestone 7 — Not Started
-
-⚪ Milestone 8 — Not Started
+| Milestone | Status |
+|-----------|--------|
+| Project Foundation | ✅ Complete |
+| Backend Core Development | ✅ Complete |
+| Emergency Resource Management | ✅ Complete |
+| Dispatch Engine | ✅ Complete |
+| Routing Intelligence | ✅ Complete |
+| Security & Authentication | ✅ Complete |
+| Frontend Development | ⏳ Not Started |
+| DevOps & Deployment | ⏳ Not Started |
 
 ---
 
-# Overall Project Progress
+# 📈 Overall Project Progress
 
-- Planning & Architecture → **100%**
-- Backend Foundation → **100%**
-- Emergency Management → **100%**
-- Resource Management → **100%**
-- Dispatch Engine → **100%**
-- Routing Intelligence → **100%**
-- Authentication & JWT → **80%**
-- Role-Based Security → **20%**
-- Frontend → **0%**
-- DevOps & Deployment → **0%**
+| Module | Progress |
+|--------|----------|
+| Planning & Architecture | **100%** |
+| Backend Foundation | **100%** |
+| Emergency Management | **100%** |
+| Resource Management | **100%** |
+| Dispatch Engine | **100%** |
+| Routing Intelligence | **100%** |
+| Security & Authentication | **100%** |
+| Frontend Development | **0%** |
+| DevOps & Deployment | **0%** |
 
-### Estimated Overall Completion
+---
 
-**≈ 83% Complete**
+# 🎯 Current Phase
+
+**Phase:** Backend Development Completed ✅
+
+**Current Focus:** React Frontend Development
+
+**Next Milestone:** Build a modern React-based user interface and integrate it with the secured Spring Boot backend.
+
+---
+
+# 📌 Estimated Overall Completion
+
+**≈ 91% Complete**
+
+**Backend:** ✅ Production Ready
+
+**Next Goal:** Complete the frontend and deploy the full-stack application.

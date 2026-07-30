@@ -1,1775 +1,1205 @@
-# LEARNING_NOTES.md
+# 📅 Day 1 — Project Initialization & Environment Setup
 
-# Learning Notes
+## 🎯 Objective
 
----
-
-# Day 1 — Project Foundation & Version Control
-
-## Objective
-
-Set up project infrastructure and establish version control workflow.
-
-## What I Built
-
-* Git repository
-* GitHub repository
-* Initial project structure
-* Documentation framework
-
-## Concepts Learned
-
-### Git
-
-* Distributed Version Control System
-* Commit history tracking
-* Branching fundamentals
-
-### GitHub
-
-* Remote repository hosting
-* Collaboration platform
-* Project backup mechanism
-
-## Commands Learned
-
-```bash
-git init
-git add .
-git commit -m "message"
-git push
-git pull
-```
-
-## Interview Questions
-
-### Q. What is Git?
-
-Git is a distributed version control system used to track source code changes.
-
-### Q. What is GitHub?
-
-GitHub is a cloud platform used to host Git repositories.
-
-### Q. Difference between Git and GitHub?
-
-Git is a version control tool while GitHub is a hosting platform.
-
-### Q. What is a Commit?
-
-A commit is a saved snapshot of project changes.
-
-## Outcome
-
-Project repository created and version control workflow established.
+- Set up the development environment.
+- Initialize version control.
+- Create the project repository.
+- Establish the project structure.
 
 ---
 
-# Day 2 — Spring Boot Setup & Database Integration
+## 🛠️ What I Built
 
-## Objective
+- Initialized local Git repository.
+- Created GitHub repository.
+- Configured Git remote.
+- Created initial project folder structure.
+- Added project documentation files.
 
-Create backend foundation and connect application with database.
+---
 
-## What I Built
+## 📚 What I Learned
 
-* Spring Boot application
-* Maven project
-* MySQL integration
-* JPA configuration
+- Git and GitHub workflow.
+- Importance of version control.
+- Repository structure for scalable projects.
+- Basic Git commands:
+    - `git init`
+    - `git add`
+    - `git commit`
+    - `git push`
 
-## Spring Boot Concepts
+---
 
-### @SpringBootApplication
+## 💡 Important Points
 
-Application entry point.
+- Use meaningful commit messages.
+- Commit small logical changes instead of large batches.
+- Keep project documentation updated from Day 1.
+- Version control is essential for collaboration and project history.
 
-### Embedded Tomcat
+---
 
-Built-in web server.
+## 🎤 Interview Questions
 
-### application.properties
+### Basic
 
-Centralized configuration file.
+**Q1. What is Git?**
+- A distributed version control system used to track source code changes.
 
-## Database Concepts
+**Q2. What is GitHub?**
+- A cloud platform used to host and manage Git repositories.
 
-### JDBC
+---
 
-Database connectivity layer.
+### Intermediate
 
-### JPA
+**Q3. Difference between Git and GitHub?**
+- Git is a version control tool.
+- GitHub is a repository hosting platform.
 
-Java Persistence API for ORM.
+**Q4. What is a commit?**
+- A snapshot of project changes saved in Git history.
 
-### Hibernate
+---
 
-Most popular JPA implementation.
+### Project-Based
+
+**Q5. Why did you use Git in this project?**
+- To maintain version history, collaborate efficiently, and safely manage source code.
+
+**Q6. What makes a good commit message?**
+- A short, descriptive message explaining the purpose of the change.
+
+---
+
+## 🚀 Outcome
+
+Successfully established the project foundation with Git, GitHub, and a structured development workflow, creating a solid base for future development.
+
+# 📅 Day 2 — Spring Boot Project Setup & MySQL Integration
+
+## 🎯 Objective
+
+- Set up the Spring Boot backend application.
+- Configure Maven dependencies.
+- Connect the application with MySQL.
+- Establish the project architecture.
+
+---
+
+## 🛠️ What I Built
+
+### Spring Boot Setup
+- Created Spring Boot project using Spring Initializr.
+- Configured Maven build system.
+- Added required dependencies:
+  - Spring Web
+  - Spring Data JPA
+  - MySQL Driver
+  - Validation
+
+### Database Integration
+- Connected Spring Boot with MySQL.
+- Configured database properties in `application.properties`.
+- Verified successful database connection.
+
+### Project Structure
+- Created standard package structure:
+  - controller
+  - service
+  - repository
+  - entity
+  - dto
+  - exception
+  - response
+
+---
+
+## 📚 What I Learned
+
+### Spring Boot
+- Spring Boot simplifies application development through auto-configuration.
+- Starter dependencies reduce manual configuration.
+- Embedded Tomcat eliminates external server setup.
 
 ### Maven
-
-Dependency management and build automation tool.
-
-## Interview Questions
-
-### Q. What is Spring Boot?
-
-Spring Boot is a framework used to rapidly develop production-ready Java applications.
-
-### Q. What is JPA?
-
-Java Persistence API used for object-relational mapping.
-
-### Q. What is Hibernate?
-
-Hibernate is the most popular implementation of JPA.
-
-### Q. Why use Maven?
-
-Maven manages project dependencies and automates builds.
-
-## Outcome
-
-Successfully connected Spring Boot application with MySQL database.
-
----
-
-# Day 3 — Emergency Request Module
-
-## Objective
-
-Build the first complete business module.
-
-## What I Built
-
-* EmergencyRequest Entity
-* Repository Layer
-* Service Layer
-* Controller Layer
-* CRUD APIs
-
-## Architecture Learned
-
-```text
-Controller
-    ↓
-Service
-    ↓
-Repository
-    ↓
-Database
-```
-
-## Concepts Learned
-
-### REST APIs
-
-Standard communication mechanism between frontend and backend.
-
-### Dependency Injection
-
-Spring automatically provides required objects.
-
-### Layered Architecture
-
-Separates responsibilities into independent layers.
+- Maven manages project dependencies automatically.
+- `pom.xml` acts as the project's build configuration file.
 
 ### Spring Data JPA
+- JPA provides Object Relational Mapping (ORM).
+- Hibernate is the default JPA implementation in Spring Boot.
 
-Provides database abstraction and CRUD functionality.
-
-## Interview Questions
-
-### Q. Why use Service Layer?
-
-To separate business logic from controller logic.
-
-### Q. What is Dependency Injection?
-
-A design pattern where Spring automatically injects required objects.
-
-### Q. Why use JpaRepository?
-
-It provides built-in CRUD operations and reduces boilerplate code.
-
-### Q. What is an Entity?
-
-A Java class mapped to a database table.
-
-## Outcome
-
-Built the complete Emergency Request module with CRUD APIs.
+### MySQL Integration
+- Spring Boot connects to MySQL using datasource properties.
+- JPA automatically manages database operations.
 
 ---
 
-# Day 4 — DTOs, Validation & Exception Handling
+## 💡 Important Points
 
-## Objective
-
-Convert application into a production-style backend architecture.
-
-## What I Built
-
-* DTO Layer
-* Validation Layer
-* Global Exception Handling
-* API Response Wrapper
-
-## Concepts Learned
-
-### DTO Pattern
-
-* Separates API data from database entities
-* Improves security
-* Improves maintainability
-
-### Validation
-
-Annotations Used:
-
-* @Valid
-* @NotBlank
-* @NotNull
-* @Min
-* @Max
-
-### Exception Handling
-
-* ResourceNotFoundException
-* GlobalExceptionHandler
-* @RestControllerAdvice
-
-### API Response Wrapper
-
-Standardized response structure across APIs.
-
-## Interview Questions
-
-### Q. Why use DTO instead of Entity?
-
-DTO prevents exposing internal database structures.
-
-### Q. What is @Valid?
-
-It triggers automatic validation of request data.
-
-### Q. What is Global Exception Handling?
-
-A centralized mechanism for handling application exceptions.
-
-### Q. Why use Response Wrappers?
-
-To maintain consistent API responses.
-
-## Outcome
-
-Backend architecture upgraded to enterprise standards.
+- Always organize the project using layered architecture.
+- Keep database credentials inside configuration files.
+- Maven automatically downloads required libraries.
+- Spring Boot starts an embedded server by default.
 
 ---
 
-# Day 5 — Hospital Management Module
+## 🎤 Interview Questions
 
-## Objective
+### Basic
 
-Add hospital resource management functionality.
+**Q1. What is Spring Boot?**
+- Spring Boot is a Java framework that simplifies Spring application development using auto-configuration and starter dependencies.
 
-## What I Built
-
-* Hospital Entity
-* Hospital DTO
-* Hospital Repository
-* Hospital Service
-* Hospital Controller
-* Hospital APIs
-
-## Concepts Learned
-
-### Resource Management
-
-Managing hospitals as emergency response resources.
-
-### DTO Reusability
-
-Using DTOs for secure API communication.
-
-### Validation Reuse
-
-Applying common validation practices.
-
-### Professional API Design
-
-Consistent request and response structures.
-
-## Interview Questions
-
-### Q. Why use DTOs?
-
-To separate API requests from database entities.
-
-### Q. What is the role of Service Layer?
-
-To handle business logic.
-
-### Q. Why use validation?
-
-To prevent invalid data from entering the application.
-
-## Outcome
-
-Hospital management module fully functional.
+**Q2. What is Maven?**
+- Maven is a build automation and dependency management tool for Java projects.
 
 ---
 
-# Day 6 — Ambulance Management Module
+### Intermediate
 
-## Objective
+**Q3. Why do we use Spring Data JPA?**
+- It reduces boilerplate code by providing built-in CRUD operations and repository support.
 
-Manage emergency response vehicles.
-
-## What I Built
-
-* Ambulance Entity
-* Ambulance DTO
-* Ambulance Repository
-* Ambulance Service
-* Ambulance Controller
-* Ambulance APIs
-* Status Tracking System
-
-## Concepts Learned
-
-### Ambulance Status Tracking
-
-Available statuses:
-
-* AVAILABLE
-* ON_ROUTE
-* AT_HOSPITAL
-* MAINTENANCE
-
-### Default Initialization
-
-Automatic assignment of initial status.
-
-### Resource Availability
-
-Tracking ambulance availability for dispatch operations.
-
-## Interview Questions
-
-### Q. Why use status tracking?
-
-To determine resource availability.
-
-### Q. Why initialize default values?
-
-To ensure every ambulance starts in a valid state.
-
-### Q. What is resource availability?
-
-The ability of a resource to be assigned to a task.
-
-## Outcome
-
-Ambulance management module completed.
+**Q4. What is ORM?**
+- Object Relational Mapping (ORM) maps Java objects to database tables.
 
 ---
 
-# Day 7 — Dispatch Engine
+### Project-Based
 
-## Objective
+**Q5. Why did you choose Spring Boot for SERRIP?**
+- It enables rapid backend development with REST APIs, dependency injection, JPA integration, and production-ready features.
 
-Automate ambulance assignment.
-
-## What I Built
-
-* DispatchRecord Entity
-* DispatchRecord Repository
-* Dispatch Service
-* Manual Dispatch API
-* Auto Dispatch API
-* Dispatch History Tracking
-
-## Concepts Learned
-
-### Resource Allocation
-
-Assigning available resources to emergencies.
-
-### Dispatch History
-
-Maintaining records of all assignments.
-
-### Business Rules
-
-* Prevent double dispatching
-* Validate ambulance availability
-* Update ambulance status automatically
-
-## Interview Questions
-
-### Q. What is resource allocation?
-
-Assigning suitable resources to tasks.
-
-### Q. Why maintain dispatch records?
-
-For auditing and tracking purposes.
-
-### Q. Why validate availability?
-
-To avoid assigning busy ambulances.
-
-## Outcome
-
-Core dispatch engine completed successfully.
+**Q6. Why did you use MySQL?**
+- MySQL is reliable, open-source, easy to integrate with Spring Boot, and suitable for relational data management.
 
 ---
 
-# Day 8 — Intelligent Ambulance Selection
+## 🚀 Outcome
 
-## Objective
+Successfully established the backend foundation by integrating Spring Boot with MySQL, configuring Maven dependencies, and creating a scalable project structure for future development.
 
-Improve dispatch quality through location-based decision making.
+# 📅 Day 2 — Spring Boot Project Setup & MySQL Integration
 
-## What I Built
+## 🎯 Objective
 
-* Distance Calculation Logic
-* Nearest Ambulance Selection
-* Intelligent Auto Dispatch Workflow
-
-## Concepts Learned
-
-### Geolocation Processing
-
-Comparing emergency and ambulance coordinates.
-
-### Smart Dispatch Workflow
-
-```text
-Emergency Request
-        ↓
-Fetch Available Ambulances
-        ↓
-Calculate Distance
-        ↓
-Find Nearest Ambulance
-        ↓
-Dispatch Ambulance
-```
-
-### Decision Making Logic
-
-Selecting the best available resource automatically.
-
-## Interview Questions
-
-### Q. Why is distance calculation important?
-
-It reduces emergency response time.
-
-### Q. What is intelligent dispatch?
-
-Automatically selecting the best resource.
-
-### Q. Why select the nearest ambulance?
-
-To improve response efficiency.
-
-## Outcome
-
-Dispatch system upgraded from manual allocation to intelligent allocation.
+- Set up the Spring Boot backend application.
+- Configure Maven dependencies.
+- Connect the application with MySQL.
+- Establish the project architecture.
 
 ---
 
-# Day 9 — Routing Intelligence Foundation
-
-## Objective
-
-Build navigation infrastructure for shortest-path routing.
-
-## What I Built
-
-### GraphNode
-
-Represents locations in the road network.
-
-### GraphEdge
-
-Represents roads between locations.
-
-### RoadGraph
-
-Stores the complete road network.
-
-### RouteNetworkService
-
-Manages graph operations and routing services.
-
-### GraphController
-
-Provides graph-related APIs.
-
-### RouteController
-
-Provides route-related APIs.
-
-### GraphTestService
-
-Tests and validates graph functionality.
-
-## Concepts Learned
-
-### Graph Data Structure
-
-A non-linear data structure consisting of nodes and edges.
-
-### Road Network Modeling
-
-Real-world roads represented as graph connections.
-
-### Weighted Graph
-
-Roads contain weights such as:
-
-* Distance
-* Cost
-* Travel Time
-
-### Adjacency List
-
-Example:
-
-```text
-1 → (2,4) (3,2)
-
-2 → (1,4) (4,5) (5,10)
-
-3 → (1,2) (6,3)
-```
-
-## Benefits of Adjacency Lists
-
-* Memory efficient
-* Fast traversal
-* Industry standard
-* Ideal for sparse graphs
-
-## Spring Boot Concepts Learned
-
-### Service Layer Expansion
-
-Service layer can manage:
-
-* Business Logic
-* Graph Structures
-* Routing Logic
-* Simulation Logic
-
-### Controller Layer Expansion
-
-Controllers can expose:
-
-* CRUD APIs
-* Graph APIs
-* Routing APIs
-* Simulation APIs
-
-## Challenges Faced
-
-* Understanding graph modeling
-* Designing adjacency lists
-* Mapping real roads into graph structures
-* Creating reusable routing architecture
-
-## Interview Questions
-
-### Q. What is a Graph?
-
-A graph is a non-linear data structure consisting of nodes and edges.
-
-### Q. What is a Node?
-
-A node represents a location or vertex inside a graph.
-
-### Q. What is an Edge?
-
-An edge represents a connection between two nodes.
-
-### Q. What is a Weighted Graph?
-
-A graph where edges contain values such as distance, cost, or travel time.
-
-### Q. What is an Adjacency List?
-
-A data structure that stores neighboring nodes connected to a node.
-
-### Q. Why use Graphs in Navigation Systems?
-
-Graphs efficiently model roads and intersections for shortest-path calculations.
-
-### Q. Adjacency List vs Adjacency Matrix?
-
-Adjacency List uses less memory and performs better for sparse networks.
-
-## Outcome
-
-✅ Road Network Model Completed
-
-✅ Graph Data Structure Completed
-
-✅ Adjacency List Completed
-
-✅ Graph APIs Working
-
-✅ Route APIs Working
-
-✅ Graph Testing Completed
-
-✅ Backend Build Successful
-
-✅ Ready for Dijkstra Algorithm Implementation
-
----
-# Day 10 Learning Notes
-
-## Topic
-
-Routing Intelligence using Graph Data Structures and Dijkstra's Algorithm
+## 🛠️ What I Built
+
+### Spring Boot Setup
+- Created Spring Boot project using Spring Initializr.
+- Configured Maven build system.
+- Added required dependencies:
+  - Spring Web
+  - Spring Data JPA
+  - MySQL Driver
+  - Validation
+
+### Database Integration
+- Connected Spring Boot with MySQL.
+- Configured database properties in `application.properties`.
+- Verified successful database connection.
+
+### Project Structure
+- Created standard package structure:
+  - controller
+  - service
+  - repository
+  - entity
+  - dto
+  - exception
+  - response
 
 ---
 
-## What I Learned
+## 📚 What I Learned
 
-### 1. Graph Data Structure
+### Spring Boot
+- Spring Boot simplifies application development through auto-configuration.
+- Starter dependencies reduce manual configuration.
+- Embedded Tomcat eliminates external server setup.
 
-A graph represents locations as nodes and roads as edges.
+### Maven
+- Maven manages project dependencies automatically.
+- `pom.xml` acts as the project's build configuration file.
 
-Components:
+### Spring Data JPA
+- JPA provides Object Relational Mapping (ORM).
+- Hibernate is the default JPA implementation in Spring Boot.
 
-* GraphNode
-* GraphEdge
-* RoadGraph
-* Adjacency List
-
-Example:
-
-1 → 2 (4 km)
-
-1 → 3 (2 km)
-
-3 → 6 (3 km)
+### MySQL Integration
+- Spring Boot connects to MySQL using datasource properties.
+- JPA automatically manages database operations.
 
 ---
 
-### 2. Adjacency List Representation
+## 💡 Important Points
 
-Instead of storing roads in a matrix, roads are stored efficiently using:
-
-Map<Integer, List<GraphEdge>>
-
-Benefits:
-
-* Faster traversal
-* Less memory usage
-* Scalable road network modeling
+- Always organize the project using layered architecture.
+- Keep database credentials inside configuration files.
+- Maven automatically downloads required libraries.
+- Spring Boot starts an embedded server by default.
 
 ---
 
-### 3. Dijkstra Algorithm
+## 🎤 Interview Questions
 
-Dijkstra is a shortest path algorithm used to find the minimum distance between two locations.
+### Basic
 
-Process:
+**Q1. What is Spring Boot?**
+- Spring Boot is a Java framework that simplifies Spring application development using auto-configuration and starter dependencies.
 
-1. Start from source node
-2. Assign distance 0 to source
-3. Assign infinity to all other nodes
-4. Visit nearest unvisited node
-5. Relax neighboring edges
-6. Update shorter distances
-7. Repeat until destination is reached
-
-Time Complexity:
-
-O((V + E) log V)
+**Q2. What is Maven?**
+- Maven is a build automation and dependency management tool for Java projects.
 
 ---
 
-### 4. Priority Queue (Min Heap)
+### Intermediate
 
-Used to always process the node with the smallest distance first.
+**Q3. Why do we use Spring Data JPA?**
+- It reduces boilerplate code by providing built-in CRUD operations and repository support.
 
-Implementation:
-
-PriorityQueue<Integer>
-
-Benefits:
-
-* Faster shortest path computation
-* Efficient node selection
-* Industry-standard approach
+**Q4. What is ORM?**
+- Object Relational Mapping (ORM) maps Java objects to database tables.
 
 ---
 
-### 5. Distance Tracking
+### Project-Based
 
-Used HashMap to store current shortest distances.
+**Q5. Why did you choose Spring Boot for SERRIP?**
+- It enables rapid backend development with REST APIs, dependency injection, JPA integration, and production-ready features.
 
-Example:
-
-Map<Integer, Double> distances
-
-Purpose:
-
-Tracks shortest known distance from source to every node.
+**Q6. Why did you use MySQL?**
+- MySQL is reliable, open-source, easy to integrate with Spring Boot, and suitable for relational data management.
 
 ---
 
-### 6. Previous Node Tracking
+## 🚀 Outcome
 
-Used HashMap to store parent nodes.
+Successfully established the backend foundation by integrating Spring Boot with MySQL, configuring Maven dependencies, and creating a scalable project structure for future development.
 
-Example:
+# 📅 Day 6 — Ambulance Management Module
 
-Map<Integer, Integer> previousNodes
+## 🎯 Objective
 
-Purpose:
-
-Allows reconstruction of the final shortest path.
-
-Example:
-
-8 ← 7 ← 4 ← 2 ← 1
-
-Produces:
-
-[1, 2, 4, 7, 8]
+- Develop the Ambulance Management module.
+- Implement ambulance CRUD operations.
+- Manage ambulance availability and status.
 
 ---
 
-### 7. Path Reconstruction
+## 🛠️ What I Built
 
-After Dijkstra finishes:
+### Ambulance Module
+- Created Ambulance entity.
+- Implemented Repository layer.
+- Implemented Service layer.
+- Implemented Controller layer.
+- Developed CRUD APIs.
 
-* Start from destination
-* Follow previous nodes backward
-* Reverse the list
-
-Result:
-
-Shortest Route:
-
-[1, 2, 4, 7, 8]
-
-Distance:
-
-12 km
+### Ambulance Status
+- Added ambulance availability.
+- Managed operational status.
+- Linked ambulances with hospitals.
 
 ---
 
-### 8. REST API Development
+## 📚 What I Learned
 
-Created APIs for:
+### Spring Boot
+- CRUD implementation
+- RESTful API design
+- Layered architecture
+- Repository operations
 
-GET /api/routes
-
-Returns complete road network.
-
-GET /api/routes/shortest?start=1&destination=8
-
-Returns:
-
-{
-"path": [1, 2, 4, 7, 8],
-"totalDistance": 12
-}
+### Database
+- Entity relationships
+- Foreign key mapping
+- Data persistence
 
 ---
 
-### 9. Postman Testing
+## 💡 Important Points
 
-Validated:
-
-* Graph retrieval API
-* Shortest path API
-* Invalid node handling
-* No-path scenarios
-* Route correctness
-
-All tests passed successfully.
+- Separate ambulance data from emergency requests.
+- Keep business logic inside the Service layer.
+- Design entities for future scalability.
+- Maintain consistent API structure.
 
 ---
 
-## Purpose
+## 🎤 Interview Questions
 
-To build the foundation for intelligent ambulance routing and route optimization.
+### Basic
 
-The routing engine will eventually help:
+**Q1. Why create a separate Ambulance entity?**
+- To manage ambulance information independently.
 
-* Find fastest ambulance routes
-* Avoid blocked roads
-* Simulate traffic delays
-* Reduce emergency response time
+**Q2. What is a Repository?**
+- A Spring Data interface for database operations.
 
----
+### Intermediate
 
-## Benefits
+**Q3. Why separate Hospital and Ambulance modules?**
+- To improve modularity and maintainability.
 
-### Technical Benefits
+**Q4. What is constructor injection?**
+- Injecting dependencies through constructors for better immutability.
 
-* Strong understanding of Graphs
-* Practical implementation of Dijkstra Algorithm
-* Priority Queue usage
-* Path reconstruction techniques
-* Real-world routing systems
+### Project-Based
 
-### Project Benefits
+**Q5. How is ambulance availability managed?**
+- Using a status field that changes during dispatch operations.
 
-* Intelligent route planning
-* Foundation for traffic simulation
-* Foundation for route optimization
-* Foundation for ETA prediction
+**Q6. Why is modular design important?**
+- It allows independent development, testing, and future expansion.
 
 ---
 
-## Interview Questions
+## 🚀 Outcome
 
-### Graphs
+Completed the Ambulance Management module with CRUD operations and status management, providing the foundation for emergency dispatch.
 
-1. What is a graph?
-2. Difference between directed and undirected graphs?
-3. What is an adjacency list?
-4. What is an adjacency matrix?
+---
 
-### Dijkstra Algorithm
+# 📅 Day 7 — Dispatch Engine
 
-5. What is Dijkstra Algorithm?
-6. How does Dijkstra work?
-7. What is the time complexity of Dijkstra?
-8. Why is Priority Queue used?
-9. Can Dijkstra handle negative weights?
-10. Difference between Dijkstra and BFS?
+## 🎯 Objective
 
-### Java Collections
+- Build the dispatch engine.
+- Assign ambulances to emergency requests.
+- Maintain dispatch records.
 
-11. What is a PriorityQueue?
-12. How is a Min Heap implemented in Java?
-13. Difference between HashMap and TreeMap?
-14. Why use HashMap for distance tracking?
+---
+
+## 🛠️ What I Built
+
+### Dispatch Module
+- Created DispatchRecord entity.
+- Implemented Repository layer.
+- Implemented Service layer.
+- Developed Dispatch APIs.
+
+### Dispatch Logic
+- Manual ambulance assignment.
+- Ambulance status updates.
+- Dispatch history management.
+
+---
+
+## 📚 What I Learned
+
+### Spring Boot
+- Service-to-Service communication
+- Business logic implementation
+- Entity relationships
+
+### Design Concepts
+- Separation of concerns
+- Real-world workflow modeling
+
+---
+
+## 💡 Important Points
+
+- Update ambulance status immediately after dispatch.
+- Record every dispatch for future tracking.
+- Keep dispatch logic inside the Service layer.
+- Maintain transactional consistency.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. What is a dispatch record?**
+- A record storing ambulance assignment details for an emergency.
+
+**Q2. Why maintain dispatch history?**
+- For tracking, auditing, and reporting.
+
+### Intermediate
+
+**Q3. Why shouldn't dispatch logic be inside the controller?**
+- Controllers should only process HTTP requests; business logic belongs in the Service layer.
+
+**Q4. Why update ambulance status after dispatch?**
+- To prevent assigning the same ambulance multiple times.
+
+### Project-Based
+
+**Q5. Explain your dispatch workflow.**
+- Emergency Request → Find Ambulance → Create Dispatch Record → Update Ambulance Status.
+
+**Q6. What improvements can be added later?**
+- Automatic dispatch, priority handling, ETA estimation, and route optimization.
+
+---
+
+## 🚀 Outcome
+
+Developed the core Dispatch Engine capable of assigning ambulances, updating their status, and maintaining dispatch history.
+
+---
+
+# 📅 Day 8 — Smart Ambulance Selection
+
+## 🎯 Objective
+
+- Automate ambulance selection.
+- Assign the nearest available ambulance.
+- Introduce intelligent dispatch logic.
+
+---
+
+## 🛠️ What I Built
+
+### Smart Dispatch
+- Automatic ambulance assignment.
+- Nearest ambulance selection.
+- Distance calculation logic.
+- Availability filtering.
+
+### API Enhancements
+- Auto Dispatch API.
+- Dispatch optimization workflow.
+
+---
+
+## 📚 What I Learned
+
+### Algorithms
+- Distance-based resource selection.
+- Search optimization.
+- Greedy decision-making.
 
 ### System Design
-
-15. How would Google Maps find shortest routes?
-16. How would you handle road closures?
-17. How would you simulate traffic congestion?
-18. How would you find alternate routes?
+- Resource allocation.
+- Real-time decision making.
+- Service abstraction.
 
 ---
 
-## Outcome
+## 💡 Important Points
 
-Successfully implemented and tested a complete shortest-path routing engine using:
-
-* Graph Data Structures
-* Adjacency Lists
-* Priority Queue (Min Heap)
-* Dijkstra Algorithm
-* Path Reconstruction
-* REST APIs
-* Postman Testing
-
-The Smart Emergency Response System can now calculate the shortest route between two locations and is ready for advanced routing features such as traffic simulation and dynamic road blockage handling.
-
-# Learning Notes — Day 11
-
-## Topic
-Routing Intelligence & Traffic-Aware Pathfinding
-
-## Learned
-
-* Graph Data Structures
-* Adjacency List Representation
-* Graph Nodes and Graph Edges
-* Dijkstra Shortest Path Algorithm
-* Priority Queue (Min Heap)
-* Path Reconstruction using Previous Nodes
-* Dynamic Road Blocking
-* Traffic Delay Simulation
-* Traffic-Aware Route Optimization
-
-## Purpose
-
-To build an intelligent routing engine capable of finding the optimal route for emergency vehicles while handling blocked roads and traffic delays.
-
-## Benefits
-
-* Faster emergency response
-* Dynamic route calculation
-* Scalable road network architecture
-* Real-world traffic simulation
-* Foundation for GIS-based navigation systems
-
-## Interview Questions
-
-1. What is a graph?
-2. What is an adjacency list?
-3. Why is Dijkstra algorithm used?
-4. What is the role of a priority queue in Dijkstra?
-5. What is the time complexity of Dijkstra?
-6. How do you reconstruct the shortest path?
-7. How can road blockages affect shortest path algorithms?
-8. How would you model traffic delays in routing systems?
-
-## Outcome
-
-Successfully developed a routing intelligence engine capable of:
-- Finding shortest paths
-- Avoiding blocked roads
-- Considering traffic delays
-- Optimizing emergency vehicle routing in real time
-
-# Day 12 — Spring Security Foundation
-
-## Topic
-
-Authentication & Authorization Foundation using Spring Security
+- Always filter unavailable ambulances first.
+- Minimize response time by selecting the nearest resource.
+- Keep selection logic reusable.
+- Prepare the system for graph-based routing.
 
 ---
 
-## Objective
+## 🎤 Interview Questions
 
-Build the security foundation of the Smart Emergency Response & Intelligent Routing Platform by integrating Spring Security and creating the initial authentication architecture.
+### Basic
 
----
+**Q1. How do you select an ambulance?**
+- By checking availability and calculating the shortest distance.
 
-## What I Built
+**Q2. Why automate ambulance assignment?**
+- To reduce manual effort and improve response time.
 
-### User Entity
+### Intermediate
 
-Represents application users.
+**Q3. Which algorithm is currently used for ambulance selection?**
+- A distance comparison approach (later upgraded with Dijkstra's Algorithm).
 
-Fields:
+**Q4. Why is automatic dispatch better than manual dispatch?**
+- It is faster, more accurate, and reduces human error.
 
-* id
-* username
-* password
-* role
+### Project-Based
 
----
+**Q5. How will your dispatch engine improve in the future?**
+- By integrating graph algorithms, live traffic data, and dynamic route optimization.
 
-### Role Enum
-
-Created system roles:
-
-* ADMIN
-* DISPATCHER
-* HOSPITAL
-
-These roles will later be used for Role-Based Access Control (RBAC).
+**Q6. Why is this considered an intelligent feature?**
+- Because the system makes automated decisions based on resource availability and distance.
 
 ---
 
-### User Repository
+## 🚀 Outcome
 
-Created a JPA repository for managing user data.
+Implemented the first intelligent component of the system by automatically selecting the nearest available ambulance, significantly improving dispatch efficiency.
 
-Implemented:
+# 📅 Day 9 — Graph-Based Road Network
 
-```
-findByUsername(String username)
-```
+## 🎯 Objective
 
-Purpose:
-
-* Retrieve users during login
-* Prevent duplicate usernames during registration
+- Model the city road network using Graph Data Structures.
+- Represent locations and roads for route planning.
+- Prepare the foundation for shortest path algorithms.
 
 ---
 
-### CustomUserDetailsService
+## 🛠️ What I Built
 
-Implemented Spring Security's `UserDetailsService`.
+### Graph Models
+- Created `GraphNode` model.
+- Created `GraphEdge` model.
+- Implemented `RoadGraph`.
+- Used Adjacency List representation.
 
-Responsibilities:
-
-* Load users from the database
-* Convert User entity into Spring Security UserDetails
-* Integrate application users with Spring Security
-
-Workflow:
-
-```
-Login Request
-        ↓
-UserRepository
-        ↓
-Load User
-        ↓
-UserDetails
-        ↓
-Spring Security
-```
+### Routing Foundation
+- Added road connections.
+- Stored road distances.
+- Built graph initialization logic.
 
 ---
+
+## 📚 What I Learned
+
+### Data Structures
+- Graph
+- Adjacency List
+- Weighted Graph
+- Directed vs Undirected Graph
+
+### Design Concepts
+- Graph Modeling
+- Network Representation
+- Route Planning
+
+---
+
+## 💡 Important Points
+
+- Adjacency List is memory efficient.
+- Weighted graphs store road distances.
+- Graph modeling is widely used in GPS systems.
+- Good graph design improves algorithm performance.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. Why use Graphs in this project?**
+- To represent locations and roads for route calculation.
+
+**Q2. What is an Adjacency List?**
+- A graph representation where each node stores its connected neighbors.
+
+### Intermediate
+
+**Q3. Why choose Adjacency List over Adjacency Matrix?**
+- Better memory usage and faster traversal for sparse graphs.
+
+**Q4. What is a Weighted Graph?**
+- A graph where every edge has an associated cost or distance.
+
+### Project-Based
+
+**Q5. How is your city represented?**
+- As a weighted graph where hospitals and intersections are nodes, and roads are edges.
+
+**Q6. Why is Graph modeling important in emergency systems?**
+- It enables efficient route computation and optimization.
+
+---
+
+## 🚀 Outcome
+
+Designed a scalable graph-based road network that serves as the foundation for intelligent routing.
+
+---
+
+# 📅 Day 10 — Dijkstra's Shortest Path Algorithm
+
+## 🎯 Objective
+
+- Implement the shortest path algorithm.
+- Optimize ambulance routing.
+- Improve routing efficiency.
+
+---
+
+## 🛠️ What I Built
+
+### Routing Engine
+- Implemented Dijkstra's Algorithm.
+- Used Java Priority Queue (Min Heap).
+- Added distance tracking.
+- Added previous node tracking.
+- Implemented path reconstruction.
+
+### Route APIs
+- Shortest Route API.
+- RouteResult model.
+
+---
+
+## 📚 What I Learned
+
+### Algorithms
+- Dijkstra's Algorithm
+- Greedy Algorithm
+- Min Heap
+- Priority Queue
+
+### Complexity
+- Time Complexity: **O(E log V)**
+- Space Complexity: **O(V)**
+
+---
+
+## 💡 Important Points
+
+- Dijkstra works only for non-negative edge weights.
+- Priority Queue significantly improves performance.
+- Previous node array is required for path reconstruction.
+- Always initialize source distance as zero.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. Why use Dijkstra's Algorithm?**
+- To find the shortest path in a weighted graph.
+
+**Q2. Why use Priority Queue?**
+- It efficiently selects the next minimum-distance node.
+
+### Intermediate
+
+**Q3. Time Complexity of your implementation?**
+- **O(E log V)**
+
+**Q4. Why not BFS?**
+- BFS only works for unweighted graphs.
+
+### Project-Based
+
+**Q5. How does your routing engine work?**
+- The graph is traversed using Dijkstra's Algorithm to compute the shortest route.
+
+**Q6. Why is your implementation better than a basic implementation?**
+- It uses a Min Heap, improving performance from **O(V²)** to **O(E log V)**.
+
+---
+
+## 🚀 Outcome
+
+Successfully implemented an optimized shortest path engine capable of finding the fastest ambulance routes.
+
+---
+
+# 📅 Day 11 — Dynamic Traffic & Road Blockage Management
+
+## 🎯 Objective
+
+- Simulate real-world traffic conditions.
+- Handle blocked roads dynamically.
+- Recalculate routes automatically.
+
+---
+
+## 🛠️ What I Built
+
+### Dynamic Routing
+- Road Blocking API.
+- Road Unblocking API.
+- Traffic Delay API.
+- Traffic Delay Removal API.
+
+### Route Updates
+- Dynamic route recalculation.
+- Traffic-aware routing.
+- Road status management.
+
+---
+
+## 📚 What I Learned
+
+### Concepts
+- Dynamic Graph Updates
+- Route Recalculation
+- Traffic Simulation
+
+### System Design
+- Real-time routing
+- Intelligent navigation
+
+---
+
+## 💡 Important Points
+
+- Road conditions change frequently.
+- Dynamic updates improve routing accuracy.
+- Route recalculation minimizes response time.
+- Separate traffic logic from routing logic.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. Why simulate traffic?**
+- To make route planning more realistic.
+
+**Q2. What happens when a road is blocked?**
+- The routing engine recalculates an alternative path.
+
+### Intermediate
+
+**Q3. How does dynamic routing work?**
+- The graph is updated before executing Dijkstra's Algorithm.
+
+**Q4. Why separate traffic updates from graph creation?**
+- To allow real-time modifications without rebuilding the graph.
+
+### Project-Based
+
+**Q5. How does your system handle emergencies during traffic?**
+- It recalculates the shortest available route using updated graph data.
+
+**Q6. Why is dynamic routing important?**
+- Static routes may become invalid due to accidents or road closures.
+
+---
+
+## 🚀 Outcome
+
+Enhanced the routing engine with real-time road updates, enabling intelligent route recalculation.
+
+---
+
+# 📅 Day 12 — Smart Route Optimization & API Testing
+
+## 🎯 Objective
+
+- Complete the routing module.
+- Expose routing APIs.
+- Verify the complete routing workflow.
+
+---
+
+## 🛠️ What I Built
+
+### Routing APIs
+- Route Controller.
+- Graph Controller.
+- RouteResult response model.
+- Route testing endpoints.
+
+### Testing
+- Complete Postman test suite.
+- Verified shortest path calculation.
+- Tested traffic-aware routing.
+- Tested road blockage scenarios.
+
+---
+
+## 📚 What I Learned
+
+### API Design
+- REST API testing
+- Request-response validation
+- Route response modeling
+
+### Backend Concepts
+- End-to-end testing
+- API verification
+- Debugging complex workflows
+
+---
+
+## 💡 Important Points
+
+- Test every edge case.
+- Verify shortest path after graph updates.
+- Maintain consistent API responses.
+- Good testing increases system reliability.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. Why use Postman?**
+- To test REST APIs independently of the frontend.
+
+**Q2. What is API testing?**
+- Verifying API functionality, correctness, and responses.
+
+### Intermediate
+
+**Q3. How did you verify Dijkstra's Algorithm?**
+- By testing multiple graph scenarios and comparing expected routes.
+
+**Q4. Why create RouteResult instead of returning raw data?**
+- To provide structured, reusable API responses.
+
+### Project-Based
+
+**Q5. What is the biggest technical achievement in your project?**
+- Developing an optimized graph-based routing engine using Dijkstra's Algorithm with dynamic traffic updates.
+
+**Q6. Which DSA concepts are used in your project?**
+- Graphs, Priority Queue (Min Heap), Greedy Algorithm, Adjacency List, Shortest Path.
+
+---
+
+## 🚀 Outcome
+
+Completed the intelligent routing engine with optimized shortest path computation, dynamic traffic handling, and thoroughly tested REST APIs.
+
+# 📅 Day 13 — Spring Security Foundation
+
+## 🎯 Objective
+
+- Secure the backend using Spring Security.
+- Configure authentication and authorization.
+- Protect application endpoints.
+
+---
+
+## 🛠️ What I Built
 
 ### Security Configuration
+- Added Spring Security dependency.
+- Configured `SecurityConfig`.
+- Configured BCrypt Password Encoder.
+- Configured Authentication Manager.
+- Enabled Stateless Session Management.
 
-Created:
-
-```
-SecurityConfig
-```
-
-Configured:
-
-* PasswordEncoder
-* AuthenticationManager
-* SecurityFilterChain
-
----
-
-### Password Encryption
-
-Configured:
-
-```
-BCryptPasswordEncoder
-```
-
-Purpose:
-
-* Secure password storage
-* Prevent plain-text password storage
-* Follow industry security standards
+### User Management
+- Created User Entity.
+- Created Role Enum.
+- Created User Repository.
+- Implemented CustomUserDetailsService.
 
 ---
 
-### Public vs Protected APIs
-
-Configured:
-
-Public APIs:
-
-```
-/api/auth/**
-```
-
-Protected APIs:
-
-```
-/api/routes/**
-```
-
-Any future API outside `/api/auth/**` requires authentication.
-
----
-
-### Authentication Flow
-
-```
-Request
-      ↓
-Security Filter Chain
-      ↓
-Authentication Manager
-      ↓
-CustomUserDetailsService
-      ↓
-UserRepository
-      ↓
-MySQL Database
-```
-
----
-
-## APIs Tested
-
-### Public Endpoint
-
-```
-GET /api/auth/test
-```
-
-Verified:
-
-* Accessible without authentication
-
----
-
-### Protected Endpoint
-
-```
-GET /api/routes
-```
-
-Verified:
-
-* Redirects to login page when unauthenticated
-
----
-
-## Concepts Learned
+## 📚 What I Learned
 
 ### Spring Security
-
-Framework used to secure Spring applications.
-
-Provides:
-
-* Authentication
-* Authorization
-* Password Encryption
-* Session Management
+- Authentication vs Authorization
+- Security Filter Chain
+- Password Encoding
+- UserDetailsService
+- Stateless Authentication
 
 ---
+
+## 💡 Important Points
+
+- Passwords should never be stored in plain text.
+- BCrypt is the recommended password encoder.
+- Stateless APIs are ideal for REST applications.
+- Security configuration should follow the principle of least privilege.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. What is Spring Security?**
+- A framework that provides authentication and authorization for Java applications.
+
+**Q2. Why use BCrypt?**
+- It securely hashes passwords using salting and adaptive hashing.
+
+### Intermediate
+
+**Q3. Authentication vs Authorization?**
+- Authentication verifies identity; Authorization determines permissions.
+
+**Q4. Why Stateless Sessions?**
+- They improve scalability and are ideal for JWT-based authentication.
+
+### Project-Based
+
+**Q5. How is security configured in your project?**
+- Using SecurityFilterChain, BCrypt, AuthenticationManager, and role-based endpoint protection.
+
+**Q6. Why did you choose Spring Security?**
+- It provides production-ready authentication, authorization, and secure API protection.
+
+---
+
+## 🚀 Outcome
+
+Established a secure backend foundation with Spring Security, user management, and role-based access configuration.
+
+---
+
+# 📅 Day 14 — User Authentication
+
+## 🎯 Objective
+
+- Implement user registration and login.
+- Store encrypted passwords.
+- Generate authentication tokens.
+
+---
+
+## 🛠️ What I Built
+
+### Authentication Module
+- Register API.
+- Login API.
+- RegisterRequest DTO.
+- LoginRequest DTO.
+- LoginResponse DTO.
+- AuthenticationService.
+
+### User Management
+- Password encryption.
+- Duplicate username validation.
+- User persistence.
+
+---
+
+## 📚 What I Learned
 
 ### Authentication
-
-Verifies who the user is.
-
-Example:
-
-```
-Username
-Password
-```
-
----
-
-### Authorization
-
-Determines what an authenticated user is allowed to access.
-
-Example:
-
-```
-ADMIN
-DISPATCHER
-HOSPITAL
-```
-
----
-
-### SecurityFilterChain
-
-The central component that intercepts every incoming request.
-
-Responsibilities:
-
-* Check authentication
-* Apply authorization rules
-* Protect APIs
-
----
-
-### BCrypt
-
-Industry-standard password hashing algorithm.
-
-Benefits:
-
-* One-way encryption
-* Salt generation
-* Resistant to brute-force attacks
-
----
-
-### UserDetailsService
-
-Bridge between Spring Security and the application's user database.
-
----
-
-### AuthenticationManager
-
-Responsible for authenticating login requests.
-
----
-
-## Challenges Faced
-
-* Understanding Spring Security architecture
-* Configuring public and protected endpoints
-* Connecting application users with Spring Security
-* Verifying authentication flow
-
----
-
-## Interview Questions
-
-### Spring Security
-
-1. What is Spring Security?
-2. Why is Spring Security used?
-3. Difference between Authentication and Authorization?
-4. What is SecurityFilterChain?
-5. What is UserDetailsService?
-6. What is AuthenticationManager?
-7. What is PasswordEncoder?
-
-### Password Security
-
-8. Why should passwords never be stored in plain text?
-9. What is BCrypt?
-10. Why is BCrypt preferred over MD5 or SHA?
-
-### REST Security
-
-11. What is permitAll()?
-12. What is authenticated()?
-13. Difference between formLogin() and httpBasic()?
-
----
-
-## Outcome
-
-Successfully integrated Spring Security into the project.
-
-Completed:
-
-* User Entity
-* Role Management
-* User Repository
-* CustomUserDetailsService
-* Security Configuration
-* Password Encoder
-* Authentication Infrastructure
-* Public & Protected API Configuration
-
-The project is now ready for:
-
-* User Registration
-* Login API
-* JWT Authentication (Testing In Progress)
-* Role-Based Access Control
-
-# Day 13 — Spring Security Foundation
-
-## Goal
-
-Implement the basic Spring Security framework to prepare the backend for authentication and authorization.
-
----
-
-## What I Learned
-
-### 1. Spring Security
-
-Spring Security is the official security framework for Spring Boot applications.
-
-It provides:
-
-- Authentication
-- Authorization
+- User Registration
+- Login Flow
+- AuthenticationManager
 - Password Encryption
-- Session Management
-- CSRF Protection
-- JWT Integration
 
-Without any configuration, Spring Security protects every endpoint by default.
-
----
-
-### 2. User Authentication Flow
-
-Authentication verifies the identity of a user.
-
-Basic flow:
-
-Client
-↓
-Username + Password
-↓
-AuthenticationManager
-↓
-UserDetailsService
-↓
-Database
-↓
-Authenticated User
+### Spring Boot
+- DTO Pattern
+- Service Layer Authentication
 
 ---
 
-### 3. UserDetailsService
+## 💡 Important Points
 
-Spring Security does not directly know how to load users.
-
-It delegates this responsibility to:
-
-CustomUserDetailsService
-
-Responsibilities:
-
-- Find user by username
-- Throw exception if user does not exist
-- Convert database entity into Spring Security UserDetails
+- Always validate user credentials.
+- Never expose passwords in responses.
+- Encrypt passwords before storing them.
+- Separate authentication logic from controllers.
 
 ---
 
-### 4. AuthenticationManager
+## 🎤 Interview Questions
 
-AuthenticationManager is responsible for verifying user credentials.
+### Basic
 
-Flow:
+**Q1. Why encrypt passwords?**
+- To protect user credentials in case of database compromise.
 
-UsernamePasswordAuthenticationToken
-↓
-AuthenticationManager
-↓
-Password Comparison
-↓
-Success / Failure
+**Q2. What is AuthenticationManager?**
+- A Spring Security component responsible for authenticating users.
 
----
+### Intermediate
 
-### 5. BCrypt Password Encoder
+**Q3. Why validate duplicate usernames?**
+- To maintain unique user identities.
 
-Passwords should never be stored in plain text.
+**Q4. Why use DTOs for authentication?**
+- To separate API requests from database entities.
 
-BCrypt provides:
+### Project-Based
 
-- Password Hashing
-- Salt Generation
-- Secure Verification
+**Q5. Describe your login workflow.**
+- User submits credentials → AuthenticationManager verifies → JWT is generated.
 
-During login:
-
-Raw Password
-↓
-
-BCrypt.matches()
-
-↓
-
-Stored Hash
+**Q6. How are passwords stored?**
+- Using BCrypt hashing.
 
 ---
 
-### 6. Security Configuration
+## 🚀 Outcome
 
-SecurityConfig defines:
-
-- Public APIs
-- Protected APIs
-- Password Encoder
-- AuthenticationManager
-- Security Filter Chain
-
-Initially:
-
-/api/auth/**
-
-was made public.
-
-All other APIs required authentication.
+Completed secure user registration and login with encrypted password storage and authentication support.
 
 ---
 
-### 7. User Entity
+# 📅 Day 15 — JWT Authentication & Role-Based Security
 
-Created a dedicated User entity containing:
+## 🎯 Objective
 
-- id
-- username
-- password
-- role
-
-Roles currently supported:
-
-- ADMIN
-- DISPATCHER
-- HOSPITAL
+- Secure APIs using JWT.
+- Implement role-based authorization.
+- Protect application endpoints.
 
 ---
 
-### 8. Repository Layer
+## 🛠️ What I Built
 
-UserRepository extends JpaRepository.
+### JWT Module
+- JwtService.
+- JWT Generation.
+- JWT Validation.
+- Username Extraction.
+- Token Expiration Validation.
 
-Custom query:
+### Security
+- JwtAuthenticationFilter.
+- SecurityContext Authentication.
+- Protected API Configuration.
+- Method-Level Security.
+- Role-Based Authorization.
 
-findByUsername()
-
-returns Optional<User>
-
----
-
-### 9. Public vs Protected Endpoints
-
-Public:
-
-- Login
-- Register
-- Test API
-
-Protected:
-
-Everything else
+### Testing
+- Registered multiple users.
+- Verified ADMIN, DISPATCHER, and HOSPITAL access.
+- Tested protected endpoints using Postman.
 
 ---
 
-### 10. Spring Security Filters
-
-Every request first passes through Spring Security Filters before reaching Controllers.
-
-Request
-↓
-
-Spring Security Filters
-↓
-
-Controller
-
----
-
-## Key Classes Created
-
-- User
-- Role
-- UserRepository
-- CustomUserDetailsService
-- SecurityConfig
-
----
-
-## Important Concepts
-
-- Authentication
-- Authorization
-- Password Hashing
-- UserDetailsService
-- AuthenticationManager
-- SecurityFilterChain
-- BCrypt
-
----
-
-## Outcome
-
-Completed the Spring Security foundation required for implementing JWT authentication.
-
-# Day 14 — JWT Authentication
-
-## Goal
-
-Implement stateless authentication using JSON Web Tokens (JWT) and secure backend APIs.
-
----
-
-## What I Learned
-
-### 1. What is JWT?
-
-JWT (JSON Web Token) is a compact token used for authentication.
-
-Instead of storing sessions on the server, the client stores the token.
-
-Each request sends:
-
-Authorization: Bearer <JWT>
-
----
-
-### 2. JWT Structure
-
-A JWT contains three parts:
-
-Header
-↓
-
-Payload
-↓
-
-Signature
-
-Example:
-
-xxxxx.yyyyy.zzzzz
-
----
-
-### 3. JWT Payload
-
-The payload stores user-related information.
-
-Current payload contains:
-
-- username
-- issuedAt
-- expiration
-
----
-
-### 4. JwtService
-
-Implemented a dedicated service responsible for:
-
-- Generate Token
-- Extract Username
-- Validate Token
-- Check Expiration
-
-Methods:
-
-- generateToken()
-- extractUsername()
-- isTokenValid()
-- isTokenExpired()
-
----
-
-### 5. Authentication Service
-
-AuthenticationService handles:
-
-Registration
-
-↓
-
-Password Encryption
-
-↓
-
-Database Save
-
-↓
-
-Login
-
-↓
-
-AuthenticationManager
-
-↓
-
-JWT Generation
-
-↓
-
-Return Token
-
----
-
-### 6. Login Flow
-
-Client
-
-↓
-
-POST /login
-
-↓
-
-AuthenticationManager
-
-↓
-
-Database Verification
-
-↓
-
-Generate JWT
-
-↓
-
-Return JWT
-
----
-
-### 7. Registration Flow
-
-Client
-
-↓
-
-POST /register
-
-↓
-
-Validate Request
-
-↓
-
-Encrypt Password
-
-↓
-
-Save User
-
-↓
-
-Return Success
-
----
-
-### 8. DTOs
-
-Created:
-
-RegisterRequest
-
-LoginRequest
-
-LoginResponse
-
-DTOs help separate API models from database entities.
-
----
-
-### 9. JwtAuthenticationFilter
-
-Every incoming request first passes through the JWT filter.
-
-Flow:
-
-Incoming Request
-
-↓
-
-Read Authorization Header
-
-↓
-
-Extract JWT
-
-↓
-
-Validate Token
-
-↓
-
-Extract Username
-
-↓
-
-Load User
-
-↓
-
-Create Authentication Object
-
-↓
-
-Store Authentication in SecurityContext
-
-↓
-
-Continue Request
-
----
-
-### 10. SecurityContextHolder
-
-Once authenticated, Spring stores the logged-in user inside:
-
-SecurityContextHolder
-
-Controllers can later access the authenticated user from here.
-
----
-
-### 11. Stateless Authentication
-
-Configured:
-
-SessionCreationPolicy.STATELESS
-
-This means:
-
-- No HTTP Sessions
-- No Server-side Login State
-- Every request must include a valid JWT
-
----
-
-### 12. JWT Filter Registration
-
-Registered JwtAuthenticationFilter before Spring's default authentication filter.
-
-Flow:
-
-Request
-
-↓
-
-JwtAuthenticationFilter
-
-↓
-
-UsernamePasswordAuthenticationFilter
-
-↓
-
-Controller
-
----
-
-### 13. Exception Handling
-
-Improved GlobalExceptionHandler to handle:
-
-- Validation Errors (400)
-- Resource Not Found (404)
-- Bad Credentials (401)
-- Runtime Exceptions (400)
-
----
-
-### 14. Protected APIs
-
-Verified that protected APIs:
-
-- Reject requests without JWT
-- Reject invalid JWT
-- Accept valid JWT
-- Populate SecurityContext successfully
-
----
-
-### 15. Security Testing
-
-Performed Postman testing for:
-
-- Registration
-- Duplicate Registration
-- Login
-- Invalid Login
-- Access without JWT
-- Access with JWT
-- Protected Endpoint Authorization
-
----
-
-## Key Classes Created / Updated
-
-- JwtService
-- JwtAuthenticationFilter
-- AuthenticationService
-- AuthController
-- LoginRequest
-- LoginResponse
-- RegisterRequest
-- SecurityConfig
-- GlobalExceptionHandler
-
----
-
-## Important Concepts
-
-- JWT
-- Stateless Authentication
-- Bearer Token
+## 📚 What I Learned
+
+### Security
+- JWT Architecture
+- Bearer Authentication
 - SecurityContextHolder
 - OncePerRequestFilter
-- AuthenticationManager
-- UsernamePasswordAuthenticationToken
-- JWT Validation
-- Authorization Header
-- BCrypt Password Encoding
+- @PreAuthorize
+
+### Authorization
+- Role-Based Access Control (RBAC)
+- Method Security
+- Endpoint Security
 
 ---
 
-## Outcome
+## 💡 Important Points
 
-Successfully implemented JWT-based authentication with secure login, registration, protected APIs, and stateless request authorization using Spring Security.
+- JWT is sent in the Authorization header.
+- APIs remain stateless.
+- Roles should determine endpoint accessibility.
+- Protect sensitive APIs using method-level security.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. What is JWT?**
+- A JSON Web Token used for secure stateless authentication.
+
+**Q2. What is Bearer Token Authentication?**
+- Sending the JWT inside the Authorization header.
+
+### Intermediate
+
+**Q3. Why use OncePerRequestFilter?**
+- To authenticate every request exactly once.
+
+**Q4. Why use @PreAuthorize?**
+- To enforce authorization at the method level.
+
+### Project-Based
+
+**Q5. How does JWT authentication work in your project?**
+- Login generates a JWT, which is validated on every protected request using JwtAuthenticationFilter.
+
+**Q6. How did you implement RBAC?**
+- Using Spring Security roles and @PreAuthorize annotations.
+
+---
+
+## 🚀 Outcome
+
+Successfully implemented JWT-based authentication and role-based authorization, securing all critical backend APIs.
+
+---
+
+# 📅 Day 16 — Production-Ready Security & Final Testing
+
+## 🎯 Objective
+
+- Improve backend security.
+- Handle unauthorized access gracefully.
+- Finalize authentication workflow.
+
+---
+
+## 🛠️ What I Built
+
+### Security Enhancements
+- JwtAuthenticationEntryPoint.
+- JwtAccessDeniedHandler.
+- Logout API.
+- Token Blacklisting.
+- BlacklistedToken Entity.
+- BlacklistedToken Repository.
+
+### Final Testing
+- Tested registration.
+- Tested login.
+- Tested logout.
+- Verified token invalidation.
+- Verified protected APIs.
+- Tested role-based authorization.
+- Completed complete Postman test suite.
+
+---
+
+## 📚 What I Learned
+
+### Security
+- AuthenticationEntryPoint
+- AccessDeniedHandler
+- Token Revocation
+- Logout Workflow
+
+### Production Practices
+- Secure error responses
+- Token invalidation
+- API security testing
+
+---
+
+## 💡 Important Points
+
+- Logout should invalidate JWTs.
+- Unauthorized and Forbidden responses should be handled separately.
+- Centralized security handling improves maintainability.
+- Thorough API testing ensures production readiness.
+
+---
+
+## 🎤 Interview Questions
+
+### Basic
+
+**Q1. Difference between 401 and 403?**
+- 401: Authentication required.
+- 403: Authenticated but lacks permission.
+
+**Q2. Why blacklist tokens?**
+- To invalidate JWTs after logout.
+
+### Intermediate
+
+**Q3. What is AuthenticationEntryPoint?**
+- Handles unauthorized access (401).
+
+**Q4. What is AccessDeniedHandler?**
+- Handles forbidden access (403).
+
+### Project-Based
+
+**Q5. How does logout work in your project?**
+- The JWT is stored in a blacklist, preventing further use.
+
+**Q6. How did you verify backend security?**
+- By testing authentication, authorization, logout, invalid tokens, and role-based access using Postman.
+
+---
+
+## 🚀 Outcome
+
+Completed a production-ready backend security system with JWT authentication, role-based authorization, logout support, token blacklisting, centralized security handling, and comprehensive API testing.
