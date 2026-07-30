@@ -10,7 +10,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
+@EnableMethodSecurity
 @Configuration
 public class SecurityConfig {
 
@@ -49,10 +51,25 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->
                         auth
 
-                                .requestMatchers(
-                                        "/api/auth/**")
+                                // Public APIs
+                                .requestMatchers("/api/auth/**")
                                 .permitAll()
 
+                                // ADMIN only
+                                .requestMatchers("/api/hospitals/**")
+                                .hasRole("ADMIN")
+
+                                .requestMatchers("/api/ambulances/**")
+                                .hasRole("ADMIN")
+
+                                // ADMIN + DISPATCHER
+                                .requestMatchers("/api/dispatch/**")
+                                .hasAnyRole("ADMIN", "DISPATCHER")
+
+                                .requestMatchers("/api/emergencies/**")
+                                .hasAnyRole("ADMIN", "DISPATCHER")
+
+                                // Everything else
                                 .anyRequest()
                                 .authenticated())
 

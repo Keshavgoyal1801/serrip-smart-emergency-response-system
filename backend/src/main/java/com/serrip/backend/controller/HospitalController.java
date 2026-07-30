@@ -6,6 +6,7 @@ import com.serrip.backend.response.ApiResponse;
 import com.serrip.backend.service.HospitalService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
