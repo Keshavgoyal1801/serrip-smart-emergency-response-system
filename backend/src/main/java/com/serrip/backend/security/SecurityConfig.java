@@ -18,13 +18,16 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+    private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
     public SecurityConfig(
             JwtAuthenticationFilter jwtAuthenticationFilter,
-            JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint) {
+            JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
+            JwtAccessDeniedHandler jwtAccessDeniedHandler) {
 
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
+        this.jwtAccessDeniedHandler = jwtAccessDeniedHandler;
     }
 
     @Bean
@@ -81,8 +84,11 @@ public class SecurityConfig {
                                 SessionCreationPolicy.STATELESS))
 
                 .exceptionHandling(exception ->
-                        exception.authenticationEntryPoint(
-                                jwtAuthenticationEntryPoint))
+                        exception
+                                .authenticationEntryPoint(
+                                        jwtAuthenticationEntryPoint)
+                                .accessDeniedHandler(
+                                        jwtAccessDeniedHandler))
 
                 .addFilterBefore(
                         jwtAuthenticationFilter,
