@@ -50,7 +50,8 @@ public class AuthenticationService {
                         request.getPassword()));
 
         // Default role for every public registration
-        user.setRole(Role.DISPATCHER);
+        // user.setRole(Role.DISPATCHER);
+        user.setRole(request.getRole()); // only for testing
 
         userRepository.save(user);
 
