@@ -2,6 +2,7 @@ package com.serrip.backend.controller;
 
 import com.serrip.backend.dto.LoginRequest;
 import com.serrip.backend.dto.LoginResponse;
+import com.serrip.backend.dto.LogoutResponse;
 import com.serrip.backend.dto.RegisterRequest;
 import com.serrip.backend.service.AuthenticationService;
 import jakarta.validation.Valid;
@@ -43,5 +44,11 @@ public class AuthController {
             LoginRequest request) {
 
         return authenticationService.login(request);
+    }
+
+    @PostMapping("/logout")
+    public LogoutResponse logout() {
+
+        return authenticationService.logout();
     }
 }
