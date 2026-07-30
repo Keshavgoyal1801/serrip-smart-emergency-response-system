@@ -47,8 +47,14 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public LogoutResponse logout() {
+    public LogoutResponse logout(
 
-        return authenticationService.logout();
+            @RequestHeader("Authorization")
+            String authHeader) {
+
+        String token =
+                authHeader.substring(7);
+
+        return authenticationService.logout(token);
     }
 }

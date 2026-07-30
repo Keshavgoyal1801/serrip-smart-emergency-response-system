@@ -9,6 +9,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import com.serrip.backend.repository.BlacklistedTokenRepository;
 
 import java.io.IOException;
 
@@ -17,6 +18,7 @@ public class JwtAuthenticationFilter
         extends OncePerRequestFilter {
 
     private final JwtService jwtService;
+    private final BlacklistedTokenRepository blacklistedTokenRepository;
 
     private final CustomUserDetailsService customUserDetailsService;
 
@@ -24,11 +26,15 @@ public class JwtAuthenticationFilter
 
             JwtService jwtService,
 
-            CustomUserDetailsService customUserDetailsService) {
+            CustomUserDetailsService customUserDetailsService,
+
+            BlacklistedTokenRepository blacklistedTokenRepository) {
 
         this.jwtService = jwtService;
 
         this.customUserDetailsService = customUserDetailsService;
+
+        this.blacklistedTokenRepository = blacklistedTokenRepository;
     }
 
     @Override
@@ -57,6 +63,23 @@ public class JwtAuthenticationFilter
 
         String jwt =
                 authHeader.substring(7);
+        if (blacklistedTokenRepository.existsByToken(jwt)) {
+
+            response.setStatus(
+                    HttpServletResponse.SC_UNAUTHORIZED);
+
+            response.setContentType("application/json");
+
+            response.getWriter().write("""
+        {
+            "success": false,
+            "message": "Token has been invalidated. Please login again.",
+            "data": null
+        }
+        """);
+
+            return;
+        }
 
         try {
 

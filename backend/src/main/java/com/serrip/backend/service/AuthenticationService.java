@@ -2,32 +2,38 @@ package com.serrip.backend.service;
 
 import com.serrip.backend.dto.LoginRequest;
 import com.serrip.backend.dto.LoginResponse;
+import com.serrip.backend.dto.LogoutResponse;
 import com.serrip.backend.dto.RegisterRequest;
-import com.serrip.backend.entity.Role;
+import com.serrip.backend.entity.BlacklistedToken;
 import com.serrip.backend.entity.User;
+import com.serrip.backend.repository.BlacklistedTokenRepository;
 import com.serrip.backend.repository.UserRepository;
 import com.serrip.backend.security.JwtService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.serrip.backend.dto.LogoutResponse;
+
+import java.time.LocalDateTime;
 
 @Service
 public class AuthenticationService {
 
     private final UserRepository userRepository;
+    private final BlacklistedTokenRepository blacklistedTokenRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
 
     public AuthenticationService(
             UserRepository userRepository,
+            BlacklistedTokenRepository blacklistedTokenRepository,
             PasswordEncoder passwordEncoder,
             AuthenticationManager authenticationManager,
             JwtService jwtService) {
 
         this.userRepository = userRepository;
+        this.blacklistedTokenRepository = blacklistedTokenRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.jwtService = jwtService;
@@ -50,9 +56,11 @@ public class AuthenticationService {
                 passwordEncoder.encode(
                         request.getPassword()));
 
-        // Default role for every public registration
+        // For testing
+        user.setRole(request.getRole());
+
+        // Production
         // user.setRole(Role.DISPATCHER);
-        user.setRole(request.getRole()); // only for testing
 
         userRepository.save(user);
 
@@ -77,10 +85,21 @@ public class AuthenticationService {
         return new LoginResponse(token);
     }
 
-    public LogoutResponse logout() {
+    public LogoutResponse logout(String token) {
+
+        BlacklistedToken blacklistedToken =
+                new BlacklistedToken();
+
+        blacklistedToken.setToken(token);
+
+        // Token expires after 24 hours (same as JWT validity)
+        blacklistedToken.setExpiryTime(
+                LocalDateTime.now().plusDays(1));
+
+        blacklistedTokenRepository.save(
+                blacklistedToken);
 
         return new LogoutResponse(
                 "Logout successful");
     }
-
 }
