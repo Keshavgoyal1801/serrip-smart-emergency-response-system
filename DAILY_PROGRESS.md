@@ -1,845 +1,746 @@
-# DAILY PROGRESS
-
-## Day 1
-
-### Objectives
-
-* Initialize project
-* Create project roadmap
-* Setup GitHub repository
-
-### Completed
-
-* Created repository
-* Added documentation structure
-* Defined project architecture
-* Created master development plan
-
-### Status
-
-Project planning completed.
+# SERRIP - Daily Progress Log
 
 ---
 
-## Day 2
-
-### Objectives
-
-* Setup backend project
-* Configure database connectivity
-
-### Completed
-
-* Created Spring Boot application
-* Configured Maven
-* Connected MySQL database
-* Verified application startup
-
-### Status
-
-Backend infrastructure completed.
-
----
-
-## Day 3
-
-### Objectives
-
-* Implement Emergency Request module
-
-### Completed
-
-* EmergencyRequest entity created
-* Repository implemented
-* Service implemented
-* Controller implemented
-* CRUD APIs developed
-* APIs tested in Postman
-
-### Status
-
-Emergency Request module operational.
-
----
-
-## Day 4
-
-### Objectives
-
-* Improve API architecture
-* Add validation and exception handling
-
-### Completed
-
-* DTO implementation
-* Request validation
-* Exception handling
-* Global exception handler
-* Professional API responses
-* Postman validation testing
-
-### Status
-
-Production-style API architecture established.
-
----
-
-## Day 5
-
-### Objectives
-
-* Develop Hospital Management Module
-* Implement hospital-related APIs
-
-### Completed
-
-* Hospital Entity
-* Hospital DTO
-* Hospital Repository
-* Hospital Service
-* Hospital Controller
-* Hospital API validation
-* Professional API responses
-* Postman API testing
-
-### Status
-
-Hospital Management Module completed and integrated successfully.
-
----
-
-## Day 6
-
-### Objectives
-
-* Develop Ambulance Management Module
-* Implement ambulance-related APIs
-
-### Completed
-
-* Ambulance Entity
-* Ambulance DTO
-* Ambulance Repository
-* Ambulance Service
-* Ambulance Controller
-* Ambulance API validation
-* Professional API responses
-* Ambulance status tracking
-* Postman API testing
-
-### Status
-
-Ambulance Management Module completed and integrated successfully.
-
----
-
-## Day 7
-
-### Objectives
-
-* Build Dispatch Engine
-* Implement Resource Allocation
-* Automate Ambulance Assignment
-
-### Completed
-
-* DispatchRecord Entity
-* DispatchRecord Repository
-* Dispatch Service
-* Dispatch Controller
-* Manual Dispatch API
-* Ambulance Availability Validation
-* Auto Dispatch API
-* Dispatch History Storage
-* Resource Allocation Engine V1
-* Custom Query Method Implementation
-* Postman Testing
-
-### Status
-
-First intelligent dispatch engine completed successfully with automatic ambulance assignment and resource allocation.
-
----
-
-## Day 8
-
-### Objectives
-
-* Implement intelligent ambulance selection
-* Develop automatic dispatch functionality
-* Introduce distance-based resource allocation
-
-### Completed
-
-* Added nearest ambulance search logic
-* Implemented distance calculation algorithm
-* Added auto-dispatch API
-* Filtered ambulances by AVAILABLE status
-* Automatic ambulance assignment
-* Automatic status update to ON_ROUTE
-* Dispatch record generation
-* Postman testing and verification
-
-### Status
-
-Smart Auto-Dispatch Engine completed successfully. System now automatically selects and dispatches the nearest available ambulance.
-
----
-
-## Day 9
-
-### Objectives
-
-* Build Routing Intelligence Foundation
-* Design Road Network Model
-* Implement Graph Data Structure
-* Implement Adjacency List Representation
-* Create Routing APIs
-* Prepare system for Dijkstra Algorithm
-
-### Completed
-
-* GraphNode model created
-* GraphEdge model created
-* RoadGraph implementation completed
-* RouteNetworkService implemented
-* GraphController developed
-* RouteController developed
-* GraphTestService implemented
-* Road Network Model completed
-* Weighted Graph structure completed
-* Adjacency List implementation completed
-* Sample route network created
-* Route APIs tested successfully
-* Graph APIs tested successfully
-* Maven build verification completed
-* Spring Boot application verified
-* Routing foundation integrated with backend
-
-### Status
-
-Routing Intelligence Foundation completed successfully.
-
-The system can now model road networks using weighted graphs and adjacency lists. Backend architecture is fully prepared for shortest-path computation using Dijkstra's Algorithm.
-
----
-
-## Day 10
-
-### Objectives
-
-* Build road network model
-* Implement graph data structure
-* Implement Dijkstra shortest path algorithm
-* Expose routing APIs
-
-### Completed
-
-* GraphNode implementation
-* GraphEdge implementation
-* RoadGraph implementation
-* RouteNetworkService
-* Adjacency List Design
-* Priority Queue implementation
-* Dijkstra Algorithm
-* Distance Relaxation Logic
-* Previous Node Tracking
-* Path Reconstruction
-* RouteResult DTO
-* Graph API
-* Shortest Route API
-* Invalid Route Handling
-* Postman Testing (5/5 Passed)
-
-### Status
-
-Routing Intelligence Engine V1 completed successfully.
-System can now calculate shortest ambulance routes using Dijkstra's Algorithm.
-
----
-
-## Day 11
-
-### Objectives
-
-* Implement Routing Intelligence
-* Develop Dijkstra Algorithm
-* Add Dynamic Road Blocking
-* Simulate Traffic Conditions
-* Build Traffic-Aware Route Optimization
-
-### Completed
-
-* GraphNode Model
-* GraphEdge Model
-* RoadGraph Implementation
-* Route Network Service
-* Route Controller
-* Dijkstra Algorithm
-* Priority Queue Integration
-* Shortest Path Engine
-* Route Reconstruction Logic
-* Road Blocking API
-* Road Unblocking API
-* Traffic Delay API
-* Traffic Delay Clearing API
-* Traffic-Aware Routing Logic
-* Postman Testing
-
-### Status
-
-Routing Intelligence Engine completed successfully with shortest-path calculation, dynamic road blocking, and traffic-aware route optimization.
----
-
-# Day 12 Progress Report (Security Foundation)
-
-**Date:** __________
-
----
+# Day 1
 
 ## Objective
 
-Start implementing the Security module by integrating Spring Security into the Emergency Response Dispatch System.
+- Finalize project idea.
+- Plan overall system architecture.
+- Create GitHub repository.
+- Set up Spring Boot project.
 
 ---
 
-## Completed Tasks
+## Completed
 
-### Security Foundation
+### Project Planning
 
-- ✅ Added Spring Security dependency
-- ✅ Configured Spring Security
-- ✅ Disabled CSRF for REST APIs
-- ✅ Configured public and protected endpoints
-- ✅ Enabled HTTP Basic Authentication
-- ✅ Enabled Form Login
+- Finalized project title:
+    - Smart Emergency Response & Resource Intelligence Platform (SERRIP)
+- Defined project objectives.
+- Planned major system modules.
+- Prepared development roadmap.
 
-### User Management
+### Project Setup
 
-- ✅ Created User entity
-- ✅ Created Role enum
-- ✅ Created UserRepository
-- ✅ Implemented CustomUserDetailsService
-- ✅ Integrated UserRepository with Spring Security
+- Created Spring Boot project.
+- Configured Maven.
+- Initialized Git repository.
+- Created GitHub repository.
+- Established project folder structure.
 
-### Authentication Infrastructure
+---
 
-- ✅ Configured AuthenticationManager
-- ✅ Configured BCryptPasswordEncoder
-- ✅ Registered security beans
-- ✅ Created Authentication Test Controller
+## Status
+
+✅ Project Planning Completed
+
+✅ Spring Boot Setup Completed
+
+✅ Git & GitHub Setup Completed
+
+---
+
+## Outcome
+
+Successfully established the project foundation and development roadmap.
+
+---
+
+# Day 2
+
+## Objective
+
+- Configure MySQL.
+- Build Emergency Request module.
+- Design backend architecture.
+
+---
+
+## Completed
+
+### Database
+
+- Connected Spring Boot with MySQL.
+- Configured application properties.
+- Verified database connectivity.
+
+### Emergency Module
+
+- Created EmergencyRequest Entity.
+- Implemented Repository Layer.
+- Implemented Service Layer.
+- Implemented Controller Layer.
+- Added Create Emergency API.
+- Added Get All Emergencies API.
+- Added Get Emergency By ID API.
+
+---
+
+## Status
+
+✅ MySQL Integration Completed
+
+✅ Emergency CRUD APIs Completed
+
+---
+
+## Outcome
+
+Successfully built the first functional backend module.
+
+---
+
+# Day 3
+
+## Objective
+
+- Improve API quality.
+- Add validation.
+- Improve exception handling.
+
+---
+
+## Completed
+
+### DTO Layer
+
+- Created EmergencyRequestDTO.
+- Separated API layer from Entity layer.
+
+### Validation
+
+- Added Bean Validation.
+- Validated request fields.
+- Improved API input quality.
+
+### Exception Handling
+
+- Implemented GlobalExceptionHandler.
+- Added custom validation responses.
+- Improved API error handling.
+
+### API Response
+
+- Standardized API response structure.
+- Improved response readability.
+
+---
+
+## Status
+
+✅ DTO Layer Completed
+
+✅ Validation Layer Completed
+
+✅ Global Exception Handling Completed
+
+---
+
+## Outcome
+
+Backend became production-ready with standardized request validation and error handling.
+
+---
+
+# Day 4
+
+## Objective
+
+- Develop Hospital Management module.
+- Build Ambulance Management module.
+
+---
+
+## Completed
+
+### Hospital Module
+
+- Created Hospital Entity.
+- Created Hospital Repository.
+- Created Hospital Service.
+- Created Hospital Controller.
+- Implemented Hospital APIs.
+- Added request validation.
+
+### Ambulance Module
+
+- Created Ambulance Entity.
+- Created Ambulance Repository.
+- Created Ambulance Service.
+- Created Ambulance Controller.
+- Implemented Ambulance APIs.
+- Added Ambulance status tracking.
+- Added validation.
+
+---
+
+## Status
+
+✅ Hospital Module Completed
+
+✅ Ambulance Module Completed
+
+---
+
+## Outcome
+
+Successfully implemented emergency resource management modules.
+
+---
+
+# Day 5
+
+## Objective
+
+- Develop Dispatch Engine.
+- Build ambulance assignment workflow.
+
+---
+
+## Completed
+
+### Dispatch Engine
+
+- Created DispatchRecord Entity.
+- Created Dispatch Repository.
+- Developed Dispatch Service.
+- Implemented Manual Dispatch API.
+- Implemented Auto Dispatch API.
+- Added Ambulance Availability Check.
+- Added Ambulance Status Updates.
+- Added Distance Calculation Logic.
+- Implemented Nearest Ambulance Selection.
+- Stored Dispatch Records.
 
 ### Testing
 
-- ✅ Project builds successfully
-- ✅ Application starts successfully
-- ✅ Public endpoint testing completed
-- ✅ Protected endpoint testing completed
-- ✅ Spring Security configuration verified
+- Verified dispatch workflow.
+- Tested all APIs using Postman.
 
 ---
 
-## Files Created
+## Status
 
-- User.java
-- Role.java
-- UserRepository.java
-- CustomUserDetailsService.java
-- SecurityConfig.java
-- AuthController.java
+✅ Dispatch Engine Completed
 
----
+✅ Ambulance Assignment Logic Completed
 
-## Concepts Learned
-
-- Spring Security Architecture
-- Authentication vs Authorization
-- UserDetailsService
-- AuthenticationManager
-- BCrypt Password Encoding
-- SecurityFilterChain
-- HTTP Basic Authentication
-- Form Login
-- Public vs Protected APIs
+✅ API Testing Completed
 
 ---
 
-## Challenges Faced
+## Outcome
 
-- Fixed Maven command issue (`mvn` vs `.\mvnw.cmd`)
-- Understood Spring Security default login behavior
-- Configured endpoint access rules correctly
+Successfully completed the emergency dispatch workflow with automated ambulance allocation.
 
 ---
 
-## Build Status
+# Day 6
 
-- ✅ Build Successful
-- ✅ Application Running
-- ✅ Security Configuration Working
+## Objective
 
----
-
-## GitHub Commits
-
-- Security foundation setup
-- User authentication infrastructure
+- Design the city road network.
+- Build graph data structures.
+- Prepare the routing foundation.
 
 ---
 
-## Progress
+## Completed
 
-Completed the Security foundation required before implementing JWT Authentication.
+### Routing Foundation
 
-Overall Project Progress: **~78%**
+- Designed Road Network Model.
+- Created GraphNode model.
+- Created GraphEdge model.
+- Implemented Adjacency List.
+- Built RoadGraph data structure.
+- Implemented RouteNetworkService.
+- Created Graph Controller.
+- Created Route Controller.
 
----
+### API Development
 
-# Day 13 — Spring Security Foundation
-
-## Goal
-
-Understand how Spring Security secures a Spring Boot application.
-
----
-
-## What I Learned
-
-### 1. Spring Security
-
-Spring Security is the standard authentication and authorization framework for Spring Boot.
-
-Responsibilities:
-
-- Authentication
-- Authorization
-- Password Encryption
-- Session Management
-- Filter Chain
-- Security Context
+- Developed graph initialization APIs.
+- Developed graph visualization APIs.
+- Verified graph creation using Postman.
 
 ---
 
-### 2. UserDetailsService
+## Status
 
-Spring Security never queries the database directly.
+✅ Road Network Model Completed
 
-Instead it asks:
+✅ Graph Data Structure Completed
 
-UserDetailsService
-
-to load the user.
-
-CustomUserDetailsService connects Spring Security with our User table.
+✅ Routing Foundation Completed
 
 ---
 
-### 3. AuthenticationManager
+## Outcome
 
-AuthenticationManager verifies
-
-Username
-
-Password
-
-using UserDetailsService and PasswordEncoder.
-
-It throws BadCredentialsException if authentication fails.
+Successfully established the graph-based road network that serves as the foundation for intelligent route optimization.
 
 ---
 
-### 4. BCrypt Password Encoder
+# Day 7
 
-Passwords should never be stored in plain text.
+## Objective
 
-BCrypt
-
-- hashes passwords
-- automatically salts passwords
-- prevents rainbow table attacks
-
-Example
-
-password
-
-becomes
-
-$2a$10$xxxxxxxxxxxxxxxx
+- Implement Dijkstra's Shortest Path Algorithm.
+- Develop intelligent route calculation.
 
 ---
 
-### 5. SecurityFilterChain
+## Completed
 
-Security configuration decides
+### Shortest Path Engine
 
-Which APIs are public
+- Implemented Dijkstra Algorithm.
+- Integrated Priority Queue (Min Heap).
+- Initialized Distance Map.
+- Implemented Previous Node Tracking.
+- Developed Path Reconstruction Logic.
+- Created RouteResult model.
 
-Which APIs require authentication
+### Route APIs
 
-Current configuration
-
-/api/auth/**
-
-is public
-
-Everything else requires authentication.
-
----
-
-### 6. Stateless Authentication
-
-Instead of sessions
-
-every request sends a JWT
-
-Server stores nothing
-
-This is ideal for REST APIs.
+- Developed Shortest Route API.
+- Added Invalid Node Validation.
+- Added No Route Available handling.
+- Tested shortest path calculations.
 
 ---
 
-## Important Classes
+## Status
 
-SecurityConfig
+✅ Dijkstra Algorithm Completed
 
-CustomUserDetailsService
+✅ Priority Queue Integration Completed
 
-AuthenticationManager
-
-PasswordEncoder
-
-UserRepository
-
-Role Enum
-
-User Entity
+✅ Shortest Route API Completed
 
 ---
 
-## Interview Questions
+## Outcome
 
-What is Spring Security?
-
-Difference between Authentication and Authorization?
-
-Why use BCrypt?
-
-What is UserDetailsService?
-
-What is AuthenticationManager?
-
-Why Stateless APIs?
-
-# Day 14 — JWT Authentication
-
-## Goal
-
-Implement JWT Authentication using Spring Security.
+Successfully implemented efficient shortest path computation with a time complexity of **O(E log V)** using Dijkstra's Algorithm.
 
 ---
 
-## What I Learned
+# Day 8
 
-### 1. JSON Web Token (JWT)
+## Objective
 
-JWT allows stateless authentication.
-
-Instead of server sessions
-
-the client stores the token.
-
-Every request sends
-
-Authorization
-
-Bearer <token>
+- Enhance routing engine with dynamic road conditions.
+- Simulate real-world traffic scenarios.
 
 ---
 
-### 2. JWT Structure
+## Completed
 
-JWT has three parts
+### Dynamic Routing
 
-Header
+- Implemented Road Blocking feature.
+- Developed Road Blocking API.
+- Developed Road Unblocking API.
+- Added Blocked Road Validation.
 
-Payload
+### Traffic Simulation
 
-Signature
-
-Header
-
-contains algorithm
-
-Payload
-
-contains claims
-
-Signature
-
-verifies authenticity
+- Implemented Traffic Delay Model.
+- Added Traffic Delay API.
+- Added Traffic Delay Removal API.
+- Simulated real-time traffic conditions.
 
 ---
 
-### 3. JwtService
+## Status
 
-Implemented
+✅ Dynamic Road Blocking Completed
 
-Generate Token
-
-Extract Username
-
-Validate Token
-
-Check Expiration
-
-Parse Claims
+✅ Traffic Simulation Completed
 
 ---
 
-### 4. JwtAuthenticationFilter
+## Outcome
 
-Every incoming request passes through this filter.
-
-Flow
-
-Request
-
-↓
-
-Authorization Header
-
-↓
-
-Extract JWT
-
-↓
-
-Extract Username
-
-↓
-
-Load User
-
-↓
-
-Validate Token
-
-↓
-
-Create Authentication Object
-
-↓
-
-Store in SecurityContext
-
-↓
-
-Continue Request
+Routing engine now supports dynamic environmental changes without modifying the graph structure.
 
 ---
 
-### 5. SecurityContextHolder
+# Day 9
 
-After authentication
+## Objective
 
-Spring stores the authenticated user
-
-inside
-
-SecurityContextHolder
-
-Controllers later access this authenticated user automatically.
+- Optimize routing based on traffic conditions.
+- Improve route recalculation logic.
 
 ---
 
-### 6. OncePerRequestFilter
+## Completed
 
-Runs exactly once
+### Smart Routing
 
-for every HTTP request.
+- Implemented Traffic-Aware Distance Calculation.
+- Developed Dynamic Route Recalculation.
+- Added Smart Route Optimization.
+- Enhanced Routing Intelligence.
 
-Ideal place for JWT validation.
+### Testing
 
----
-
-### 7. UsernamePasswordAuthenticationToken
-
-Represents an authenticated user.
-
-Contains
-
-UserDetails
-
-Credentials
-
-Authorities
+- Validated multiple routing scenarios.
+- Verified optimized route selection.
+- Completed comprehensive Postman testing.
 
 ---
 
-### 8. SecurityContext
+## Status
 
-Stores current logged-in user.
+✅ Traffic-Aware Routing Completed
 
-Without setting SecurityContext
+✅ Route Optimization Completed
 
-Spring treats request as anonymous.
-
----
-
-### 9. Protected APIs
-
-Public
-
-/api/auth/**
-
-Protected
-
-/api/emergencies/**
-
-Hospital
-
-Dispatch
-
-Ambulance
-
-etc.
+✅ Routing Validation Completed
 
 ---
 
-### 10. Authorization Header
+## Outcome
 
-Format
-
-Authorization
-
-Bearer eyJhbGciOi...
-
-Always starts with
-
-Bearer
-
-followed by a space.
+Successfully upgraded the routing engine to intelligently adapt to changing traffic and road conditions.
 
 ---
 
-### 11. Exception Handling
+# Day 10
 
-BadCredentialsException
+## Objective
 
-returns
-
-401 Unauthorized
-
-instead of
-
-400 Bad Request
-
-This is REST best practice.
+- Build the security foundation.
+- Integrate Spring Security into the project.
 
 ---
 
-## Authentication Flow
+## Completed
 
-Client
+### Security Foundation
 
-↓
+- Added Spring Security dependency.
+- Configured Spring Security.
+- Created User Entity.
+- Created Role Enum.
+- Developed User Repository.
+- Implemented CustomUserDetailsService.
+- Configured AuthenticationManager.
+- Added BCrypt Password Encoder.
 
-Login
+### Security Configuration
 
-↓
-
-AuthenticationManager
-
-↓
-
-JwtService
-
-↓
-
-JWT Generated
-
-↓
-
-Client Stores Token
-
-↓
-
-Client Sends Token
-
-↓
-
-JwtAuthenticationFilter
-
-↓
-
-Token Validation
-
-↓
-
-SecurityContext
-
-↓
-
-Controller
+- Configured public endpoints.
+- Configured protected endpoints.
+- Verified Spring Security integration.
+- Tested authentication configuration.
 
 ---
 
-## Important Classes
+## Status
 
-JwtService
+✅ Spring Security Integrated
 
-JwtAuthenticationFilter
+✅ User Management Foundation Completed
 
-AuthenticationService
-
-CustomUserDetailsService
-
-SecurityConfig
-
-SecurityContextHolder
-
-UsernamePasswordAuthenticationToken
-
-AuthenticationManager
-
-PasswordEncoder
+✅ Authentication Infrastructure Ready
 
 ---
 
-## Common Mistakes
+## Outcome
 
-Using plain password
-
-Using sessions with JWT
-
-Not setting SecurityContext
-
-Not checking expiration
-
-Using weak secret key
-
-Forgetting Bearer prefix
+Successfully established the security foundation required for JWT authentication and role-based access control.
 
 ---
 
-## Interview Questions
+# Day 11
 
-What is JWT?
+## Objective
 
-Difference between JWT and Session Authentication?
+- Complete the intelligent routing module.
+- Improve route optimization reliability.
+- Perform comprehensive routing validation.
 
-What is JwtAuthenticationFilter?
+---
 
-Why OncePerRequestFilter?
+## Completed
 
-What is SecurityContextHolder?
+### Routing Intelligence
 
-What is UsernamePasswordAuthenticationToken?
+- Enhanced shortest path calculation.
+- Improved path reconstruction logic.
+- Optimized route selection process.
+- Strengthened route validation.
 
-Why BCrypt?
+### API Testing
 
-Difference between Authentication and Authorization?
+- Tested shortest route API.
+- Tested invalid route scenarios.
+- Verified no-path handling.
+- Validated routing responses using Postman.
 
-How is JWT validated?
+### Project Verification
 
-Why Stateless Authentication?
+- Verified graph initialization.
+- Verified Dijkstra algorithm outputs.
+- Confirmed routing accuracy under multiple scenarios.
+
+---
+
+## Status
+
+✅ Routing Intelligence Completed
+
+✅ Route Validation Completed
+
+✅ API Testing Completed
+
+---
+
+## Outcome
+
+Successfully completed the intelligent routing module with reliable shortest-path computation and comprehensive API validation.
+
+---
+
+# Day 12
+
+## Objective
+
+- Extend routing capabilities.
+- Simulate real-world traffic conditions.
+- Improve route recalculation logic.
+
+---
+
+## Completed
+
+### Traffic Management
+
+- Enhanced traffic delay simulation.
+- Improved road blockage handling.
+- Optimized traffic-aware routing logic.
+- Strengthened dynamic route recalculation.
+
+### Testing
+
+- Verified traffic delay APIs.
+- Tested blocked road scenarios.
+- Tested road recovery scenarios.
+- Completed routing stress testing.
+
+### Documentation
+
+- Updated routing architecture.
+- Updated project documentation.
+- Improved routing module organization.
+
+---
+
+## Status
+
+✅ Traffic Simulation Completed
+
+✅ Dynamic Routing Completed
+
+✅ Documentation Updated
+
+---
+
+## Outcome
+
+Successfully completed the advanced routing system capable of adapting to changing road and traffic conditions.
+
+---
+
+# Day 13
+
+## Objective
+
+- Begin Security & Authentication module.
+- Implement user authentication infrastructure.
+- Prepare project for JWT integration.
+
+---
+
+## Completed
+
+### Security Foundation
+
+- Configured Spring Security.
+- Verified SecurityFilterChain.
+- Configured AuthenticationManager.
+- Configured PasswordEncoder.
+
+### User Management
+
+- Created User entity.
+- Implemented Role enum.
+- Created User repository.
+- Implemented CustomUserDetailsService.
+
+### Testing
+
+- Verified secured application startup.
+- Tested authentication configuration.
+- Confirmed protected endpoint behavior.
+
+---
+
+## Status
+
+✅ Security Foundation Completed
+
+✅ User Management Completed
+
+✅ Authentication Infrastructure Ready
+
+---
+
+## Outcome
+
+Successfully established the security foundation required for secure authentication and authorization.
+
+---
+
+# Day 14
+
+## Objective
+
+- Implement JWT authentication.
+- Secure REST APIs.
+- Complete authentication workflow.
+
+---
+
+## Completed
+
+### Authentication Module
+
+- Implemented User Registration API.
+- Implemented Login API.
+- Added BCrypt password encryption.
+- Added duplicate username validation.
+
+### JWT Security
+
+- Implemented JWT generation.
+- Implemented JWT validation.
+- Developed JwtAuthenticationFilter.
+- Integrated JWT authentication with Spring Security.
+- Configured stateless session management.
+
+### API Security
+
+- Protected REST APIs using JWT.
+- Configured public and secured endpoints.
+- Successfully authenticated API requests.
+
+### Testing
+
+- Registered application users.
+- Verified secure login.
+- Generated JWT tokens.
+- Tested Bearer Token authentication.
+
+---
+
+## Status
+
+✅ User Registration Completed
+
+✅ Login Authentication Completed
+
+✅ JWT Authentication Completed
+
+✅ Protected API Testing Completed
+
+---
+
+## Outcome
+
+Successfully implemented JWT-based authentication and secured the backend using stateless authentication.
+
+---
+
+# Day 15
+
+## Objective
+
+- Implement Role-Based Access Control (RBAC).
+- Protect application resources based on user roles.
+- Complete end-to-end security validation.
+
+---
+
+## Completed
+
+### Role-Based Authorization
+
+- Configured ADMIN role.
+- Configured DISPATCHER role.
+- Configured HOSPITAL role.
+- Applied endpoint-level authorization.
+- Added method-level authorization using @PreAuthorize.
+
+### Security Testing
+
+- Registered Admin, Dispatcher and Hospital users.
+- Verified login for all roles.
+- Generated JWT tokens for each user.
+- Tested protected APIs with Bearer Token authentication.
+- Verified successful authorization.
+- Verified HTTP 403 responses for unauthorized access.
+
+### Database Management
+
+- Reset project database.
+- Cleared existing records.
+- Reinitialized project data.
+- Verified user role persistence.
+
+### Documentation
+
+- Updated architecture documentation.
+- Updated milestone tracker.
+- Updated task board.
+- Updated learning notes.
+- Updated README.
+
+---
+
+## Status
+
+✅ Role-Based Access Control Completed
+
+✅ Authorization Testing Completed
+
+✅ End-to-End Security Validation Completed
+
+✅ Milestone 6 Completed
+
+---
+
+## Outcome
+
+Successfully completed the Security & Authentication module.
+
+The backend now supports:
+
+- Secure User Registration
+- Secure Login
+- BCrypt Password Encryption
+- JWT-based Authentication
+- Stateless Session Management
+- Role-Based Access Control (ADMIN, DISPATCHER, HOSPITAL)
+- Protected REST APIs
+- End-to-End Security Validation
+
+Overall Project Progress: **~85%**
