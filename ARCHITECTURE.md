@@ -1,193 +1,400 @@
-# SYSTEM ARCHITECTURE
+# Architecture
 
-# SERRIP
-Smart Emergency Response & Resource Intelligence Platform
+## Overview
 
-    ────────────────────────────────────────────────────────────
+SERRIP (**Smart Emergency Response & Resource Intelligence Platform**) is a full-stack web application designed to automate emergency response operations through intelligent ambulance dispatch, secure user authentication, and graph-based route optimization.
 
-                USER / CITIZEN
-                       │
-                       ▼
-             Authentication Module
-                       │
-        ┌──────────────┼──────────────┐
-        │              │              │
-        ▼              ▼              ▼
-    Registration      Login API     JWT Token
-        │              │              │
-        └──────────────┼──────────────┘
-                       ▼
-            JWT Authentication Filter
-                       │
-                       ▼
-            Spring Security Context
-                       │
-                       ▼
-            Protected REST Endpoints
-                       │
-                       ▼
-            Emergency Request API
+The system follows a **Three-Tier Layered Architecture**, ensuring modularity, scalability, maintainability, and clear separation of responsibilities.
 
-    ────────────────────────────────────────────────────────────
+---
 
-                 EMERGENCY DISPATCH FLOW
+# Architecture Overview
 
-                    Emergency Request
-                             │
-                             ▼
-                 Priority Evaluation Engine
-                             │                         
-                             ▼
-                  Location Analysis Engine
-                             │
-                             ▼
-                 Nearest Hospital Selection
-                             │
-                             ▼
-                 Available Ambulance Search
-                             │
-                             ▼
-                    Ambulance Assignment
-                             │
-                             ▼   
-                      Response Tracking
-                             │
-                             ▼
-                      Emergency Resolved
+```text
+                    +---------------------------+
+                    |     React Frontend        |
+                    |     (Presentation Layer)  |
+                    +-------------+-------------+
+                                  |
+                          REST APIs (HTTP/HTTPS)
+                                  |
+                    +-------------v-------------+
+                    |     Spring Boot API       |
+                    |    (Application Layer)   |
+                    +-------------+-------------+
+                                  |
+             +--------------------+--------------------+
+             |                                         |
+     Business Logic                          Spring Security
+             |                          JWT Authentication & RBAC
+             |                                         |
+      Repository Layer                         Authentication Filter
+             |
+      Spring Data JPA
+             |
+             |
+      +------v------+
+      |   MySQL     |
+      | (Data Layer)|
+      +-------------+
+```
 
-    ────────────────────────────────────────────────────────────
+---
 
-                   BACKEND ARCHITECTURE
+# Technology Stack
 
-                        Controllers
-                            │
-                            ▼
-                        DTO Validation
-                            │
-                            ▼
-                    Authentication Layer
-                    │
-                    ├── BCrypt Password Encoder
-                    ├── AuthenticationManager
-                    ├── JwtService
-                    ├── JwtAuthenticationFilter
-                    ├── CustomUserDetailsService
-                    └── Spring Security
-                            │
-                            ▼
-                    Business Services
-                            │
-                            ▼
-                        Repositories
-                            │
-                            ▼
-                          MySQL
+## Frontend
 
-    ────────────────────────────────────────────────────────────
+- React
+- Vite
+- React Router
+- Axios
 
-                     PROJECT MODULES
+## Backend
 
-    Current
-    │ 
-    ├── Emergency Request Management
-    │
-    └── API Validation & Exception Handling
+- Java 25
+- Spring Boot
+- Spring Security
+- Spring Data JPA
+- Maven
 
-    Upcoming
-    │
-    ├── Hospital Management
-    ├── Ambulance Management
-    ├── Dispatch Engine
-    ├── Priority Assignment Engine
-    ├── Distance Calculation Module
-    ├── Resource Tracking Module
-    ├── Analytics Dashboard
-    └── Admin Management
+## Database
 
-    ────────────────────────────────────────────────────────────
+- MySQL
 
-                     DATABASE DESIGN
+## Authentication
 
-    EmergencyRequest
-    │
-    ├── id
-    ├── callerName
-    ├── phone
-    ├── latitude
-    ├── longitude
-    ├── emergencyType
-    ├── priority
-    ├── status
-    └── createdAt
+- JWT
+- BCrypt Password Encryption
+- Role-Based Access Control (RBAC)
 
-    Hospital
-    │
-    ├── id
-    ├── hospitalName
-    ├── address
-    ├── latitude
-    ├── longitude
-    ├── availableBeds
-    └── contactNumber
+---
 
-    Ambulance
-    │
-    ├── id
-    ├── vehicleNumber
-    ├── driverName
-    ├── status
-    ├── latitude
-    ├── longitude
-    └── hospitalId
+# Layered Architecture
 
-    User
-    │
-    ├── id
-    ├── username
-    ├── password (BCrypt)
-    └── role
+## 1. Presentation Layer
 
-    ────────────────────────────────────────────────────────────
+**Technology**
 
-                    TECHNOLOGY STACK
+- React
+- Axios
+- React Router
 
-    Backend
-    ├── Java 21
-    ├── Spring Boot
-    ├── Spring Data JPA
-    ├── Spring Security
-    ├── Hibernate
-    ├── JWT (jjwt)
-    ├── BCrypt
-    └── Maven
-    
-    Database
-    └── MySQL
-    
-    Testing
-    └── Postman
-    
-    Version Control
-    ├── Git
-    └── GitHub
-    
-    IDE
-    └── IntelliJ IDEA
+**Responsibilities**
 
-    ────────────────────────────────────────────────────────────
+- User Interface
+- Dashboard
+- Authentication
+- Form Validation
+- API Communication
+- Route Visualization
 
-                    FUTURE ENHANCEMENTS
+---
 
-    ├── Real-Time Ambulance Tracking
-    ├── Google Maps Integration
-    ├── Notification System
-    ├── Role-Based Authorization
-    ├──Refresh Tokens
-    ├──Access Token Rotation
-    ├──Password Reset
-    ├──Email Verification
-    ├──Account Locking
-    ├──Audit Logging
-    ├── Admin Dashboard
-    ├── Analytics & Reporting
-    └── AI-Based Resource Allocation
+## 2. Application Layer
+
+**Technology**
+
+- Spring Boot
+
+**Responsibilities**
+
+- REST APIs
+- Business Logic
+- Request Validation
+- Authentication
+- Authorization
+- Dispatch Engine
+- Smart Routing
+
+---
+
+## 3. Data Layer
+
+**Technology**
+
+- MySQL
+- Spring Data JPA
+- Hibernate
+
+**Responsibilities**
+
+- Data Persistence
+- Entity Management
+- Database Transactions
+
+---
+
+# Backend Architecture
+
+The backend follows a standard layered architecture.
+
+```text
+Client
+
+↓
+
+Controller
+
+↓
+
+Service
+
+↓
+
+Repository
+
+↓
+
+Database
+```
+
+Each layer has a single responsibility, making the application easy to maintain and extend.
+
+---
+
+# Core Backend Modules
+
+## Emergency Management
+
+- Emergency Requests
+- Request Validation
+- Status Management
+
+---
+
+## Hospital Management
+
+- Hospital Records
+- Availability Management
+- CRUD Operations
+
+---
+
+## Ambulance Management
+
+- Ambulance Records
+- Availability Tracking
+- Status Management
+
+---
+
+## Dispatch Engine
+
+- Manual Dispatch
+- Automatic Dispatch
+- Nearest Ambulance Selection
+- Dispatch History
+
+---
+
+## Smart Routing
+
+- Graph Data Structure
+- Dijkstra's Algorithm
+- Dynamic Road Blocking
+- Traffic Delay Simulation
+- Route Optimization
+
+---
+
+## Security
+
+- User Authentication
+- JWT Authorization
+- Password Encryption
+- Role-Based Access Control
+- Protected REST APIs
+
+---
+
+# Request Flow
+
+```text
+Client
+
+↓
+
+HTTP Request
+
+↓
+
+Controller
+
+↓
+
+Validation
+
+↓
+
+Service
+
+↓
+
+Repository
+
+↓
+
+MySQL
+
+↓
+
+Repository
+
+↓
+
+Service
+
+↓
+
+Controller
+
+↓
+
+JSON Response
+```
+
+---
+
+# Authentication Flow
+
+```text
+User Login
+
+↓
+
+Authentication Manager
+
+↓
+
+Credentials Validation
+
+↓
+
+JWT Token Generation
+
+↓
+
+Client Stores JWT
+
+↓
+
+Authorization Header
+
+↓
+
+JWT Authentication Filter
+
+↓
+
+Protected API Access
+```
+
+---
+
+# Smart Routing Flow
+
+```text
+Emergency Request
+
+↓
+
+Dispatch Engine
+
+↓
+
+Road Network Graph
+
+↓
+
+Dijkstra Algorithm
+
+↓
+
+Traffic Analysis
+
+↓
+
+Shortest Route
+
+↓
+
+Dispatch Result
+```
+
+---
+
+# Design Principles
+
+The project follows modern software engineering practices:
+
+- Layered Architecture
+- Separation of Concerns
+- RESTful API Design
+- Stateless Authentication
+- Modular Development
+- Reusable Components
+- Clean Code Principles
+- Feature-Based Development
+
+---
+
+# Current Architecture Status
+
+| Component | Status |
+|----------|--------|
+| Backend | ✅ Complete |
+| Database | ✅ Complete |
+| Authentication | ✅ Complete |
+| Smart Routing | ✅ Complete |
+| Documentation | ✅ Complete |
+| Frontend | ⏳ Planned |
+| Deployment | ⏳ Planned |
+
+---
+
+# Future Enhancements
+
+## Frontend
+
+- React Dashboard
+- Route Visualization
+- Authentication Screens
+- Resource Management
+
+## DevOps
+
+- Docker
+- Docker Compose
+- GitHub Actions
+- Cloud Deployment
+- Monitoring & Logging
+
+## System Improvements
+
+- Real-Time Ambulance Tracking
+- Maps API Integration
+- Live Traffic Integration
+- Push Notifications
+- Performance Optimization
+
+---
+
+# Architecture Summary
+
+| Category | Technology |
+|----------|------------|
+| Architecture | Three-Tier Layered Architecture |
+| Frontend | React (Planned) |
+| Backend | Spring Boot |
+| Database | MySQL |
+| Authentication | JWT + Spring Security |
+| Routing | Dijkstra's Algorithm |
+| API Communication | REST APIs |
+| Deployment | Docker & Cloud (Planned) |
+
+---
+
+**Current Phase:** Frontend Preparation
+
+**Version:** 1.0

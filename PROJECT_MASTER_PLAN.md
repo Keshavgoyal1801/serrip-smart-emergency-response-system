@@ -1,228 +1,224 @@
-# 🚀 SERRIP Milestone Tracker
+# Project Master Plan
 
-## ✅ Milestone 1: Project Foundation
+## Project Information
 
-- [x] Git Repository Setup
-- [x] Spring Boot Project Setup
-- [x] Maven Configuration
-- [x] MySQL Database Integration
-- [x] Project Structure & Layered Architecture
+**Project Name:** SERRIP – Smart Emergency Response & Resource Intelligence Platform
 
----
+**Project Type:** Full Stack Web Application
 
-## ✅ Milestone 2: Backend Core Development
+**Domain:** Emergency Response & Smart Routing
 
-- [x] EmergencyRequest Entity
-- [x] Repository Layer
-- [x] Service Layer
-- [x] Controller Layer
-- [x] CRUD REST APIs
-- [x] DTO Layer
-- [x] Request Validation
-- [x] Global Exception Handling
-- [x] Standard API Response Wrapper
+**Architecture:** Layered Architecture (Spring Boot + React)
+
+**Development Methodology:** Incremental & Feature-Based Development
 
 ---
 
-## ✅ Milestone 3: Emergency Resource Management
+# Project Vision
 
-### Hospital Module
+SERRIP is a Smart Emergency Response System designed to improve emergency handling by automating ambulance dispatch, optimizing routes using graph algorithms, and providing secure access through role-based authentication.
 
-- [x] Hospital Entity
-- [x] Repository Layer
-- [x] Service Layer
-- [x] Controller Layer
-- [x] CRUD APIs
-
-### Ambulance Module
-
-- [x] Ambulance Entity
-- [x] Repository Layer
-- [x] Service Layer
-- [x] Controller Layer
-- [x] CRUD APIs
-- [x] Ambulance Status Management
+The project demonstrates real-world backend engineering concepts including REST APIs, authentication, graph algorithms, routing optimization, and scalable application design.
 
 ---
 
-## ✅ Milestone 4: Dispatch Engine
+# Project Objectives
 
-- [x] DispatchRecord Entity
-- [x] Repository Layer
-- [x] Service Layer
-- [x] Manual Ambulance Dispatch
-- [x] Automatic Ambulance Dispatch
-- [x] Nearest Ambulance Selection
-- [x] Distance Calculation
-- [x] Dispatch History
-- [x] Ambulance Status Updates
-
----
-
-## ✅ Milestone 5: Routing Intelligence
-
-### Graph Infrastructure
-
-- [x] Road Network Model
-- [x] Graph Data Structure
-- [x] Adjacency List
-- [x] GraphNode Model
-- [x] GraphEdge Model
-- [x] RoadGraph Implementation
-
-### Route Optimization
-
-- [x] Dijkstra's Shortest Path Algorithm
-- [x] Priority Queue (Min Heap)
-- [x] Distance Tracking
-- [x] Previous Node Tracking
-- [x] Path Reconstruction
-- [x] RouteResult Model
-- [x] Shortest Route API
-
-### Dynamic Routing
-
-- [x] Road Blocking
-- [x] Road Unblocking
-- [x] Traffic Delay Simulation
-- [x] Traffic Delay Management
-- [x] Traffic-Aware Route Calculation
-- [x] Dynamic Route Recalculation
-- [x] Route Optimization Testing
+- Develop a secure RESTful backend using Spring Boot.
+- Implement JWT-based authentication and authorization.
+- Manage emergency requests, hospitals, and ambulances.
+- Build an intelligent dispatch engine.
+- Implement shortest-path routing using Dijkstra's Algorithm.
+- Develop a responsive React frontend.
+- Containerize the application using Docker.
+- Deploy the application using modern DevOps practices.
 
 ---
 
-## ✅ Milestone 6: Security & Authentication
+# Technology Stack
 
-### Authentication
+## Backend
 
-- [x] Spring Security Integration
-- [x] Security Configuration
-- [x] User Entity
-- [x] Role Management
-- [x] User Repository
-- [x] CustomUserDetailsService
-- [x] Authentication Manager
-- [x] BCrypt Password Encryption
-- [x] User Registration API
-- [x] User Login API
+- Java 25
+- Spring Boot
+- Spring Security
+- Spring Data JPA
+- Maven
 
-### JWT Security
+## Database
 
-- [x] JWT Token Generation
-- [x] JWT Validation
-- [x] Username Extraction
-- [x] JwtAuthenticationFilter
-- [x] Stateless Session Management
-- [x] JWT Protected APIs
+- MySQL
 
-### Role-Based Authorization
+## Frontend (Upcoming)
 
-- [x] ADMIN Authorization
-- [x] DISPATCHER Authorization
-- [x] HOSPITAL Authorization
-- [x] Endpoint-Level Security
-- [x] Method-Level Security (@PreAuthorize)
-- [x] Role-Based API Testing
+- React
+- Vite
+- Axios
+- React Router
 
-### Advanced Security
+## Security
 
-- [x] Custom AuthenticationEntryPoint (401)
-- [x] Custom AccessDeniedHandler (403)
-- [x] Secure Logout API
-- [x] JWT Token Blacklisting
-- [x] Blacklisted Token Validation
-- [x] Production-Style Authentication Testing
+- JWT Authentication
+- BCrypt Password Encryption
+- Role-Based Access Control (RBAC)
+
+## Tools
+
+- IntelliJ IDEA
+- Postman
+- Git & GitHub
+- Docker (Upcoming)
 
 ---
 
-## ⏳ Milestone 7: Frontend Development
+# Project Roadmap
 
-### React Application
+## Phase 1 — Project Foundation ✅
 
-- [ ] React Project Setup
-- [ ] Project Folder Structure
-- [ ] Routing Configuration
-- [ ] Authentication Pages
-- [ ] Login & Logout Flow
-- [ ] Dashboard
-
-### User Interfaces
-
-- [ ] Emergency Request Module
-- [ ] Dispatcher Dashboard
-- [ ] Hospital Dashboard
-- [ ] Ambulance Dashboard
-- [ ] Route Visualization
-- [ ] Live Status Updates
-
-### Integration
-
-- [ ] JWT Integration
-- [ ] Protected Routes
-- [ ] API Integration
-- [ ] Error Handling
-- [ ] Loading States
+- Spring Boot Setup
+- Maven Configuration
+- MySQL Integration
+- Project Structure
+- GitHub Repository
 
 ---
 
-## ⏳ Milestone 8: DevOps & Deployment
+## Phase 2 — Backend Development ✅
 
-- [ ] Docker Configuration
-- [ ] Docker Compose
-- [ ] GitHub Actions CI/CD
-- [ ] Production Environment Configuration
-- [ ] Cloud Deployment
-- [ ] Monitoring & Logging
-- [ ] Performance Optimization
+- Emergency Module
+- Hospital Module
+- Ambulance Module
+- Dispatch Engine
+- Exception Handling
+- DTO Layer
+- Validation
 
 ---
 
-# 📊 Milestone Status
+## Phase 3 — Routing Intelligence ✅
 
-| Milestone | Status |
-|-----------|--------|
+- Road Network Graph
+- Dijkstra Algorithm
+- Dynamic Road Blocking
+- Traffic Delay Simulation
+- Smart Route Optimization
+
+---
+
+## Phase 4 — Security & Authentication ✅
+
+Completed
+
+- Spring Security
+- JWT Authentication
+- Login
+- Registration
+- Logout
+- Role-Based Endpoint Protection
+- Custom Authentication Entry Point
+- Custom Access Denied Handler
+- Method-Level Security
+- Production Security Hardening
+- Refresh Token Support
+
+---
+
+## Phase 5 — Frontend Development ⏳
+
+Planned Features
+
+- Authentication
+- Dashboard
+- Emergency Management
+- Hospital Management
+- Ambulance Management
+- Route Visualization
+- Dispatcher Dashboard
+
+---
+
+## Phase 6 — DevOps & Deployment ⏳
+
+Planned Features
+
+- Docker
+- Docker Compose
+- GitHub Actions
+- Cloud Deployment
+- Production Configuration
+- Monitoring & Logging
+
+---
+
+# Current Progress
+
+| Module | Status     |
+|---------|------------|
 | Project Foundation | ✅ Complete |
-| Backend Core Development | ✅ Complete |
-| Emergency Resource Management | ✅ Complete |
-| Dispatch Engine | ✅ Complete |
+| Backend Development | ✅ Complete |
 | Routing Intelligence | ✅ Complete |
-| Security & Authentication | ✅ Complete |
-| Frontend Development | ⏳ Not Started |
-| DevOps & Deployment | ⏳ Not Started |
+| Authentication & Security | ✅ Complete |
+| Frontend | ⏳ Planned  |
+| DevOps | ⏳ Planned  |
 
 ---
 
-# 📈 Overall Project Progress
+# Development Principles
 
-| Module | Progress |
-|--------|----------|
-| Planning & Architecture | **100%** |
-| Backend Foundation | **100%** |
-| Emergency Management | **100%** |
-| Resource Management | **100%** |
-| Dispatch Engine | **100%** |
-| Routing Intelligence | **100%** |
-| Security & Authentication | **100%** |
-| Frontend Development | **0%** |
-| DevOps & Deployment | **0%** |
+The project follows these principles throughout development:
 
----
-
-# 🎯 Current Phase
-
-**Phase:** Backend Development Completed ✅
-
-**Current Focus:** React Frontend Development
-
-**Next Milestone:** Build a modern React-based user interface and integrate it with the secured Spring Boot backend.
+- Clean Code
+- Layered Architecture
+- Separation of Concerns
+- RESTful API Design
+- Stateless Authentication
+- Modular Development
+- Incremental Feature Delivery
+- Documentation-Driven Development
 
 ---
 
-# 📌 Estimated Overall Completion
+# Repository Organization
 
-**≈ 91% Complete**
+```
+backend/
+    Spring Boot Backend
 
-**Backend:** ✅ Production Ready
+frontend/
+    React Frontend (Upcoming)
 
-**Next Goal:** Complete the frontend and deploy the full-stack application.
+docs/
+    Technical Documentation
+
+notes/
+    Learning Notes & Daily Progress
+```
+
+---
+
+# Long-Term Goals
+
+- Complete React Frontend
+- Dockerize Complete Application
+- Implement CI/CD Pipeline
+- Deploy to Cloud Platform
+- Improve Performance
+- Add Real-Time Tracking
+- Integrate Maps API
+- Enhance System Scalability
+
+---
+
+# Success Criteria
+
+The project will be considered complete when:
+
+- All planned modules are implemented.
+- Backend and frontend are fully integrated.
+- Authentication and authorization are production-ready.
+- Complete documentation is available.
+- Docker deployment is functional.
+- CI/CD pipeline is operational.
+- The application is deployed successfully.
+
+---
