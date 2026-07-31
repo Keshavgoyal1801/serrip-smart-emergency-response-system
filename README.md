@@ -4,12 +4,11 @@
 
 ### Smart Emergency Response & Resource Intelligence Platform
 
-*A full-stack emergency response system powered by Spring Boot, JWT Authentication, and Graph-Based Route Optimization.*
+*A full-stack emergency response system powered by Spring Boot, JWT Authentication with Token Blacklisting, and Graph-Based Route Optimization.*
 
 <br>
 
-![Java](https://img.shields.io/badge/Java-25-red)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
+![Java](https://img.shields.io/badge/Java-21_LTS-red)![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.14-brightgreen)
 ![React](https://img.shields.io/badge/React-Planned-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
 ![JWT](https://img.shields.io/badge/JWT-Secured-yellow)
@@ -35,7 +34,7 @@
 
 SERRIP is a full-stack emergency response platform designed to improve the efficiency of emergency services by automating ambulance dispatch, optimizing route selection, and securely managing healthcare resources.
 
-The system combines **Spring Boot**, **JWT Authentication**, **MySQL**, and **Graph Algorithms** to deliver a scalable and modular backend that can support real-world emergency management scenarios.
+The system combines **Spring Boot**, **JWT Authentication with Token Blacklisting**, **MySQL**, and **Graph Algorithms** to deliver a scalable and modular backend that can support real-world emergency management scenarios.
 
 The project is being developed as an end-to-end software engineering project following modern development practices, clean architecture, and comprehensive documentation.
 
@@ -50,7 +49,7 @@ SERRIP addresses these challenges by providing a centralized platform that can:
 - Automatically assign the nearest available ambulance
 - Calculate optimal routes using Dijkstra's Algorithm
 - Simulate traffic conditions and blocked roads
-- Secure all APIs using JWT Authentication
+- Secure all APIs using JWT Authentication with Token Blacklisting
 - Provide a scalable architecture for future real-time enhancements
 
 The project emphasizes modular design, maintainability, and extensibility, making it suitable for academic learning as well as enterprise-level development practices.
@@ -130,7 +129,7 @@ SERRIP combines intelligent routing, secure authentication, and emergency resour
 
 ✅ Layered Architecture
 
-✅ JWT Authentication
+✅ JWT Authentication with Token Blacklisting
 
 ✅ Role-Based Authorization
 
@@ -184,18 +183,18 @@ SERRIP follows a **Three-Tier Layered Architecture** to ensure modularity, scala
 
 # Technology Stack
 
-| Category | Technology |
-|----------|------------|
-| Language | Java 25 |
-| Backend Framework | Spring Boot 3.x |
-| Frontend | React + Vite *(Planned)* |
-| Database | MySQL |
+| Category | Technology                  |
+|----------|-----------------------------|
+| Language | Java 21 LTS                 |
+| Backend Framework | Spring Boot 3.5.14          |
+| Frontend | React + Vite *(Planned)*    |
+| Database | MySQL                       |
 | ORM | Spring Data JPA / Hibernate |
-| Authentication | JWT + Spring Security |
-| Build Tool | Maven |
-| API Testing | Postman |
-| Version Control | Git & GitHub |
-| Deployment | Docker *(Planned)* |
+| Authentication | JWT + Spring Security       |
+| Build Tool | Maven Wrapper               |
+| API Testing | Postman                     |
+| Version Control | Git & GitHub                |
+| Deployment | Docker *(Planned)*          |
 
 ---
 
@@ -343,9 +342,6 @@ Passwords are securely encrypted using **BCrypt**, and authenticated users recei
 | JwtAuthenticationFilter | Extracts and validates JWT from every request |
 | JwtService | Generates and validates JWT tokens |
 | CustomUserDetailsService | Loads authenticated user details |
-| JwtAuthenticationEntryPoint | Handles unauthorized access (401) |
-| JwtAccessDeniedHandler | Handles forbidden requests (403) |
-
 ---
 
 ## Authentication Features
@@ -624,8 +620,8 @@ Ensure the following software is installed before running the project:
 
 | Software | Version |
 |----------|---------|
-| Java | JDK 25 or later |
-| Maven | 3.9+ |
+| Java | JDK 21 or later |
+| Maven Wrapper | 3.9+ |
 | MySQL | 8.0+ |
 | Git | Latest |
 | IntelliJ IDEA | Recommended |
@@ -778,17 +774,17 @@ Comprehensive project documentation is available inside the repository.
 ---
 # Project Statistics
 
-| Metric | Value |
-|---------|------:|
-| Backend Modules | 6 |
-| REST APIs | 20+ |
-| Database Tables | 9 |
-| Authentication | JWT |
-| Routing Algorithm | Dijkstra |
-| Documentation Files | 15+ |
-| Development Days | 16 |
-| Architecture | Three-Tier Layered |
-| Project Status | Backend Complete |
+| Metric |                    Value |
+|---------|-------------------------:|
+| Backend Modules |                       8+ |
+| REST APIs |                      25+ |
+| Database Tables |                        9 |
+| Authentication | JWT + Token Blacklisting |
+| Routing Algorithm |                 Dijkstra |
+| Documentation Files |                      20+ |
+| Development Days |                       16 |
+| Architecture |       Three-Tier Layered |
+| Project Status |         Backend Complete |
 
 ---
 
@@ -847,13 +843,13 @@ Comprehensive project documentation is available inside the repository.
 
 ---
 
-## Phase 6 🟡
+## Phase 6 ✅
 
 - Project Documentation
 
 ---
 
-## Phase 7 ⏳
+## Phase 7 🟡
 
 - React Frontend
 
@@ -947,8 +943,8 @@ The current backend provides a solid foundation for intelligent emergency respon
 | Dispatch Engine | ✅ Complete |
 | Smart Routing | ✅ Complete |
 | Authentication & Security | ✅ Complete |
-| Documentation | 🟡 In Progress |
-| Frontend | ⏳ Planned |
+| Documentation | ✅ Complete |
+| Frontend | 🚧 Under Development |
 | DevOps & Deployment | ⏳ Planned |
 
 ---
@@ -1061,7 +1057,7 @@ Special thanks to:
 - Spring Boot
 - Spring Security
 - MySQL
-- Maven
+- Maven Wrapper
 - React (Upcoming)
 - Open Source Community
 
@@ -1073,9 +1069,7 @@ for providing the technologies and tools that made this project possible.
 
 For detailed information, refer to the project documentation:
 
-- 📖 Project Master Plan
-- 🏗️ Architecture Guide
-- 📦 Package Structure
+- 📖 [Project Master Plan](docs/...)
 - 🗄️ Database Schema
 - 🌐 API Documentation
 - 🧪 Postman Testing Guide
